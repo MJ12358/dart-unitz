@@ -1,0 +1,14 @@
+name: dart_unitz
+description: A simple and expandable unit conversion library.
+version: 0.0.1
+repository: https://github.com/mj12358/dart-unitz
+
+environment:
+  sdk: ">=2.19.2 <3.0.0"
+
+dependencies:
+  meta: ^1.9.0
+
+dev_dependencies:
+  dart_lintz: ^1.0.0
+  test: ^1.21.0

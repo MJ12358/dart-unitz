@@ -1,21 +1,5 @@
-# Dart Unitz
+import 'package:dart_unitz/dart_unitz.dart';
 
-A simple and expandable unit conversion library.
-
-## WIP
-
-- [X] Temperature
-- [ ] Angle
-- [ ] Length
-- [ ] Time
-- [ ] Mass
-- [ ] Electric current
-- [ ] Luminous intensity
-- [ ] Amount of substance
-
-## Usage
-
-```dart
 final Unit conversion = Unitz.convert(
   from: Celsius(100),
   to: Fahrenheit(),
@@ -30,4 +14,3 @@ final Unit additionResult = freezingInCelsius + boilingInFahrenheit;
 
 final String formatted = Celsius(100).toString();
 // expect(formatted, '100 °C');
-```
