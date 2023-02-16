@@ -22,6 +22,22 @@ Map<Type, Unit> boilingMap = <Type, Unit>{
 };
 
 void main() {
+  test('equality', () {
+    expect(Celsius(0) == Celsius(0), true);
+    expect(Celsius(0) != Celsius(100), true);
+    expect(Celsius(0) == Fahrenheit(32), true);
+    expect(Celsius(0) != Fahrenheit(212), true);
+  });
+
+  test('compare', () {
+    expect(Celsius(0).compareTo(Celsius(0)), 0);
+    expect(Celsius(0).compareTo(Celsius(100)), -1);
+    expect(Celsius(100).compareTo(Celsius(0)), 1);
+    expect(Celsius(0).compareTo(Fahrenheit(32)), 0);
+    expect(Celsius(0).compareTo(Fahrenheit(212)), -1);
+    expect(Celsius(100).compareTo(Fahrenheit(32)), 1);
+  });
+
   test('addition', () {
     for (final Type t in boilingMap.keys) {
       expect(Celsius(0) + boilingMap[t]!, Celsius(100));
@@ -52,9 +68,34 @@ void main() {
     }
   });
 
-  test('equality', () {
-    expect(Celsius(0) == Celsius(0), true);
-    expect(Celsius(0) != Celsius(100), true);
+  test('subtraction', () {
+    for (final Type t in boilingMap.keys) {
+      expect(Celsius(0) - boilingMap[t]!, Celsius(-100));
+    }
+
+    for (final Type t in boilingMap.keys) {
+      expect(Delisle(150) - boilingMap[t]!, Delisle(150));
+    }
+
+    for (final Type t in boilingMap.keys) {
+      expect(Fahrenheit(32) - boilingMap[t]!, Fahrenheit(-180));
+    }
+
+    for (final Type t in boilingMap.keys) {
+      expect(Kelvin(273.15) - boilingMap[t]!, Kelvin(-100));
+    }
+
+    for (final Type t in boilingMap.keys) {
+      expect(Rankine(491.67) - boilingMap[t]!, Rankine(-180));
+    }
+
+    for (final Type t in boilingMap.keys) {
+      expect(Reaumur(0) - boilingMap[t]!, Reaumur(-80));
+    }
+
+    for (final Type t in boilingMap.keys) {
+      expect(Romer(7.5) - boilingMap[t]!, Romer(-52.5));
+    }
   });
 
   test('celsius', () {

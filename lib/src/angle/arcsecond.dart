@@ -17,15 +17,13 @@ class ArcSecond extends Angle {
   String get symbol => '"';
 
   @override
-  Unit toBase() {
-    final num result = value * math.pi / (180 * 3600);
-    return ArcSecond(result);
+  num toBase() {
+    return value * math.pi / (180 * 3600);
   }
 
   @override
-  Unit fromBase(Unit base) {
-    final num result = base.value * (3600 * 180) / math.pi;
-    return base.newInstance(result);
+  num fromBase(num base) {
+    return base * (3600 * 180) / math.pi;
   }
 
   @override

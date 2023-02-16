@@ -13,7 +13,8 @@ abstract class Unit implements Comparable<Unit> {
   final int _precision = Unitz.precision;
   final bool _removeTrailingZeros = Unitz.removeTrailingZeros;
 
-  num get value => _format();
+  /// The precise value
+  num get value => _value;
 
   /// The name of this unit.
   String get name;
@@ -24,28 +25,26 @@ abstract class Unit implements Comparable<Unit> {
   /// The symbol for this unit.
   String get symbol;
 
-  /// The base unit. Used when creating the "category" unit.
+  /// The base unit
   Unit get base;
 
-  /// Converts this unit to base unit.
-  Unit toBase();
+  /// Converts this unit to the base unit.
+  num toBase();
 
-  /// Converts from base unit to this unit.
-  Unit fromBase(Unit base);
+  /// Converts from the base unit to this unit.
+  num fromBase(num base);
 
   /// Creates a new instance of this class.
   Unit newInstance([num? value]);
 
   /// This is used to allow dynamic unit registration.
+  /// This is done by using the `Unit.new` syntax
   Unit Function() tearOff();
 
-  num _format() {
-    // TODO: precision dosent seem to be working
-
+  /// The formatted value
+  num get formatted {
     final double mod = math.pow(10, _precision.toDouble()).toDouble();
     final num result = (_value * mod).round().toDouble() / mod;
-
-    // final num result = num.parse(_value.toStringAsFixed(_precision));
 
     if (_removeTrailingZeros) {
       final bool hasTrailingZero = result.truncateToDouble() == result;
@@ -59,20 +58,25 @@ abstract class Unit implements Comparable<Unit> {
 
   @override
   int compareTo(Unit other) {
-    return toBase().compareTo(other.toBase());
+    final num a = base.newInstance(toBase()).formatted;
+    final num b = other.base.newInstance(other.toBase()).formatted;
+    return a.compareTo(b);
   }
 
   @override
   String toString() {
-    return '$value $symbol';
+    return '$formatted $symbol';
   }
 
   @override
-  bool operator ==(Object other) =>
-      other is Unit &&
-      other.value == value &&
-      other.name == name &&
-      other.symbol == symbol;
+  bool operator ==(Object other) {
+    if (other is! Unit) {
+      return false;
+    }
+    final num a = base.newInstance(toBase()).formatted;
+    final num b = other.base.newInstance(other.toBase()).formatted;
+    return a == b;
+  }
 
   @override
   int get hashCode => Object.hash(value, name, symbol);

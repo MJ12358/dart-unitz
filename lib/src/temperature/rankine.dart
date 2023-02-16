@@ -21,15 +21,13 @@ class Rankine extends Temperature {
   String get symbol => '°Ra';
 
   @override
-  Unit toBase() {
-    final num result = 5 * value / 9;
-    return base.newInstance(result);
+  num toBase() {
+    return 5 * value / 9;
   }
 
   @override
-  Unit fromBase(Unit base) {
-    final num result = 9 * base.value / 5;
-    return Rankine(result);
+  num fromBase(num base) {
+    return 9 * base / 5;
   }
 
   @override

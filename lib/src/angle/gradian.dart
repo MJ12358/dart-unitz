@@ -18,15 +18,13 @@ class Gradian extends Angle {
   String get symbol => 'grad';
 
   @override
-  Unit toBase() {
-    final num result = value * 0.015708;
-    return base.newInstance(result);
+  num toBase() {
+    return value * 0.015708;
   }
 
   @override
-  Unit fromBase(Unit base) {
-    final num result = base.value / 0.015708;
-    return Gradian(result);
+  num fromBase(num base) {
+    return base / 0.015708;
   }
 
   @override

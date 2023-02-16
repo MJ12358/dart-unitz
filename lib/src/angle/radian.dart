@@ -17,13 +17,13 @@ class Radian extends Angle {
   String get symbol => 'rad';
 
   @override
-  Unit toBase() {
-    return Radian(value);
+  num toBase() {
+    return value;
   }
 
   @override
-  Unit fromBase(Unit base) {
-    return Radian(base.value);
+  num fromBase(num base) {
+    return base;
   }
 
   @override

@@ -19,15 +19,13 @@ class Romer extends Temperature {
   String get symbol => '°Rø';
 
   @override
-  Unit toBase() {
-    final num result = (value - 7.5) * (40 / 21) + 273.15;
-    return base.newInstance(result);
+  num toBase() {
+    return (value - 7.5) * (40 / 21) + 273.15;
   }
 
   @override
-  Unit fromBase(Unit base) {
-    final num result = (base.value - 273.15) * (21 / 40) + 7.5;
-    return Romer(result);
+  num fromBase(num base) {
+    return (base - 273.15) * (21 / 40) + 7.5;
   }
 
   @override

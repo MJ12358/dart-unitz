@@ -18,15 +18,13 @@ class Celsius extends Temperature {
   String get symbol => '°C';
 
   @override
-  Unit toBase() {
-    final num result = value + 273.15;
-    return base.newInstance(result);
+  num toBase() {
+    return value + 273.15;
   }
 
   @override
-  Unit fromBase(Unit base) {
-    final num result = base.value - 273.15;
-    return Celsius(result);
+  num fromBase(num base) {
+    return base - 273.15;
   }
 
   @override

@@ -18,15 +18,13 @@ class Degree extends Angle {
   String get symbol => '°';
 
   @override
-  Unit toBase() {
-    final num result = value * (math.pi / 180);
-    return base.newInstance(result);
+  num toBase() {
+    return value * (math.pi / 180);
   }
 
   @override
-  Unit fromBase(Unit base) {
-    final num result = base.value * (180 / math.pi);
-    return Degree(result);
+  num fromBase(num base) {
+    return base * (180 / math.pi);
   }
 
   @override

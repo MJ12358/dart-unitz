@@ -18,15 +18,13 @@ class Reaumur extends Temperature {
   String get symbol => '°Ré';
 
   @override
-  Unit toBase() {
-    final num result = value * 5 / 4 + 273.15;
-    return base.newInstance(result);
+  num toBase() {
+    return value * 5 / 4 + 273.15;
   }
 
   @override
-  Unit fromBase(Unit base) {
-    final num result = (base.value - 273.15) * (4 / 5);
-    return Reaumur(result);
+  num fromBase(num base) {
+    return (base - 273.15) * (4 / 5);
   }
 
   @override

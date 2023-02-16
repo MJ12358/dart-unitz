@@ -22,7 +22,12 @@ abstract class Unitz {
       );
     }
 
-    final Unit u = _registration[to]!();
-    return u.fromBase(from.toBase());
+    final Unit fromUnit = from;
+    final Unit toUnit = _registration[to]!();
+
+    final num base = fromUnit.toBase();
+    final num result = toUnit.fromBase(base);
+
+    return toUnit.newInstance(result);
   }
 }

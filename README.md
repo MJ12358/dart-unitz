@@ -11,7 +11,7 @@ Additionally, the library is designed to be easily expandable, meaning that deve
 ## WIP
 
 - [X] Temperature
-- [ ] Angle
+- [X] Angle
 - [ ] Length
 - [ ] Time
 - [ ] Mass
@@ -24,12 +24,20 @@ Additionally, the library is designed to be easily expandable, meaning that deve
 Basic conversion.
 
 ```dart
-final Unit conversion = Unitz.convert(
+final Unit conversion1 = Unitz.convert(
   from: Celsius(100),
   to: Fahrenheit,
 );
 
-// expect(conversion, Fahrenheit(212));
+// expect(conversion1, Fahrenheit(212));
+
+final Unit conversion2 = Unitz.convert(
+  from: Degree(360),
+  to: Radian,
+);
+
+// expect(conversion2, Radian(6.28));
+// expect(conversion2, Radian(2 * pi));
 ```
 
 Addition, subtraction, multiplication and division of arbitrary units.

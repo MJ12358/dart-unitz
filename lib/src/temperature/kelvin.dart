@@ -17,13 +17,13 @@ class Kelvin extends Temperature {
   String get symbol => 'K';
 
   @override
-  Unit toBase() {
-    return Kelvin(value);
+  num toBase() {
+    return value;
   }
 
   @override
-  Unit fromBase(Unit base) {
-    return Kelvin(base.value);
+  num fromBase(num base) {
+    return base;
   }
 
   @override

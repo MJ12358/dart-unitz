@@ -19,15 +19,13 @@ class Inch extends Length {
   String get symbol => 'in';
 
   @override
-  Unit toBase() {
-    final num result = value / 39.3700787402;
-    return base.newInstance(result);
+  num toBase() {
+    return value / 39.3700787402;
   }
 
   @override
-  Unit fromBase(Unit base) {
-    final num result = base.value * 39.3700787402;
-    return Inch(result);
+  num fromBase(num base) {
+    return base * 39.3700787402;
   }
 
   @override

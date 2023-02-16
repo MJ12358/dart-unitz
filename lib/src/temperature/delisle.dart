@@ -18,15 +18,13 @@ class Delisle extends Temperature {
   String get symbol => '°D';
 
   @override
-  Unit toBase() {
-    final num result = 373.15 - value * (2 / 3);
-    return base.newInstance(result);
+  num toBase() {
+    return 373.15 - value * (2 / 3);
   }
 
   @override
-  Unit fromBase(Unit base) {
-    final num result = (373.15 - base.value) * (3 / 2);
-    return Delisle(result);
+  num fromBase(num base) {
+    return (373.15 - base) * (3 / 2);
   }
 
   @override

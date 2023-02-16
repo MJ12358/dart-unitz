@@ -17,15 +17,13 @@ class ArcMinute extends Angle {
   String get symbol => "'";
 
   @override
-  Unit toBase() {
-    final num result = value * math.pi / (60 * 180);
-    return base.newInstance(result);
+  num toBase() {
+    return value * math.pi / (60 * 180);
   }
 
   @override
-  Unit fromBase(Unit base) {
-    final num result = base.value * (60 * 180) / math.pi;
-    return ArcMinute(result);
+  num fromBase(num base) {
+    return base * (60 * 180) / math.pi;
   }
 
   @override

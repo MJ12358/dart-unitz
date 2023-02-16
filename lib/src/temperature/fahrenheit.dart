@@ -19,15 +19,13 @@ class Fahrenheit extends Temperature {
   String get symbol => '°F';
 
   @override
-  Unit toBase() {
-    final num result = (value - 32) * (5 / 9) + 273.15;
-    return base.newInstance(result);
+  num toBase() {
+    return (value - 32) * (5 / 9) + 273.15;
   }
 
   @override
-  Unit fromBase(Unit base) {
-    final num result = (base.value - 273.15) * (9 / 5) + 32;
-    return Fahrenheit(result);
+  num fromBase(num base) {
+    return (base - 273.15) * (9 / 5) + 32;
   }
 
   @override

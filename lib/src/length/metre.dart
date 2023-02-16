@@ -17,13 +17,13 @@ class Metre extends Length {
   String get symbol => 'm';
 
   @override
-  Unit toBase() {
-    return Metre(value);
+  num toBase() {
+    return value;
   }
 
   @override
-  Unit fromBase(Unit base) {
-    return Metre(base.value);
+  num fromBase(num base) {
+    return base;
   }
 
   @override
