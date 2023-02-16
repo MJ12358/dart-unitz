@@ -1,14 +1,17 @@
 part of dart_unitz;
 
-/// An arcsecond (denoted by the symbol “)
-/// is an anglular measurement equal to 1/3600 of a degree or 1/60 of an arcminute.
+/// An arcsecond (denoted by the symbol “) is an angular
+/// measurement equal to 1/3600 of a degree or 1/60 of an arcminute.
 ///
 /// https://en.wikipedia.org/wiki/Minute_and_second_of_arc
-class ArcSeconds extends Angle {
-  ArcSeconds([super.value]);
+class ArcSecond extends Angle {
+  ArcSecond([super.value]);
 
   @override
-  String get name => 'Arc Seconds';
+  String get name => 'Arc Second';
+
+  @override
+  String get pluralName => 'Arc Seconds';
 
   @override
   String get symbol => '"';
@@ -16,7 +19,7 @@ class ArcSeconds extends Angle {
   @override
   Unit toBase() {
     final num result = value * math.pi / (180 * 3600);
-    return ArcSeconds(result);
+    return ArcSecond(result);
   }
 
   @override
@@ -27,6 +30,11 @@ class ArcSeconds extends Angle {
 
   @override
   Unit newInstance([num? value]) {
-    return ArcSeconds(value);
+    return ArcSecond(value);
+  }
+
+  @override
+  Unit Function() tearOff() {
+    return ArcSecond.new;
   }
 }

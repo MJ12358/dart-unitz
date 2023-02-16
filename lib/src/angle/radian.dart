@@ -11,6 +11,9 @@ class Radian extends Angle {
   String get name => 'Radian';
 
   @override
+  String get pluralName => 'Radians';
+
+  @override
   String get symbol => 'rad';
 
   @override
@@ -26,5 +29,10 @@ class Radian extends Angle {
   @override
   Unit newInstance([num? value]) {
     return Radian(value);
+  }
+
+  @override
+  Unit Function() tearOff() {
+    return Radian.new;
   }
 }

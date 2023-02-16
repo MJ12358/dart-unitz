@@ -12,6 +12,9 @@ class Gradian extends Angle {
   String get name => 'Gradian';
 
   @override
+  String get pluralName => 'Gradians';
+
+  @override
   String get symbol => 'grad';
 
   @override
@@ -29,5 +32,10 @@ class Gradian extends Angle {
   @override
   Unit newInstance([num? value]) {
     return Gradian(value);
+  }
+
+  @override
+  Unit Function() tearOff() {
+    return Gradian.new;
   }
 }

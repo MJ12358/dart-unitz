@@ -15,6 +15,9 @@ class Rankine extends Temperature {
   String get name => 'Rankine';
 
   @override
+  String get pluralName => name;
+
+  @override
   String get symbol => '°Ra';
 
   @override
@@ -32,5 +35,10 @@ class Rankine extends Temperature {
   @override
   Unit newInstance([num? value]) {
     return Rankine(value);
+  }
+
+  @override
+  Unit Function() tearOff() {
+    return Rankine.new;
   }
 }

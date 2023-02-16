@@ -13,6 +13,9 @@ class Romer extends Temperature {
   String get name => 'Rømer';
 
   @override
+  String get pluralName => name;
+
+  @override
   String get symbol => '°Rø';
 
   @override
@@ -30,5 +33,10 @@ class Romer extends Temperature {
   @override
   Unit newInstance([num? value]) {
     return Romer(value);
+  }
+
+  @override
+  Unit Function() tearOff() {
+    return Romer.new;
   }
 }

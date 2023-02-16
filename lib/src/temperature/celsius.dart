@@ -12,6 +12,9 @@ class Celsius extends Temperature {
   String get name => 'Celsius';
 
   @override
+  String get pluralName => name;
+
+  @override
   String get symbol => '°C';
 
   @override
@@ -29,5 +32,10 @@ class Celsius extends Temperature {
   @override
   Unit newInstance([num? value]) {
     return Celsius(value);
+  }
+
+  @override
+  Unit Function() tearOff() {
+    return Celsius.new;
   }
 }

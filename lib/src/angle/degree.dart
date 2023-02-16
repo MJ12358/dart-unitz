@@ -9,7 +9,10 @@ class Degree extends Angle {
   Degree([super.value]);
 
   @override
-  String get name => 'Degrees';
+  String get name => 'Degree';
+
+  @override
+  String get pluralName => 'Degrees';
 
   @override
   String get symbol => '°';
@@ -29,5 +32,10 @@ class Degree extends Angle {
   @override
   Unit newInstance([num? value]) {
     return Degree(value);
+  }
+
+  @override
+  Unit Function() tearOff() {
+    return Degree.new;
   }
 }

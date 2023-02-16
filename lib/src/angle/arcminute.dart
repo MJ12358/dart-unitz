@@ -11,6 +11,9 @@ class ArcMinute extends Angle {
   String get name => 'Arc Minute';
 
   @override
+  String get pluralName => 'Arc Minutes';
+
+  @override
   String get symbol => "'";
 
   @override
@@ -28,5 +31,10 @@ class ArcMinute extends Angle {
   @override
   Unit newInstance([num? value]) {
     return ArcMinute(value);
+  }
+
+  @override
+  Unit Function() tearOff() {
+    return ArcMinute.new;
   }
 }

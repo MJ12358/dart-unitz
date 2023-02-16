@@ -13,6 +13,9 @@ class Fahrenheit extends Temperature {
   String get name => 'Fahrenheit';
 
   @override
+  String get pluralName => name;
+
+  @override
   String get symbol => '°F';
 
   @override
@@ -30,5 +33,10 @@ class Fahrenheit extends Temperature {
   @override
   Unit newInstance([num? value]) {
     return Fahrenheit(value);
+  }
+
+  @override
+  Unit Function() tearOff() {
+    return Fahrenheit.new;
   }
 }

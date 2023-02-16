@@ -12,6 +12,9 @@ class Delisle extends Temperature {
   String get name => 'Delisle';
 
   @override
+  String get pluralName => name;
+
+  @override
   String get symbol => '°D';
 
   @override
@@ -29,5 +32,10 @@ class Delisle extends Temperature {
   @override
   Unit newInstance([num? value]) {
     return Delisle(value);
+  }
+
+  @override
+  Unit Function() tearOff() {
+    return Delisle.new;
   }
 }

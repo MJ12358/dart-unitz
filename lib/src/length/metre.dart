@@ -11,6 +11,9 @@ class Metre extends Length {
   String get name => 'Metre';
 
   @override
+  String get pluralName => 'Metres';
+
+  @override
   String get symbol => 'm';
 
   @override
@@ -26,5 +29,10 @@ class Metre extends Length {
   @override
   Unit newInstance([num? value]) {
     return Metre(value);
+  }
+
+  @override
+  Unit Function() tearOff() {
+    return Metre.new;
   }
 }

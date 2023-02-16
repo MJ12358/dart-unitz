@@ -11,6 +11,9 @@ class Kelvin extends Temperature {
   String get name => 'Kelvin';
 
   @override
+  String get pluralName => name;
+
+  @override
   String get symbol => 'K';
 
   @override
@@ -26,5 +29,10 @@ class Kelvin extends Temperature {
   @override
   Unit newInstance([num? value]) {
     return Kelvin(value);
+  }
+
+  @override
+  Unit Function() tearOff() {
+    return Kelvin.new;
   }
 }

@@ -21,4 +21,6 @@ part 'src/temperature/rankine.dart';
 part 'src/temperature/reaumur.dart';
 part 'src/temperature/romer.dart';
 part 'src/temperature/temperature.dart';
+part 'src/unit.dart';
+part 'src/unit_extension.dart';
 part 'src/unitz.dart';

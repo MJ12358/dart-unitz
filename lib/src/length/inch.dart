@@ -13,6 +13,9 @@ class Inch extends Length {
   String get name => 'Inch';
 
   @override
+  String get pluralName => 'Inches';
+
+  @override
   String get symbol => 'in';
 
   @override
@@ -30,5 +33,10 @@ class Inch extends Length {
   @override
   Unit newInstance([num? value]) {
     return Inch(value);
+  }
+
+  @override
+  Unit Function() tearOff() {
+    return Inch.new;
   }
 }
