@@ -1,5 +1,6 @@
 part of dart_unitz;
 
+/// The base unit for `Information` is the `Bit`.
 abstract class Information extends Unit {
   Information([super.value]);
 

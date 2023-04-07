@@ -1,11 +1,14 @@
 part of dart_unitz;
 
+/// {@template dart_unitz.Delisle}
 /// The Delisle scale is a temperature scale,
 /// notable as one of the only temperature scales that is
 /// inverted from the amount of thermal energy it measures.
 ///
 /// https://en.wikipedia.org/wiki/Delisle_scale
+/// {@endtemplate}
 class Delisle extends Temperature {
+  /// {@macro dart_unitz.Delisle}
   Delisle([super.value]);
 
   @override

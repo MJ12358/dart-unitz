@@ -1,5 +1,6 @@
 part of dart_unitz;
 
+/// {@template dart_unitz.Rankine}
 /// The Rankine scale is an absolute
 /// scale of thermodynamic temperature.
 /// Zero on the Rankine scale is absolute zero,
@@ -8,7 +9,9 @@ part of dart_unitz;
 /// rather than the Celsius degree used on the Kelvin scale.
 ///
 /// https://en.wikipedia.org/wiki/Rankine_scale
+/// {@endtemplate}
 class Rankine extends Temperature {
+  /// {@macro dart_unitz.Rankine}
   Rankine([super.value]);
 
   @override

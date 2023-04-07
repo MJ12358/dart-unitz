@@ -13,6 +13,7 @@ part 'src/angle/radian.dart';
 part 'src/information/bit.dart';
 part 'src/information/byte.dart';
 part 'src/information/information.dart';
+part 'src/length/foot.dart';
 part 'src/length/inch.dart';
 part 'src/length/length.dart';
 part 'src/length/metre.dart';

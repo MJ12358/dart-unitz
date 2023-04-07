@@ -1,10 +1,13 @@
 part of dart_unitz;
 
+/// {@template dart_unitz.Metre}
 /// The metre, symbol m, is the primary unit of length
 /// in the International System of Units (SI)
 ///
 /// https://en.wikipedia.org/wiki/Metre
+/// {@endtemplate}
 class Metre extends Length {
+  /// {@macro dart_unitz.Metre}
   Metre([super.value]);
 
   @override

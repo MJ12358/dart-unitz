@@ -1,10 +1,13 @@
 part of dart_unitz;
 
+/// {@template dart_unitz.Radian}
 /// The radian, denoted by the symbol rad,
 /// is the unit of angle in the International System of Units
 ///
 /// https://en.wikipedia.org/wiki/Radian
+/// {@endtemplate}
 class Radian extends Angle {
+  /// {@macro dart_unitz.Radian}
   Radian([super.value]);
 
   @override

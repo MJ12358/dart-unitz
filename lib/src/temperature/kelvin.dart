@@ -1,10 +1,13 @@
 part of dart_unitz;
 
+/// {@template dart_unitz.Kelvin}
 /// The kelvin, symbol K, is the primary unit of
 /// temperature in the International System of Units (SI).
 ///
 /// https://en.wikipedia.org/wiki/Kelvin
+/// {@endtemplate}
 class Kelvin extends Temperature {
+  /// {@macro dart_unitz.Kelvin}
   Kelvin([super.value]);
 
   @override

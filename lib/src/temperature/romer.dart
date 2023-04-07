@@ -1,12 +1,15 @@
 part of dart_unitz;
 
+/// {@template dart_unitz.Romer}
 /// The Rømer scale also known as Romer or Roemer,
 /// is a temperature scale, based on the freezing point
 /// of pure water being 7.5 degrees and the boiling point
 /// of water as 60 degrees.
 ///
 /// https://en.wikipedia.org/wiki/Romer_scale
+/// {@endtemplate}
 class Romer extends Temperature {
+  /// {@macro dart_unitz.Romer}
   Romer([super.value]);
 
   @override

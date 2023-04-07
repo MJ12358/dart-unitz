@@ -1,8 +1,6 @@
 part of dart_unitz;
 
 /// An abstract class to provide a template for unit prefixes.
-///
-///
 @immutable
 abstract class UnitPrefix {
   /// The name of this prefix.

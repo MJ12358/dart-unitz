@@ -1,11 +1,14 @@
 part of dart_unitz;
 
+/// {@template dart_unitz.Gradian}
 /// The gradian, also known as the gon, grad, or grade,
 /// is a unit of measurement of an angle,
 /// defined as one hundredth of the right angle
 ///
 /// https://en.wikipedia.org/wiki/Gradian
+/// {@endtemplate}
 class Gradian extends Angle {
+  /// {@macro dart_unitz.Gradian}
   Gradian([super.value]);
 
   @override

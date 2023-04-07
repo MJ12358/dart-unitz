@@ -1,11 +1,14 @@
 part of dart_unitz;
 
+/// {@template dart_unitz.Reaumur}
 /// The Réaumur scale, also known as the "octogesimal division",
 /// is a temperature scale for which the melting and boiling points
 /// of water are defined as 0 and 80 degrees respectively.
 ///
 /// https://en.wikipedia.org/wiki/Reaumur_scale
+/// {@endtemplate}
 class Reaumur extends Temperature {
+  /// {@macro dart_unitz.Reaumur}
   Reaumur([super.value]);
 
   @override

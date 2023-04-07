@@ -1,12 +1,15 @@
 part of dart_unitz;
 
+/// {@template dart_unitz.Fahrenheit}
 /// Fahrenheit temperature scale,
 /// based on 32° for the freezing point of water
 /// and 212° for the boiling point of water,
 /// the interval between the two being divided into 180 equal parts.
 ///
 /// https://en.wikipedia.org/wiki/Fahrenheit
+/// {@endtemplate}
 class Fahrenheit extends Temperature {
+  /// {@macro dart_unitz.Fahrenheit}
   Fahrenheit([super.value]);
 
   @override

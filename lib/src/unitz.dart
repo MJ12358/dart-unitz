@@ -20,7 +20,7 @@ abstract class Unitz {
   ///
   /// The [from] Unit should have a value.
   ///
-  /// The [to] Unit is merely the `Type` you'd like to convert to.
+  /// The [to] Unit is merely the type you'd like to convert to.
   static Unit convert({
     required Unit from,
     required Unit to,

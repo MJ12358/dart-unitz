@@ -1,8 +1,6 @@
 part of dart_unitz;
 
 /// An extension to provide operators on Units.
-///
-///
 extension UnitExtension on Unit {
   Unit operator +(Unit other) {
     final num b = fromBase(other.toBase());
