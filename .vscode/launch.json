@@ -8,7 +8,8 @@
       "name": "dart_unitz",
       "request": "launch",
       "type": "dart",
-      "program": "lib/dart_lintz.dart"
+      // "cwd": "lib",
+      "program": "example/main.dart"
     }
   ]
 }

@@ -1,31 +1,41 @@
 part of dart_unitz;
 
-/// An abstract class to provide a template for other units
+/// An abstract class to provide a template for units.
 ///
-///
+/// https://en.wikipedia.org/wiki/Unit_of_measurement
 @immutable
 abstract class Unit implements Comparable<Unit> {
-  Unit(num? value) : _value = value ?? 0 {
-    Unitz._registration.putIfAbsent(runtimeType, tearOff);
+  Unit(Object? value) {
+    if (value == null) {
+      _value = 0;
+    } else if (value is num) {
+      _value = value;
+    } else if (value is String) {
+      _value = num.parse(value);
+    } else if (value is BigInt) {
+      _value = value.toInt();
+    } else {
+      throw UnsupportedError(
+        '${value.runtimeType} is not a supported input.',
+      );
+    }
   }
 
-  final num _value;
-  final int _precision = Unitz.precision;
-  final bool _removeTrailingZeros = Unitz.removeTrailingZeros;
+  late final num _value;
 
-  /// The precise value
+  /// The precise value.
   num get value => _value;
 
   /// The name of this unit.
   String get name;
 
-  /// The plural name of this unit.
+  /// The plural name for this unit.
   String get pluralName;
 
   /// The symbol for this unit.
   String get symbol;
 
-  /// The base unit
+  /// The base unit.
   Unit get base;
 
   /// Converts this unit to the base unit.
@@ -35,25 +45,40 @@ abstract class Unit implements Comparable<Unit> {
   num fromBase(num base);
 
   /// Creates a new instance of this class.
-  Unit newInstance([num? value]);
+  Unit newInstance([Object? value]);
 
-  /// This is used to allow dynamic unit registration.
-  /// This is done by using the `Unit.new` syntax
-  Unit Function() tearOff();
+  /// The type of prefix used for this unit.
+  Type get prefixType;
 
-  /// The formatted value
+  /// The formatted value.
+  ///
+  /// Taking into account your `Unitz` configuration.
   num get formatted {
-    final double mod = math.pow(10, _precision.toDouble()).toDouble();
-    final num result = (_value * mod).round().toDouble() / mod;
+    final num result = _toPrecision();
+    if (Unitz.removeTrailingZeros) {
+      return _removeTrailingZeros(result);
+    }
+    return result;
+  }
 
-    if (_removeTrailingZeros) {
-      final bool hasTrailingZero = result.truncateToDouble() == result;
-      if (hasTrailingZero) {
-        return num.parse(result.toStringAsFixed(0));
-      }
+  /// The unit prefix for this [value]
+  UnitPrefix get prefix {
+    List<UnitPrefix> _prefixes = <UnitPrefix>[];
+
+    if (prefixType == BinaryPrefix) {
+      _prefixes = Unitz.binaryPrefixes;
+    } else if (prefixType == DecimalPrefix) {
+      _prefixes = Unitz.decimalPrefixes;
+    } else {
+      return NullPrefix();
     }
 
-    return result;
+    return _prefixes.firstWhere(
+      (UnitPrefix e) {
+        return e.power <= _value;
+      },
+      orElse: NullPrefix.new,
+    );
   }
 
   @override
@@ -65,6 +90,9 @@ abstract class Unit implements Comparable<Unit> {
 
   @override
   String toString() {
+    if (Unitz.usePrefix) {
+      return '${_truncate()} ${prefix.symbol}$symbol';
+    }
     return '$formatted $symbol';
   }
 
@@ -80,4 +108,31 @@ abstract class Unit implements Comparable<Unit> {
 
   @override
   int get hashCode => Object.hash(value, name, symbol);
+
+  num _toPrecision() {
+    final double mod = math.pow(10, Unitz.precision.toDouble()).toDouble();
+    return (_value * mod).round().toDouble() / mod;
+  }
+
+  num _removeTrailingZeros(num v) {
+    final bool hasTrailingZero = v.truncateToDouble() == v;
+    if (hasTrailingZero) {
+      return num.parse(v.toStringAsFixed(0));
+    }
+    return v;
+  }
+
+  String _truncate() {
+    final num power = prefix.power;
+
+    num exp = math.log(_value) / math.log(power);
+
+    if (exp.isNaN || exp.isInfinite) {
+      exp = 1;
+    } else {
+      exp = exp.floor();
+    }
+
+    return (_value / math.pow(power, exp)).toStringAsFixed(0);
+  }
 }

@@ -27,12 +27,7 @@ class Metre extends Length {
   }
 
   @override
-  Unit newInstance([num? value]) {
+  Unit newInstance([Object? value]) {
     return Metre(value);
-  }
-
-  @override
-  Unit Function() tearOff() {
-    return Metre.new;
   }
 }

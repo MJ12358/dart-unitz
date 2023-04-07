@@ -29,12 +29,7 @@ class Fahrenheit extends Temperature {
   }
 
   @override
-  Unit newInstance([num? value]) {
+  Unit newInstance([Object? value]) {
     return Fahrenheit(value);
-  }
-
-  @override
-  Unit Function() tearOff() {
-    return Fahrenheit.new;
   }
 }

@@ -27,12 +27,11 @@ class Kelvin extends Temperature {
   }
 
   @override
-  Unit newInstance([num? value]) {
+  Unit newInstance([Object? value]) {
     return Kelvin(value);
   }
 
   @override
-  Unit Function() tearOff() {
-    return Kelvin.new;
-  }
+  // kelvin can get prefixed
+  Type get prefixType => DecimalPrefix;
 }

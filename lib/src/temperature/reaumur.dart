@@ -28,12 +28,7 @@ class Reaumur extends Temperature {
   }
 
   @override
-  Unit newInstance([num? value]) {
+  Unit newInstance([Object? value]) {
     return Reaumur(value);
-  }
-
-  @override
-  Unit Function() tearOff() {
-    return Reaumur.new;
   }
 }

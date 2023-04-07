@@ -29,12 +29,7 @@ class Romer extends Temperature {
   }
 
   @override
-  Unit newInstance([num? value]) {
+  Unit newInstance([Object? value]) {
     return Romer(value);
-  }
-
-  @override
-  Unit Function() tearOff() {
-    return Romer.new;
   }
 }

@@ -27,12 +27,7 @@ class ArcSecond extends Angle {
   }
 
   @override
-  Unit newInstance([num? value]) {
+  Unit newInstance([Object? value]) {
     return ArcSecond(value);
-  }
-
-  @override
-  Unit Function() tearOff() {
-    return ArcSecond.new;
   }
 }

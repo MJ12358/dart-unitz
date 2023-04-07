@@ -28,12 +28,7 @@ class Celsius extends Temperature {
   }
 
   @override
-  Unit newInstance([num? value]) {
+  Unit newInstance([Object? value]) {
     return Celsius(value);
-  }
-
-  @override
-  Unit Function() tearOff() {
-    return Celsius.new;
   }
 }

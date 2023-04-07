@@ -29,12 +29,7 @@ class Inch extends Length {
   }
 
   @override
-  Unit newInstance([num? value]) {
+  Unit newInstance([Object? value]) {
     return Inch(value);
-  }
-
-  @override
-  Unit Function() tearOff() {
-    return Inch.new;
   }
 }

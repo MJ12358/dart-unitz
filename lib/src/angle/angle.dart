@@ -8,4 +8,7 @@ abstract class Angle extends Unit {
 
   @override
   Unit get base => Radian();
+
+  @override
+  Type get prefixType => NullPrefix;
 }

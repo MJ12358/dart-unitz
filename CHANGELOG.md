@@ -1,5 +1,11 @@
 # Dart Unitz
 
+## 0.0.4
+
+- Revert back to instances.
+- Add prefixes.
+- Add information units.
+
 ## 0.0.3
 
 - Simplify base conversion requirements.

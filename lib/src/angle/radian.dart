@@ -27,12 +27,7 @@ class Radian extends Angle {
   }
 
   @override
-  Unit newInstance([num? value]) {
+  Unit newInstance([Object? value]) {
     return Radian(value);
-  }
-
-  @override
-  Unit Function() tearOff() {
-    return Radian.new;
   }
 }

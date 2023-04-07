@@ -1,12 +1,13 @@
 name: dart_unitz
 description: A simple and expandable unit conversion library. Quickly and easily convert between units and apply math operations on any unit.
-version: 0.0.3
+version: 0.0.4
 repository: https://github.com/mj12358/dart-unitz
 
 environment:
   sdk: ">=2.19.2 <3.0.0"
 
 dependencies:
+  # decimal: ^2.3.2
   meta: ^1.9.0
 
 dev_dependencies:

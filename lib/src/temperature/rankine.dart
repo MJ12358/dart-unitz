@@ -31,12 +31,7 @@ class Rankine extends Temperature {
   }
 
   @override
-  Unit newInstance([num? value]) {
+  Unit newInstance([Object? value]) {
     return Rankine(value);
-  }
-
-  @override
-  Unit Function() tearOff() {
-    return Rankine.new;
   }
 }

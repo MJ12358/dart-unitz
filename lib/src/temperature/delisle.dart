@@ -28,12 +28,7 @@ class Delisle extends Temperature {
   }
 
   @override
-  Unit newInstance([num? value]) {
+  Unit newInstance([Object? value]) {
     return Delisle(value);
-  }
-
-  @override
-  Unit Function() tearOff() {
-    return Delisle.new;
   }
 }

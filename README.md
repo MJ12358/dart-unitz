@@ -26,18 +26,18 @@ Basic conversion.
 ```dart
 final Unit conversion1 = Unitz.convert(
   from: Celsius(100),
-  to: Fahrenheit,
+  to: Fahrenheit(),
 );
 
-// expect(conversion1, Fahrenheit(212));
+assert(conversion1 == Fahrenheit(212));
 
 final Unit conversion2 = Unitz.convert(
   from: Degree(360),
-  to: Radian,
+  to: Radian(),
 );
 
-// expect(conversion2, Radian(6.28));
-// expect(conversion2, Radian(2 * pi));
+assert(conversion2 == Radian(6.28));
+assert(conversion2 == Radian(2 * pi));
 ```
 
 Addition, subtraction, multiplication and division of arbitrary units.
@@ -46,9 +46,9 @@ Addition, subtraction, multiplication and division of arbitrary units.
 final Celsius freezingInCelsius = Celsius(0);
 final Fahrenheit boilingInFahrenheit = Fahrenheit(212);
 
-final Unit additionResult = freezingInCelsius + boilingInFahrenheit;
+final Unit result = freezingInCelsius + boilingInFahrenheit;
 
-// expect(additionResult, Celsius(100));
+assert(result == Celsius(100));
 ```
 
 Get a formatted string.
@@ -57,6 +57,6 @@ Get a formatted string.
 final String formatted1 = Celsius(100).toString();
 final String formatted2 = '$Celsius(100)';
 
-// expect(formatted1, '100 °C');
-// expect(formatted2, '100 °C');
+assert(formatted1 == '100 °C');
+assert(formatted2 == '100 °C');
 ```

@@ -8,4 +8,8 @@ abstract class Temperature extends Unit {
 
   @override
   Unit get base => Kelvin();
+
+  @override
+  // most temperatures do not get prefixed
+  Type get prefixType => NullPrefix;
 }

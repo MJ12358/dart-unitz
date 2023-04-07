@@ -1,6 +1,6 @@
 part of dart_unitz;
 
-/// An extension to provide operators on Units
+/// An extension to provide operators on Units.
 ///
 ///
 extension UnitExtension on Unit {

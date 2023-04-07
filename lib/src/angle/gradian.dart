@@ -28,12 +28,7 @@ class Gradian extends Angle {
   }
 
   @override
-  Unit newInstance([num? value]) {
+  Unit newInstance([Object? value]) {
     return Gradian(value);
-  }
-
-  @override
-  Unit Function() tearOff() {
-    return Gradian.new;
   }
 }

@@ -27,12 +27,7 @@ class ArcMinute extends Angle {
   }
 
   @override
-  Unit newInstance([num? value]) {
+  Unit newInstance([Object? value]) {
     return ArcMinute(value);
-  }
-
-  @override
-  Unit Function() tearOff() {
-    return ArcMinute.new;
   }
 }

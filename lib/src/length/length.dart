@@ -8,4 +8,7 @@ abstract class Length extends Unit {
 
   @override
   Unit get base => Metre();
+
+  @override
+  Type get prefixType => DecimalPrefix;
 }

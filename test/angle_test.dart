@@ -3,12 +3,12 @@ import 'dart:math';
 import 'package:dart_unitz/dart_unitz.dart';
 import 'package:test/test.dart';
 
-Map<Type, Unit> circleMap = <Type, Unit>{
-  ArcMinute: ArcMinute(21600),
-  ArcSecond: ArcSecond(1296000),
-  Degree: Degree(360),
-  Gradian: Gradian(400),
-  Radian: Radian(2 * pi),
+Map<Unit, Unit> circleMap = <Unit, Unit>{
+  ArcMinute(): ArcMinute(21600),
+  ArcSecond(): ArcSecond(1296000),
+  Degree(): Degree(360),
+  Gradian(): Gradian(400),
+  Radian(): Radian(2 * pi),
 };
 
 void main() {
@@ -40,56 +40,56 @@ void main() {
   });
 
   test('addition', () {
-    for (final Type t in circleMap.keys) {
-      expect(ArcMinute(0) + circleMap[t]!, ArcMinute(21600));
+    for (final Unit t in circleMap.keys) {
+      expect(ArcMinute(0) + circleMap[t]!, circleMap[ArcMinute()]);
     }
 
-    for (final Type t in circleMap.keys) {
-      expect(ArcSecond(0) + circleMap[t]!, ArcSecond(1296000));
+    for (final Unit t in circleMap.keys) {
+      expect(ArcSecond(0) + circleMap[t]!, circleMap[ArcSecond()]);
     }
 
-    for (final Type t in circleMap.keys) {
-      expect(Degree(0) + circleMap[t]!, Degree(360));
+    for (final Unit t in circleMap.keys) {
+      expect(Degree(0) + circleMap[t]!, circleMap[Degree()]);
     }
 
-    for (final Type t in circleMap.keys) {
-      expect(Gradian(0) + circleMap[t]!, Gradian(400));
+    for (final Unit t in circleMap.keys) {
+      expect(Gradian(0) + circleMap[t]!, circleMap[Gradian()]);
     }
 
-    for (final Type t in circleMap.keys) {
-      expect(Radian(0) + circleMap[t]!, Radian(2 * pi));
+    for (final Unit t in circleMap.keys) {
+      expect(Radian(0) + circleMap[t]!, circleMap[Radian()]);
     }
   });
 
   test('subtraction', () {
-    for (final Type t in circleMap.keys) {
-      expect(ArcMinute(21600) - circleMap[t]!, ArcMinute(0));
+    for (final Unit t in circleMap.keys) {
+      expect(circleMap[ArcMinute()]! - circleMap[t]!, ArcMinute(0));
     }
 
-    for (final Type t in circleMap.keys) {
-      expect(ArcSecond(1296000) - circleMap[t]!, ArcSecond(0));
+    for (final Unit t in circleMap.keys) {
+      expect(circleMap[ArcSecond()]! - circleMap[t]!, ArcSecond(0));
     }
 
-    for (final Type t in circleMap.keys) {
-      expect(Degree(360) - circleMap[t]!, Degree(0));
+    for (final Unit t in circleMap.keys) {
+      expect(circleMap[Degree()]! - circleMap[t]!, Degree(0));
     }
 
-    for (final Type t in circleMap.keys) {
-      expect(Gradian(400) - circleMap[t]!, Gradian(0));
+    for (final Unit t in circleMap.keys) {
+      expect(circleMap[Gradian()]! - circleMap[t]!, Gradian(0));
     }
 
-    for (final Type t in circleMap.keys) {
-      expect(Radian(2 * pi) - circleMap[t]!, Radian(0));
+    for (final Unit t in circleMap.keys) {
+      expect(circleMap[Radian()]! - circleMap[t]!, Radian(0));
     }
   });
 
   test('arcminute', () {
-    final Unit arcminute = circleMap[ArcMinute]!;
+    final Unit arcminute = circleMap[ArcMinute()]!;
     expect(arcminute.name, 'Arc Minute');
     expect(arcminute.symbol, "'");
     expect(arcminute.toString(), "21600 '");
 
-    for (final Type t in circleMap.keys) {
+    for (final Unit t in circleMap.keys) {
       expect(
         Unitz.convert(from: arcminute, to: t),
         circleMap[t],
@@ -98,12 +98,12 @@ void main() {
   });
 
   test('arcsecond', () {
-    final Unit arcsecond = circleMap[ArcSecond]!;
+    final Unit arcsecond = circleMap[ArcSecond()]!;
     expect(arcsecond.name, 'Arc Second');
     expect(arcsecond.symbol, '"');
     expect(arcsecond.toString(), '1296000 "');
 
-    for (final Type t in circleMap.keys) {
+    for (final Unit t in circleMap.keys) {
       expect(
         Unitz.convert(from: arcsecond, to: t),
         circleMap[t],
@@ -112,12 +112,12 @@ void main() {
   });
 
   test('degree', () {
-    final Unit degree = circleMap[Degree]!;
+    final Unit degree = circleMap[Degree()]!;
     expect(degree.name, 'Degree');
     expect(degree.symbol, '°');
     expect(degree.toString(), '360 °');
 
-    for (final Type t in circleMap.keys) {
+    for (final Unit t in circleMap.keys) {
       expect(
         Unitz.convert(from: degree, to: t),
         circleMap[t],
@@ -126,12 +126,12 @@ void main() {
   });
 
   test('gradian', () {
-    final Unit gradian = circleMap[Gradian]!;
+    final Unit gradian = circleMap[Gradian()]!;
     expect(gradian.name, 'Gradian');
     expect(gradian.symbol, 'grad');
     expect(gradian.toString(), '400 grad');
 
-    for (final Type t in circleMap.keys) {
+    for (final Unit t in circleMap.keys) {
       expect(
         Unitz.convert(from: gradian, to: t),
         circleMap[t],
@@ -140,12 +140,12 @@ void main() {
   });
 
   test('radian', () {
-    final Unit radian = circleMap[Radian]!;
+    final Unit radian = circleMap[Radian()]!;
     expect(radian.name, 'Radian');
     expect(radian.symbol, 'rad');
     expect(radian.toString(), '6.2832 rad');
 
-    for (final Type t in circleMap.keys) {
+    for (final Unit t in circleMap.keys) {
       expect(
         Unitz.convert(from: radian, to: t),
         circleMap[t],
