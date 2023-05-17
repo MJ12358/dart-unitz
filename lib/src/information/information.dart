@@ -1,7 +1,10 @@
 part of dart_unitz;
 
-/// The base unit for `Information` is the `Bit`.
+/// {@template dart_unitz.Information}
+/// The base unit for [Information] is the [Bit].
+/// {@endtemplate}
 abstract class Information extends Unit {
+  /// {@macro dart_unitz.Information}
   Information([super.value]);
 
   @override

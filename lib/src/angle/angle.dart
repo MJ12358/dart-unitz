@@ -1,7 +1,10 @@
 part of dart_unitz;
 
-/// The base unit for `Angle` is the `Radian`
+/// {@template dart_unitz.Angle}
+/// The base unit for [Angle] is the [Radian].
+/// {@endtemplate}
 abstract class Angle extends Unit {
+  /// {@macro dart_unitz.Angle}
   Angle([super.value]);
 
   @override

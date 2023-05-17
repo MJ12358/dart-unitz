@@ -1,6 +1,6 @@
 part of dart_unitz;
 
-/// The entry point for `Unitz`.
+/// The entry point for [Unitz].
 ///
 /// Also holds global configuration settings.
 abstract class Unitz {
@@ -13,14 +13,14 @@ abstract class Unitz {
   /// Used to strip trailing zeros from the `formatted` value.
   static bool removeTrailingZeros = true;
 
-  /// Uses a `UnitPrefix` when required.
+  /// Uses a [UnitPrefix] when required.
   static bool usePrefix = false;
 
   /// Convert from one unit to another.
   ///
   /// The [from] Unit should have a value.
   ///
-  /// The [to] Unit is merely the type you'd like to convert to.
+  /// The [to] Unit is the type you'd like to convert to.
   static Unit convert({
     required Unit from,
     required Unit to,

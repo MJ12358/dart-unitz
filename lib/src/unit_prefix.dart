@@ -26,13 +26,14 @@ abstract class UnitPrefix {
 abstract class DecimalPrefix implements UnitPrefix {}
 
 /// An abstract class to provide a template for binary prefixes.
+/// These are sometimes referred to as "IEC prefixes".
 ///
 /// https://en.wikipedia.org/wiki/Binary_prefix
 abstract class BinaryPrefix implements UnitPrefix {}
 
-/// A class used to represent a null/empty prefix
+/// A class used to represent a null/empty prefix.
 ///
-/// Usually used when (value <= 9 && value >= 0)
+/// Usually used when `value <= 9 && value >= 0`
 class NullPrefix extends UnitPrefix {
   @override
   String get name => '';

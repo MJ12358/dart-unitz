@@ -1,10 +1,13 @@
 part of dart_unitz;
 
+/// {@template dart_unitz.Unit}
 /// An abstract class to provide a template for units.
 ///
 /// https://en.wikipedia.org/wiki/Unit_of_measurement
+/// {@endtemplate}
 @immutable
 abstract class Unit implements Comparable<Unit> {
+  /// {@macro dart_unitz.Unit}
   Unit(Object? value) {
     if (value == null) {
       _value = 0;
@@ -52,7 +55,7 @@ abstract class Unit implements Comparable<Unit> {
 
   /// The formatted value.
   ///
-  /// Taking into account your `Unitz` configuration.
+  /// Taking into account your [Unitz] configuration.
   num get formatted {
     final num result = _toPrecision();
     if (Unitz.removeTrailingZeros) {
@@ -61,7 +64,7 @@ abstract class Unit implements Comparable<Unit> {
     return result;
   }
 
-  /// The unit prefix for this [value]
+  /// The unit prefix for this [value].
   UnitPrefix get prefix {
     List<UnitPrefix> _prefixes = <UnitPrefix>[];
 

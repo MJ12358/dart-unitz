@@ -1,5 +1,11 @@
 # Dart Unitz
 
+## 0.0.5
+
+- Bump sdk version.
+- Add more docs/comments.
+- Add more tests.
+
 ## 0.0.4
 
 - Revert back to instances.
