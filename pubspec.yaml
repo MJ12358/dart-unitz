@@ -14,7 +14,7 @@ environment:
 
 dependencies:
   # decimal: ^2.3.2
-  meta: 1.17.0
+  meta: ^1.17.0
 
 dev_dependencies:
   dart_lintz: 1.2.3
