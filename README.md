@@ -10,8 +10,8 @@ Additionally, the library is designed to be easily expandable, meaning that deve
 
 ## WIP
 
-- [X] Temperature
-- [X] Angle
+- ✔ Temperature
+- ✔ Angle
 - [ ] Length
 - [ ] Time
 - [ ] Mass

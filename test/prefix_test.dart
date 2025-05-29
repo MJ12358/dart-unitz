@@ -7,24 +7,20 @@ void main() {
   test('decimalPrefixOrder', () {
     final List<UnitPrefix> arr = Unitz.decimalPrefixes;
 
-    for (int i = 0; i < arr.length; i++) {
-      if (i != 0) {
-        final UnitPrefix p1 = arr[i];
-        final UnitPrefix p2 = arr[i - 1];
-        expect(p1.power < p2.power, true);
-      }
+    for (int i = 1; i < arr.length; i++) {
+      final UnitPrefix p1 = arr[i];
+      final UnitPrefix p2 = arr[i - 1];
+      expect(p1.power < p2.power, true);
     }
   });
 
   test('binaryPrefixOrder', () {
     final List<UnitPrefix> arr = Unitz.binaryPrefixes;
 
-    for (int i = 0; i < arr.length; i++) {
-      if (i != 0) {
-        final UnitPrefix p1 = arr[i];
-        final UnitPrefix p2 = arr[i - 1];
-        expect(p1.power < p2.power, true);
-      }
+    for (int i = 1; i < arr.length; i++) {
+      final UnitPrefix p1 = arr[i];
+      final UnitPrefix p2 = arr[i - 1];
+      expect(p1.power < p2.power, true);
     }
   });
 
@@ -33,7 +29,7 @@ void main() {
 
     final Map<Unit, String> results = <Unit, String>{
       Metre(1e-30): '1 qm',
-      Metre(1e-27): '1 rm',
+      Meter(1e-27): '1 rm',
       Metre(1e-24): '1 ym',
       Metre(1e-21): '1 zm',
       Metre(1e-18): '1 am',
@@ -55,7 +51,7 @@ void main() {
       Metre(1e+18): '1 Em',
       Metre(1e+21): '1 Zm',
       Metre(1e+24): '1 Ym',
-      Metre(1e+27): '1 Rm',
+      Meter(1e+27): '1 Rm',
       Metre(1e+30): '1 Qm',
     };
 
@@ -76,7 +72,7 @@ void main() {
       Bit(pow(2, 40)): '1 Tib',
       Bit(pow(2, 50)): '1 Pib',
       Bit(pow(2, 60)): '1 Eib',
-      // Bit(pow(2, 70)): '1 Zib', // num too large
+      // Bit(pow(2, 70)): '1 Zib', //TODO: num too large
       // Bit(pow(2, 80)): '1 Yib',
     };
 

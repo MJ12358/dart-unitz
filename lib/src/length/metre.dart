@@ -34,3 +34,18 @@ class Metre extends Length {
     return Metre(value);
   }
 }
+
+/// {@template dart_unitz.Meter}
+/// An alias for [Metre].
+/// For our American friends.
+/// {@endtemplate}
+class Meter extends Metre {
+  /// {@macro dart_unitz.Meter}
+  Meter([super.value]);
+
+  @override
+  String get name => 'Meter';
+
+  @override
+  String get pluralName => 'Meters';
+}

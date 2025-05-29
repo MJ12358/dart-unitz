@@ -113,7 +113,8 @@ abstract class Unit implements Comparable<Unit> {
   int get hashCode => Object.hash(value, name, symbol);
 
   num _toPrecision() {
-    final double mod = math.pow(10, Unitz.precision.toDouble()).toDouble();
+    final double p = Unitz.precision.toDouble();
+    final double mod = math.pow(10, p).toDouble();
     return (_value * mod).round().toDouble() / mod;
   }
 
