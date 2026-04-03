@@ -1,10 +1,15 @@
 part of dart_unitz;
 
-/// Deca (symbol da) is a decimal unit prefix in the metric
-/// system denoting a factor of ten.
+/// {@template dart_unitz.Deca}
+/// The deca (symbol: da) is a decimal prefix.
+/// This denotes a factor of ten.
 ///
 /// https://en.wikipedia.org/wiki/Deca-
+/// {@endtemplate}
 class Deca extends DecimalPrefix {
+  /// {@macro dart_unitz.Deca}
+  Deca();
+
   @override
   String get name => 'deca';
 

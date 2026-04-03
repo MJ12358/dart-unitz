@@ -1,6 +1,14 @@
 part of dart_unitz;
 
+/// {@template dart_unitz.Pebi}
+/// The pebi (symbol: Pi) is a binary prefix.
+///
+/// https://en.wikipedia.org/wiki/Binary_prefix#pebi
+/// {@endtemplate}
 class Pebi extends BinaryPrefix {
+  /// {@macro dart_unitz.Pebi}
+  Pebi();
+
   @override
   String get name => 'pebi';
 

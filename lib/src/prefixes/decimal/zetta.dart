@@ -1,6 +1,15 @@
 part of dart_unitz;
 
+/// {@template dart_unitz.Zetta}
+/// The zetta (symbol: Z) is a decimal prefix.
+/// This denotes a factor of one sextillion.
+///
+/// https://en.wikipedia.org/wiki/Zetta-
+/// {@endtemplate}
 class Zetta extends DecimalPrefix {
+  /// {@macro dart_unitz.Zetta}
+  Zetta();
+
   @override
   String get name => 'zetta';
 

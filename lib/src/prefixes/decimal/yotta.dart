@@ -1,6 +1,15 @@
 part of dart_unitz;
 
+/// {@template dart_unitz.Yotta}
+/// The yotta (symbol: Y) is a decimal prefix.
+/// This denotes a factor of one septillion.
+///
+/// https://en.wikipedia.org/wiki/Yotta-
+/// {@endtemplate}
 class Yotta extends DecimalPrefix {
+  /// {@macro dart_unitz.Yotta}
+  Yotta();
+
   @override
   String get name => 'yotta';
 

@@ -1,6 +1,15 @@
 part of dart_unitz;
 
+/// {@template dart_unitz.Tera}
+/// The tera (symbol: T) is a decimal prefix.
+/// This denotes a factor of one trillion.
+///
+/// https://en.wikipedia.org/wiki/Tera-
+/// {@endtemplate}
 class Tera extends DecimalPrefix {
+  /// {@macro dart_unitz.Tera}
+  Tera();
+
   @override
   String get name => 'tera';
 

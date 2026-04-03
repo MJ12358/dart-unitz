@@ -1,10 +1,15 @@
 part of dart_unitz;
 
-/// Nano (symbol n) is a unit prefix in the metric
-/// system denoting a factor of one billionth.
+/// {@template dart_unitz.Nano}
+/// The nano (symbol: n) is a decimal prefix.
+/// This denotes a factor of one billionth.
 ///
 /// https://en.wikipedia.org/wiki/Nano-
+/// {@endtemplate}
 class Nano extends DecimalPrefix {
+  /// {@macro dart_unitz.Nano}
+  Nano();
+
   @override
   String get name => 'nano';
 

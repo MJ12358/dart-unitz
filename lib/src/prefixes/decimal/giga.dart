@@ -1,10 +1,15 @@
 part of dart_unitz;
 
-/// Giga (symbol G) is a unit prefix in the metric
-/// system denoting a factor of one billion.
+/// {@template dart_unitz.Giga}
+/// The giga (symbol: G) is a decimal prefix.
+/// This denotes a factor of one billion.
 ///
 /// https://en.wikipedia.org/wiki/Giga-
+/// {@endtemplate}
 class Giga extends DecimalPrefix {
+  /// {@macro dart_unitz.Giga}
+  Giga();
+
   @override
   String get name => 'giga';
 

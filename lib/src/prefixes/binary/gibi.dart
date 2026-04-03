@@ -1,6 +1,14 @@
 part of dart_unitz;
 
+/// {@template dart_unitz.Gibi}
+/// The gibi (symbol: Gi) is a binary prefix.
+///
+/// https://en.wikipedia.org/wiki/Binary_prefix#gibi
+/// {@endtemplate}
 class Gibi extends BinaryPrefix {
+  /// {@macro dart_unitz.Gibi}
+  Gibi();
+
   @override
   String get name => 'gibi';
 

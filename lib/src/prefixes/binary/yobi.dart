@@ -1,6 +1,14 @@
 part of dart_unitz;
 
+/// {@template dart_unitz.Yobi}
+/// The yobi (symbol: Yi) is a binary prefix.
+///
+/// https://en.wikipedia.org/wiki/Binary_prefix#yobi
+/// {@endtemplate}
 class Yobi extends BinaryPrefix {
+  /// {@macro dart_unitz.Yobi}
+  Yobi();
+
   @override
   String get name => 'yobi';
 

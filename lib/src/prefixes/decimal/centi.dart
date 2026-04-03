@@ -1,10 +1,15 @@
 part of dart_unitz;
 
-/// Centi (symbol c) is a unit prefix in the metric
-/// system denoting a factor of one hundredth.
+/// {@template dart_unitz.Centi}
+/// The centi (symbol: c) is a decimal prefix.
+/// This denotes a factor of one hundredth.
 ///
 /// https://en.wikipedia.org/wiki/Centi-
+/// {@endtemplate}
 class Centi extends DecimalPrefix {
+  /// {@macro dart_unitz.Centi}
+  Centi();
+
   @override
   String get name => 'centi';
 

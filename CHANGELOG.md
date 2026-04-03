@@ -1,5 +1,11 @@
 # Dart Unitz
 
+## [0.0.7]
+
+- Add pub.dev thumbnail.
+- Update dependencies.
+- Add more comments.
+
 ## [0.0.6]
 
 - Update dependencies.

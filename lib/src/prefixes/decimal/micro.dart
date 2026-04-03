@@ -1,10 +1,15 @@
 part of dart_unitz;
 
-/// Micro (symbol μ) is a unit prefix in the metric
-/// system denoting a factor of one millionth.
+/// {@template dart_unitz.Micro}
+/// The micro (symbol: μ) is a decimal prefix.
+/// This denotes a factor of one millionth.
 ///
 /// https://en.wikipedia.org/wiki/Micro-
+/// {@endtemplate}
 class Micro extends DecimalPrefix {
+  /// {@macro dart_unitz.Micro}
+  Micro();
+
   @override
   String get name => 'micro';
 

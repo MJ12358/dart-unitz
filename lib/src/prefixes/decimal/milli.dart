@@ -1,10 +1,15 @@
 part of dart_unitz;
 
-/// Milli (symbol m) is a unit prefix in the metric
-/// system denoting a factor of one thousandth.
+/// {@template dart_unitz.Milli}
+/// The milli (symbol: m) is a decimal prefix.
+/// This denotes a factor of one thousandth.
 ///
 /// https://en.wikipedia.org/wiki/Milli-
+/// {@endtemplate}
 class Milli extends DecimalPrefix {
+  /// {@macro dart_unitz.Milli}
+  Milli();
+
   @override
   String get name => 'milli';
 

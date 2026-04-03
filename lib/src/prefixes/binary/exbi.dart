@@ -1,6 +1,14 @@
 part of dart_unitz;
 
+/// {@template dart_unitz.Exbi}
+/// The exbi (symbol: Ei) is a binary prefix.
+///
+/// https://en.wikipedia.org/wiki/Binary_prefix#exbi
+/// {@endtemplate}
 class Exbi extends BinaryPrefix {
+  /// {@macro dart_unitz.Exbi}
+  Exbi();
+
   @override
   String get name => 'exbi';
 

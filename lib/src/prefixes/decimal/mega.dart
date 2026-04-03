@@ -1,10 +1,15 @@
 part of dart_unitz;
 
-/// Mega (symbol M) is a unit prefix in the metric
-/// system denoting a factor of one million.
+/// {@template dart_unitz.Mega}
+/// The mega (symbol: M) is a decimal prefix.
+/// This denotes a factor of one million.
 ///
 /// https://en.wikipedia.org/wiki/Mega-
+/// {@endtemplate}
 class Mega extends DecimalPrefix {
+  /// {@macro dart_unitz.Mega}
+  Mega();
+
   @override
   String get name => 'mega';
 
