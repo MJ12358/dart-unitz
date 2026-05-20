@@ -1,4 +1,4 @@
-part of dart_unitz;
+part of '../../dart_unitz.dart';
 
 /// {@template dart_unitz.Byte}
 /// The byte is a unit of digital information

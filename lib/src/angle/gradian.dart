@@ -1,4 +1,4 @@
-part of dart_unitz;
+part of '../../dart_unitz.dart';
 
 /// {@template dart_unitz.Gradian}
 /// The gradian, also known as the gon, grad, or grade,

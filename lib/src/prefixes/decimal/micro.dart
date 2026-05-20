@@ -1,4 +1,4 @@
-part of dart_unitz;
+part of '../../../dart_unitz.dart';
 
 /// {@template dart_unitz.Micro}
 /// The micro (symbol: μ) is a decimal prefix.

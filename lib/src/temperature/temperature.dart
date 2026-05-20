@@ -1,4 +1,4 @@
-part of dart_unitz;
+part of '../../dart_unitz.dart';
 
 /// {@template dart_unitz.Temperature}
 /// The base unit for [Temperature] is the [Kelvin].

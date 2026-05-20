@@ -1,4 +1,4 @@
-part of dart_unitz;
+part of '../../../dart_unitz.dart';
 
 /// {@template dart_unitz.Centi}
 /// The centi (symbol: c) is a decimal prefix.

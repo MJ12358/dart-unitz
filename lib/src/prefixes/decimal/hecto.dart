@@ -1,4 +1,4 @@
-part of dart_unitz;
+part of '../../../dart_unitz.dart';
 
 /// {@template dart_unitz.Hecto}
 /// The hecto (symbol: h) is a decimal prefix.

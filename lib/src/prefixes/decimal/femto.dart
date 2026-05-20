@@ -1,4 +1,4 @@
-part of dart_unitz;
+part of '../../../dart_unitz.dart';
 
 /// {@template dart_unitz.Femto}
 /// The femto (symbol: f) is a decimal prefix.

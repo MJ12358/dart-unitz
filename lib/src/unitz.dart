@@ -1,4 +1,4 @@
-part of dart_unitz;
+part of '../dart_unitz.dart';
 
 /// The entry point for [Unitz].
 ///

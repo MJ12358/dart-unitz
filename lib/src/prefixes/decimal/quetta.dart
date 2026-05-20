@@ -1,4 +1,4 @@
-part of dart_unitz;
+part of '../../../dart_unitz.dart';
 
 /// {@template dart_unitz.Quetta}
 /// The quetta (symbol: Q) is a decimal prefix.

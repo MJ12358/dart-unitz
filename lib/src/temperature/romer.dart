@@ -1,4 +1,4 @@
-part of dart_unitz;
+part of '../../dart_unitz.dart';
 
 /// {@template dart_unitz.Romer}
 /// The Rømer scale also known as Romer or Roemer,

@@ -1,4 +1,4 @@
-part of dart_unitz;
+part of '../dart_unitz.dart';
 
 /// An extension to provide operators on Units.
 extension UnitExtension on Unit {

@@ -1,4 +1,4 @@
-part of dart_unitz;
+part of '../../dart_unitz.dart';
 
 /// {@template dart_unitz.Information}
 /// The base unit for [Information] is the [Bit].

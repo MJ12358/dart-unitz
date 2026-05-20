@@ -1,5 +1,9 @@
 # Dart Unitz
 
+## [0.0.8]
+
+- Fix static analysis warning: "part-of directive uses a library name"
+
 ## [0.0.7]
 
 - Add pub.dev thumbnail.

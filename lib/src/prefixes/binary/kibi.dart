@@ -1,4 +1,4 @@
-part of dart_unitz;
+part of '../../../dart_unitz.dart';
 
 /// {@template dart_unitz.Kibi}
 /// The kibi (symbol: Ki) is a binary prefix.

@@ -1,4 +1,4 @@
-part of dart_unitz;
+part of '../../../dart_unitz.dart';
 
 /// {@template dart_unitz.Ronto}
 /// The ronto (symbol: r) is a decimal prefix.

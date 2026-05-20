@@ -1,4 +1,4 @@
-part of dart_unitz;
+part of '../../../dart_unitz.dart';
 
 /// {@template dart_unitz.Yobi}
 /// The yobi (symbol: Yi) is a binary prefix.

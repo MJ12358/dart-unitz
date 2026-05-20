@@ -1,4 +1,4 @@
-part of dart_unitz;
+part of '../../../dart_unitz.dart';
 
 /// {@template dart_unitz.Gibi}
 /// The gibi (symbol: Gi) is a binary prefix.

@@ -1,4 +1,4 @@
-part of dart_unitz;
+part of '../../../dart_unitz.dart';
 
 /// {@template dart_unitz.Deci}
 /// The deci (symbol: d) is a decimal prefix.

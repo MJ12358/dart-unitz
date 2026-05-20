@@ -1,4 +1,4 @@
-part of dart_unitz;
+part of '../../../dart_unitz.dart';
 
 /// {@template dart_unitz.Mebi}
 /// The mebi (symbol: Mi) is a binary prefix.

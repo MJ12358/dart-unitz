@@ -1,4 +1,4 @@
-part of dart_unitz;
+part of '../../../dart_unitz.dart';
 
 /// {@template dart_unitz.Tebi}
 /// The tebi (symbol: Ti) is a binary prefix.

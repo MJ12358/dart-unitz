@@ -1,4 +1,4 @@
-part of dart_unitz;
+part of '../../../dart_unitz.dart';
 
 /// {@template dart_unitz.Tera}
 /// The tera (symbol: T) is a decimal prefix.

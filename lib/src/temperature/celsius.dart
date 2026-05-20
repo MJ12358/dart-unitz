@@ -1,4 +1,4 @@
-part of dart_unitz;
+part of '../../dart_unitz.dart';
 
 /// {@template dart_unitz.Celsius}
 /// The degree Celsius is the unit of temperature on the Celsius scale,

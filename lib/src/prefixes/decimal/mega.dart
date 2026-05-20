@@ -1,4 +1,4 @@
-part of dart_unitz;
+part of '../../../dart_unitz.dart';
 
 /// {@template dart_unitz.Mega}
 /// The mega (symbol: M) is a decimal prefix.

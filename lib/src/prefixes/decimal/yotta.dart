@@ -1,4 +1,4 @@
-part of dart_unitz;
+part of '../../../dart_unitz.dart';
 
 /// {@template dart_unitz.Yotta}
 /// The yotta (symbol: Y) is a decimal prefix.

@@ -1,4 +1,4 @@
-part of dart_unitz;
+part of '../../../dart_unitz.dart';
 
 /// {@template dart_unitz.Pico}
 /// The pico (symbol: p) is a decimal prefix.

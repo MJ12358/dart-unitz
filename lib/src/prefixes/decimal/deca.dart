@@ -1,4 +1,4 @@
-part of dart_unitz;
+part of '../../../dart_unitz.dart';
 
 /// {@template dart_unitz.Deca}
 /// The deca (symbol: da) is a decimal prefix.

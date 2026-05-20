@@ -1,4 +1,4 @@
-part of dart_unitz;
+part of '../dart_unitz.dart';
 
 /// An abstract class to provide a template for unit prefixes.
 @immutable

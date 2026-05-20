@@ -1,4 +1,4 @@
-part of dart_unitz;
+part of '../../../dart_unitz.dart';
 
 /// {@template dart_unitz.Nano}
 /// The nano (symbol: n) is a decimal prefix.

@@ -1,4 +1,4 @@
-part of dart_unitz;
+part of '../../dart_unitz.dart';
 
 /// {@template dart_unitz.Degree}
 /// A degree (in full, a degree of arc, arc degree, or arcdegree),

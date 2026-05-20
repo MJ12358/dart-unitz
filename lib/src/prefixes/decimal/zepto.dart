@@ -1,4 +1,4 @@
-part of dart_unitz;
+part of '../../../dart_unitz.dart';
 
 /// {@template dart_unitz.Zepto}
 /// The zepto (symbol: z) is a decimal prefix.

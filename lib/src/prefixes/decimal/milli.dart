@@ -1,4 +1,4 @@
-part of dart_unitz;
+part of '../../../dart_unitz.dart';
 
 /// {@template dart_unitz.Milli}
 /// The milli (symbol: m) is a decimal prefix.

@@ -1,4 +1,4 @@
-part of dart_unitz;
+part of '../../../dart_unitz.dart';
 
 /// {@template dart_unitz.Pebi}
 /// The pebi (symbol: Pi) is a binary prefix.

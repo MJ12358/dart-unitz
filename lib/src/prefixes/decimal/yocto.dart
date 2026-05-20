@@ -1,4 +1,4 @@
-part of dart_unitz;
+part of '../../../dart_unitz.dart';
 
 /// {@template dart_unitz.Yocto}
 /// The yocto (symbol: y) is a decimal prefix.

@@ -1,4 +1,4 @@
-part of dart_unitz;
+part of '../../../dart_unitz.dart';
 
 /// {@template dart_unitz.Kilo}
 /// The kilo (symbol: k) is a decimal prefix.

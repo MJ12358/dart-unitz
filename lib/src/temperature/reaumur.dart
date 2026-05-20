@@ -1,4 +1,4 @@
-part of dart_unitz;
+part of '../../dart_unitz.dart';
 
 /// {@template dart_unitz.Reaumur}
 /// The Réaumur scale, also known as the "octogesimal division",

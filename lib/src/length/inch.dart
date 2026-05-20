@@ -1,4 +1,4 @@
-part of dart_unitz;
+part of '../../dart_unitz.dart';
 
 /// {@template dart_unitz.Inch}
 /// The inch (symbol: in or ″) is a unit of length

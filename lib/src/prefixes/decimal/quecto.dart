@@ -1,4 +1,4 @@
-part of dart_unitz;
+part of '../../../dart_unitz.dart';
 
 /// {@template dart_unitz.Quecto}
 /// The quecto (symbol: q) is a decimal prefix.
