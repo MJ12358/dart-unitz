@@ -1,6 +1,7 @@
 /// A simple and expandable unit conversion library.
 /// Quickly and easily convert between units
 /// and apply math operations on any unit.
+library;
 
 import 'dart:math' as math;
 

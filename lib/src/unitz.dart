@@ -1,9 +1,14 @@
 part of '../dart_unitz.dart';
 
+/// {@template dart_unitz.Unitz}
 /// The entry point for [Unitz].
 ///
 /// Also holds global configuration settings.
+/// {@endtemplate}
 abstract class Unitz {
+  /// {@macro dart_unitz.Unitz}
+  const Unitz._();
+
   /// The number of decimal places to represent.
   ///
   /// This applies when retrieving the `formatted` value.
@@ -30,6 +35,7 @@ abstract class Unitz {
     return to.newInstance(result);
   }
 
+  /// A list of all decimal prefixes, ordered from largest to smallest.
   static final List<UnitPrefix> decimalPrefixes = <UnitPrefix>[
     Quetta(),
     Ronna(),
@@ -58,6 +64,7 @@ abstract class Unitz {
     Quecto(),
   ];
 
+  /// A list of all binary prefixes, ordered from largest to smallest.
   static final List<UnitPrefix> binaryPrefixes = <UnitPrefix>[
     Yobi(),
     Zebi(),

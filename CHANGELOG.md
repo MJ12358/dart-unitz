@@ -1,5 +1,11 @@
 # Dart Unitz
 
+## [0.0.10]
+
+- Fix lint issue.
+- Update dependencies.
+- Add more comments.
+
 ## [0.0.9]
 
 - Fix lint issues.
