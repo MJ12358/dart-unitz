@@ -1,5 +1,10 @@
 # Dart Unitz
 
+## [0.0.9]
+
+- Fix lint issues.
+- Update dependencies.
+
 ## [0.0.8]
 
 - Fix static analysis warning: "part-of directive uses a library name"

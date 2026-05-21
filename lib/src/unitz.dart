@@ -43,7 +43,7 @@ abstract class Unitz {
     Kilo(),
     Hecto(),
     Deca(),
-    NullPrefix(),
+    const NullPrefix(),
     Deci(),
     Centi(),
     Milli(),
@@ -67,6 +67,6 @@ abstract class Unitz {
     Gibi(),
     Mebi(),
     Kibi(),
-    NullPrefix(),
+    const NullPrefix(),
   ];
 }

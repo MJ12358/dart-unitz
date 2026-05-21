@@ -66,17 +66,17 @@ abstract class Unit implements Comparable<Unit> {
 
   /// The unit prefix for this [value].
   UnitPrefix get prefix {
-    List<UnitPrefix> _prefixes = <UnitPrefix>[];
+    List<UnitPrefix> prefixes = <UnitPrefix>[];
 
     if (prefixType == BinaryPrefix) {
-      _prefixes = Unitz.binaryPrefixes;
+      prefixes = Unitz.binaryPrefixes;
     } else if (prefixType == DecimalPrefix) {
-      _prefixes = Unitz.decimalPrefixes;
+      prefixes = Unitz.decimalPrefixes;
     } else {
-      return NullPrefix();
+      return const NullPrefix();
     }
 
-    return _prefixes.firstWhere(
+    return prefixes.firstWhere(
       (UnitPrefix e) {
         return e.power <= _value;
       },
