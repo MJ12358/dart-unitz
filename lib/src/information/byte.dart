@@ -21,12 +21,12 @@ class Byte extends Information {
 
   @override
   num toBase() {
-    return value / 8;
+    return value * 8;
   }
 
   @override
   num fromBase(num base) {
-    return base * 8;
+    return base / 8;
   }
 
   @override
