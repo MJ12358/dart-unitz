@@ -1,10 +1,17 @@
 import 'package:dart_unitz/dart_unitz.dart';
 import 'package:test/test.dart';
 
-Map<Unit, Unit> metreMap = <Unit, Unit>{
+Map<Unit, Unit> unitMap = <Unit, Unit>{
+  AstronomicalUnit(): AstronomicalUnit(1.495978707e11),
+  Chain(): Chain(20.1168),
   Foot(): Foot(3.2808),
+  Furlong(): Furlong(201.168),
   Inch(): Inch(39.37),
+  LightYear(): LightYear(9.4607e15),
   Metre(): Metre(1),
+  Mile(): Mile(0.000621371),
+  Parsec(): Parsec(3.0856775814913673e16),
+  Yard(): Yard(1.09361),
 };
 
 void main() {
@@ -33,16 +40,18 @@ void main() {
   });
 
   test('addition', () {
-    for (final Unit t in metreMap.keys) {
-      expect(Foot(0) + metreMap[t]!, Foot(3.2808));
+    for (final Unit zero in unitMap.keys) {
+      for (final MapEntry<Unit, Unit> entry in unitMap.entries) {
+        expect(zero + entry.value, entry.value);
+      }
     }
+  });
 
-    for (final Unit t in metreMap.keys) {
-      expect(Inch(0) + metreMap[t]!, Inch(39.37));
-    }
-
-    for (final Unit t in metreMap.keys) {
-      expect(Metre(0) + metreMap[t]!, Metre(1));
+  test('substraction', () {
+    for (final Unit zero in unitMap.keys) {
+      for (final MapEntry<Unit, Unit> entry in unitMap.entries) {
+        expect(entry.value - entry.value, zero);
+      }
     }
   });
 }

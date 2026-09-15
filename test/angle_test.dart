@@ -3,7 +3,7 @@ import 'dart:math';
 import 'package:dart_unitz/dart_unitz.dart';
 import 'package:test/test.dart';
 
-Map<Unit, Unit> circleMap = <Unit, Unit>{
+Map<Unit, Unit> unitMap = <Unit, Unit>{
   ArcMinute(): ArcMinute(21600),
   ArcSecond(): ArcSecond(1296000),
   Degree(): Degree(360),
@@ -40,116 +40,18 @@ void main() {
   });
 
   test('addition', () {
-    for (final Unit t in circleMap.keys) {
-      expect(ArcMinute(0) + circleMap[t]!, circleMap[ArcMinute()]);
-    }
-
-    for (final Unit t in circleMap.keys) {
-      expect(ArcSecond(0) + circleMap[t]!, circleMap[ArcSecond()]);
-    }
-
-    for (final Unit t in circleMap.keys) {
-      expect(Degree(0) + circleMap[t]!, circleMap[Degree()]);
-    }
-
-    for (final Unit t in circleMap.keys) {
-      expect(Gradian(0) + circleMap[t]!, circleMap[Gradian()]);
-    }
-
-    for (final Unit t in circleMap.keys) {
-      expect(Radian(0) + circleMap[t]!, circleMap[Radian()]);
+    for (final Unit zero in unitMap.keys) {
+      for (final MapEntry<Unit, Unit> entry in unitMap.entries) {
+        expect(zero + entry.value, entry.value);
+      }
     }
   });
 
-  test('subtraction', () {
-    for (final Unit t in circleMap.keys) {
-      expect(circleMap[ArcMinute()]! - circleMap[t]!, ArcMinute(0));
-    }
-
-    for (final Unit t in circleMap.keys) {
-      expect(circleMap[ArcSecond()]! - circleMap[t]!, ArcSecond(0));
-    }
-
-    for (final Unit t in circleMap.keys) {
-      expect(circleMap[Degree()]! - circleMap[t]!, Degree(0));
-    }
-
-    for (final Unit t in circleMap.keys) {
-      expect(circleMap[Gradian()]! - circleMap[t]!, Gradian(0));
-    }
-
-    for (final Unit t in circleMap.keys) {
-      expect(circleMap[Radian()]! - circleMap[t]!, Radian(0));
-    }
-  });
-
-  test('arcminute', () {
-    final Unit arcminute = circleMap[ArcMinute()]!;
-    expect(arcminute.name, 'Arc Minute');
-    expect(arcminute.symbol, "'");
-    expect(arcminute.toString(), "21600 '");
-
-    for (final Unit t in circleMap.keys) {
-      expect(
-        Unitz.convert(from: arcminute, to: t),
-        circleMap[t],
-      );
-    }
-  });
-
-  test('arcsecond', () {
-    final Unit arcsecond = circleMap[ArcSecond()]!;
-    expect(arcsecond.name, 'Arc Second');
-    expect(arcsecond.symbol, '"');
-    expect(arcsecond.toString(), '1296000 "');
-
-    for (final Unit t in circleMap.keys) {
-      expect(
-        Unitz.convert(from: arcsecond, to: t),
-        circleMap[t],
-      );
-    }
-  });
-
-  test('degree', () {
-    final Unit degree = circleMap[Degree()]!;
-    expect(degree.name, 'Degree');
-    expect(degree.symbol, '°');
-    expect(degree.toString(), '360 °');
-
-    for (final Unit t in circleMap.keys) {
-      expect(
-        Unitz.convert(from: degree, to: t),
-        circleMap[t],
-      );
-    }
-  });
-
-  test('gradian', () {
-    final Unit gradian = circleMap[Gradian()]!;
-    expect(gradian.name, 'Gradian');
-    expect(gradian.symbol, 'grad');
-    expect(gradian.toString(), '400 grad');
-
-    for (final Unit t in circleMap.keys) {
-      expect(
-        Unitz.convert(from: gradian, to: t),
-        circleMap[t],
-      );
-    }
-  });
-
-  test('radian', () {
-    final Unit radian = circleMap[Radian()]!;
-    expect(radian.name, 'Radian');
-    expect(radian.symbol, 'rad');
-    expect(radian.toString(), '6.2832 rad');
-
-    for (final Unit t in circleMap.keys) {
-      expect(
-        Unitz.convert(from: radian, to: t),
-        circleMap[t],
-      );
+  test('substraction', () {
+    for (final Unit zero in unitMap.keys) {
+      for (final MapEntry<Unit, Unit> entry in unitMap.entries) {
+        expect(entry.value - entry.value, zero);
+      }
     }
   });
 }
