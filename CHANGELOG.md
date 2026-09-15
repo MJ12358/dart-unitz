@@ -1,5 +1,12 @@
 # Dart Unitz
 
+## [0.0.11]
+
+- Add more Length units.
+- Update tests and comments.
+- Update Dart version.
+- Update dependencies.
+
 ## [0.0.10]
 
 - Fix lint issue.
