@@ -34,46 +34,4 @@ abstract class Unitz {
     final num result = to.fromBase(base);
     return to.newInstance(result);
   }
-
-  /// A list of all decimal prefixes, ordered from largest to smallest.
-  static final List<UnitPrefix> decimalPrefixes = <UnitPrefix>[
-    Quetta(),
-    Ronna(),
-    Yotta(),
-    Zetta(),
-    Exa(),
-    Peta(),
-    Tera(),
-    Giga(),
-    Mega(),
-    Kilo(),
-    Hecto(),
-    Deca(),
-    const NullPrefix(),
-    Deci(),
-    Centi(),
-    Milli(),
-    Micro(),
-    Nano(),
-    Pico(),
-    Femto(),
-    Atto(),
-    Zepto(),
-    Yocto(),
-    Ronto(),
-    Quecto(),
-  ];
-
-  /// A list of all binary prefixes, ordered from largest to smallest.
-  static final List<UnitPrefix> binaryPrefixes = <UnitPrefix>[
-    Yobi(),
-    Zebi(),
-    Exbi(),
-    Pebi(),
-    Tebi(),
-    Gibi(),
-    Mebi(),
-    Kibi(),
-    const NullPrefix(),
-  ];
 }

@@ -5,7 +5,7 @@ import 'package:test/test.dart';
 
 void main() {
   test('decimalPrefixOrder', () {
-    final List<UnitPrefix> arr = Unitz.decimalPrefixes;
+    final List<UnitPrefix> arr = DecimalPrefix.values;
 
     for (int i = 1; i < arr.length; i++) {
       final UnitPrefix p1 = arr[i];
@@ -15,7 +15,7 @@ void main() {
   });
 
   test('binaryPrefixOrder', () {
-    final List<UnitPrefix> arr = Unitz.binaryPrefixes;
+    final List<UnitPrefix> arr = BinaryPrefix.values;
 
     for (int i = 1; i < arr.length; i++) {
       final UnitPrefix p1 = arr[i];
@@ -24,7 +24,7 @@ void main() {
     }
   });
 
-  test('decimalValuePrefix', () {
+  test('decimalPrefixValue', () {
     Unitz.usePrefix = true;
 
     final Map<Unit, String> results = <Unit, String>{
@@ -60,7 +60,7 @@ void main() {
     }
   });
 
-  test('binaryValuePrefix', () {
+  test('binaryPrefixValue', () {
     Unitz.usePrefix = true;
 
     final Map<Unit, String> results = <Unit, String>{

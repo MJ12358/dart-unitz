@@ -69,9 +69,9 @@ abstract class Unit implements Comparable<Unit> {
     List<UnitPrefix> prefixes = <UnitPrefix>[];
 
     if (prefixType == BinaryPrefix) {
-      prefixes = Unitz.binaryPrefixes;
+      prefixes = BinaryPrefix.values;
     } else if (prefixType == DecimalPrefix) {
-      prefixes = Unitz.decimalPrefixes;
+      prefixes = DecimalPrefix.values;
     } else {
       return const NullPrefix();
     }

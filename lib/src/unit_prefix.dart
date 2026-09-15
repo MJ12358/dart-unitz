@@ -2,6 +2,8 @@ part of '../dart_unitz.dart';
 
 /// {@template dart_unitz.UnitPrefix}
 /// An abstract class to provide a template for unit prefixes.
+///
+/// https://en.wikipedia.org/wiki/Unit_prefix
 /// {@endtemplate}
 @immutable
 abstract class UnitPrefix {
@@ -33,6 +35,35 @@ abstract class UnitPrefix {
 abstract class DecimalPrefix implements UnitPrefix {
   /// {@macro dart_unitz.DecimalPrefix}
   const DecimalPrefix();
+
+  /// A list of all decimal prefixes, ordered from largest to smallest.
+  static final List<UnitPrefix> values = <UnitPrefix>[
+    Quetta(),
+    Ronna(),
+    Yotta(),
+    Zetta(),
+    Exa(),
+    Peta(),
+    Tera(),
+    Giga(),
+    Mega(),
+    Kilo(),
+    Hecto(),
+    Deca(),
+    const NullPrefix(),
+    Deci(),
+    Centi(),
+    Milli(),
+    Micro(),
+    Nano(),
+    Pico(),
+    Femto(),
+    Atto(),
+    Zepto(),
+    Yocto(),
+    Ronto(),
+    Quecto(),
+  ];
 }
 
 /// {@template dart_unitz.BinaryPrefix}
@@ -44,6 +75,19 @@ abstract class DecimalPrefix implements UnitPrefix {
 abstract class BinaryPrefix implements UnitPrefix {
   /// {@macro dart_unitz.BinaryPrefix}
   const BinaryPrefix();
+
+  /// A list of all binary prefixes, ordered from largest to smallest.
+  static final List<UnitPrefix> values = <UnitPrefix>[
+    Yobi(),
+    Zebi(),
+    Exbi(),
+    Pebi(),
+    Tebi(),
+    Gibi(),
+    Mebi(),
+    Kibi(),
+    const NullPrefix(),
+  ];
 }
 
 /// {@template dart_unitz.NullPrefix}
