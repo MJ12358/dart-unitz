@@ -22,13 +22,22 @@ class Fahrenheit extends Temperature {
   String get symbol => '°F';
 
   @override
+  Fahrenheit get boiling => Fahrenheit(212);
+
+  @override
+  Fahrenheit get freezing => Fahrenheit(32);
+
+  @override
+  num get factor => 273.15;
+
+  @override
   num toBase() {
-    return (value - 32) * (5 / 9) + 273.15;
+    return (value - 32) * (5 / 9) + factor;
   }
 
   @override
   num fromBase(num base) {
-    return (base - 273.15) * (9 / 5) + 32;
+    return (base - factor) * (9 / 5) + 32;
   }
 
   @override

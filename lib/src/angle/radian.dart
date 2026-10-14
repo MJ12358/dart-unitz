@@ -20,6 +20,9 @@ class Radian extends Angle {
   String get symbol => 'rad';
 
   @override
+  num get factor => 1;
+
+  @override
   num toBase() {
     return value;
   }

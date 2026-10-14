@@ -21,13 +21,22 @@ class Reaumur extends Temperature {
   String get symbol => '°Ré';
 
   @override
+  Reaumur get boiling => Reaumur(80);
+
+  @override
+  Reaumur get freezing => Reaumur(0);
+
+  @override
+  num get factor => 273.15;
+
+  @override
   num toBase() {
-    return value * 5 / 4 + 273.15;
+    return value * 5 / 4 + factor;
   }
 
   @override
   num fromBase(num base) {
-    return (base - 273.15) * (4 / 5);
+    return (base - factor) * (4 / 5);
   }
 
   @override

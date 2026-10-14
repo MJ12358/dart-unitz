@@ -38,6 +38,9 @@ abstract class Unit implements Comparable<Unit> {
   /// The symbol for this unit.
   String get symbol;
 
+  /// The common factor for this unit.
+  num get factor;
+
   /// The base unit.
   Unit get base;
 

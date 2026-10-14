@@ -20,13 +20,16 @@ class LightYear extends Length {
   String get symbol => 'ly';
 
   @override
+  num get factor => 9.4607e15;
+
+  @override
   num toBase() {
-    return value * 9.4607e15;
+    return value * factor;
   }
 
   @override
   num fromBase(num base) {
-    return base / 9.4607e15;
+    return base / factor;
   }
 
   @override

@@ -24,6 +24,15 @@ class Rankine extends Temperature {
   String get symbol => '°Ra';
 
   @override
+  Rankine get boiling => Rankine(671.67);
+
+  @override
+  Rankine get freezing => Rankine(491.67);
+
+  @override
+  num get factor => 1;
+
+  @override
   num toBase() {
     return 5 * value / 9;
   }

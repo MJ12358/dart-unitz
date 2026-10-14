@@ -20,13 +20,16 @@ class Furlong extends Length {
   String get symbol => 'fur';
 
   @override
+  num get factor => 201.168;
+
+  @override
   num toBase() {
-    return value * 201.168;
+    return value * factor;
   }
 
   @override
   num fromBase(num base) {
-    return base / 201.168;
+    return base / factor;
   }
 
   @override

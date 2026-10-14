@@ -21,13 +21,22 @@ class Celsius extends Temperature {
   String get symbol => '°C';
 
   @override
+  Celsius get boiling => Celsius(100);
+
+  @override
+  Celsius get freezing => Celsius(0);
+
+  @override
+  num get factor => 273.15;
+
+  @override
   num toBase() {
-    return value + 273.15;
+    return value + factor;
   }
 
   @override
   num fromBase(num base) {
-    return base - 273.15;
+    return base - factor;
   }
 
   @override

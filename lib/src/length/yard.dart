@@ -20,13 +20,16 @@ class Yard extends Length {
   String get symbol => 'yd';
 
   @override
+  num get factor => 0.9144;
+
+  @override
   num toBase() {
-    return value * 0.9144;
+    return value * factor;
   }
 
   @override
   num fromBase(num base) {
-    return base / 0.9144;
+    return base / factor;
   }
 
   @override

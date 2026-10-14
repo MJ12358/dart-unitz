@@ -20,13 +20,16 @@ class Mile extends Length {
   String get symbol => 'mi';
 
   @override
+  num get factor => 1609.344;
+
+  @override
   num toBase() {
-    return value * 1609.344;
+    return value * factor;
   }
 
   @override
   num fromBase(num base) {
-    return base / 1609.344;
+    return base / factor;
   }
 
   @override

@@ -20,13 +20,17 @@ class ArcMinute extends Angle {
   String get symbol => "'";
 
   @override
+  /// 60 arcminutes per degree and 180 degrees per pi radians.
+  num get factor => 60 * 180;
+
+  @override
   num toBase() {
-    return value * math.pi / (60 * 180);
+    return value * math.pi / factor;
   }
 
   @override
   num fromBase(num base) {
-    return base * (60 * 180) / math.pi;
+    return base * factor / math.pi;
   }
 
   @override

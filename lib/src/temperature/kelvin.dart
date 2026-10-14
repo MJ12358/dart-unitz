@@ -20,6 +20,15 @@ class Kelvin extends Temperature {
   String get symbol => 'K';
 
   @override
+  Kelvin get boiling => Kelvin(373.15);
+
+  @override
+  Kelvin get freezing => Kelvin(273.15);
+
+  @override
+  num get factor => 1;
+
+  @override
   num toBase() {
     return value;
   }

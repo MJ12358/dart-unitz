@@ -20,13 +20,16 @@ class Byte extends Information {
   String get symbol => 'B';
 
   @override
+  num get factor => 8;
+
+  @override
   num toBase() {
-    return value * 8;
+    return value * factor;
   }
 
   @override
   num fromBase(num base) {
-    return base / 8;
+    return base / factor;
   }
 
   @override

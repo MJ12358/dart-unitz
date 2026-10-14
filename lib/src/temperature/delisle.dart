@@ -21,13 +21,22 @@ class Delisle extends Temperature {
   String get symbol => '°D';
 
   @override
+  Delisle get boiling => Delisle(0);
+
+  @override
+  Delisle get freezing => Delisle(150);
+
+  @override
+  num get factor => 373.15;
+
+  @override
   num toBase() {
-    return 373.15 - value * (2 / 3);
+    return factor - value * (2 / 3);
   }
 
   @override
   num fromBase(num base) {
-    return (373.15 - base) * (3 / 2);
+    return (factor - base) * (3 / 2);
   }
 
   @override

@@ -22,13 +22,22 @@ class Romer extends Temperature {
   String get symbol => '°Rø';
 
   @override
+  Romer get boiling => Romer(60);
+
+  @override
+  Romer get freezing => Romer(7.5);
+
+  @override
+  num get factor => 273.15;
+
+  @override
   num toBase() {
-    return (value - 7.5) * (40 / 21) + 273.15;
+    return (value - 7.5) * (40 / 21) + factor;
   }
 
   @override
   num fromBase(num base) {
-    return (base - 273.15) * (21 / 40) + 7.5;
+    return (base - factor) * (21 / 40) + 7.5;
   }
 
   @override
