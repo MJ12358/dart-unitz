@@ -2,6 +2,8 @@ part of '../../dart_unitz.dart';
 
 /// {@template dart_unitz.Information}
 /// The base unit for [Information] is the [Bit].
+///
+/// https://en.wikipedia.org/wiki/Units_of_information
 /// {@endtemplate}
 abstract class Information extends Unit {
   /// {@macro dart_unitz.Information}
@@ -13,7 +15,6 @@ abstract class Information extends Unit {
   @override
   Type get prefixType => BinaryPrefix;
 
-  /// A list of all the [Information] units.
   static final List<Information> values = <Information>[
     Bit(),
     Byte(),
