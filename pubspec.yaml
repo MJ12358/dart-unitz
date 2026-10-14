@@ -1,6 +1,6 @@
 name: dart_unitz
 description: A simple and expandable unit conversion library. Quickly and easily convert between units and apply math operations on any unit.
-version: 0.0.11
+version: 0.0.12
 repository: https://github.com/mj12358/dart-unitz
 screenshots:
   - description: Dart Unitz Thumbnail
@@ -13,7 +13,7 @@ topics:
   - conversion
 
 environment:
-  sdk: ">=3.13.3 <4.0.0"
+  sdk: ">=3.13.5 <4.0.0"
 
 dependencies:
   # decimal: ^3.2.4

@@ -1,5 +1,13 @@
 # Dart Unitz
 
+## [0.0.12]
+
+- Fix `Byte` conversion.
+- Add `factor` to base unit.
+- Add `values` list to units.
+- Update tests.
+- Update Dart version.
+
 ## [0.0.11]
 
 - Add more Length units.
