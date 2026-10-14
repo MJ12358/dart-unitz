@@ -12,9 +12,6 @@ Map<Unit, Unit> unitMap = <Unit, Unit>{
 };
 
 void main() {
-  //! You are setting precision here so adjust tests accordingly
-  Unitz.precision = 4;
-
   test('equality', () {
     expect(Degree(0) == Degree(0), true);
     expect(Degree(0) != Degree(360), true);

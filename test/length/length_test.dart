@@ -39,6 +39,16 @@ void main() {
     expect(Metre(1).compareTo(Foot(1)), 1);
   });
 
+  test('conversion', () {
+    final Metre m = Metre();
+    for (final Unit unit in Length.values) {
+      expect(
+        Unitz.convert(from: m, to: unit),
+        unit,
+      );
+    }
+  });
+
   test('addition', () {
     for (final Unit zero in unitMap.keys) {
       for (final MapEntry<Unit, Unit> entry in unitMap.entries) {
