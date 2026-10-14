@@ -34,4 +34,12 @@ abstract class Unitz {
     final num result = to.fromBase(base);
     return to.newInstance(result);
   }
+
+  /// The list of all unit categories available in Unitz.
+  static final List<Type> categories = <Type>[
+    Angle,
+    Information,
+    Length,
+    Temperature,
+  ];
 }
