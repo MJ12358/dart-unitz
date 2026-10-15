@@ -12,8 +12,8 @@ Additionally, the library is designed to be easily expandable, meaning that deve
 
 - ✔ Temperature
 - ✔ Angle
-- [ ] Length
-- [ ] Time
+- ✔ Length
+- ✔ Time
 - [ ] Mass
 - [ ] Electric current
 - [ ] Luminous intensity
