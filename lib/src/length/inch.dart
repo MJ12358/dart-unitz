@@ -22,16 +22,16 @@ class Inch extends Length {
   String get symbol => 'in';
 
   @override
-  num get factor => 39.3700787402;
+  num get factor => 0.0254;
 
   @override
   num toBase() {
-    return value / factor;
+    return value * factor;
   }
 
   @override
   num fromBase(num base) {
-    return base * factor;
+    return base / factor;
   }
 
   @override
