@@ -41,5 +41,6 @@ abstract class Unitz {
     Information,
     Length,
     Temperature,
+    Time,
   ];
 }

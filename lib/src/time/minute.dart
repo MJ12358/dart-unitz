@@ -1,0 +1,39 @@
+part of '../../dart_unitz.dart';
+
+/// {@template dart_unitz.Minute}
+/// The minute, standard symbol: min,
+/// is a unit of time equal to 60 seconds.
+///
+/// https://en.wikipedia.org/wiki/Minute
+/// {@endtemplate}
+class Minute extends Time {
+  /// {@macro dart_unitz.Minute}
+  Minute([super.value]);
+
+  @override
+  String get name => 'Minute';
+
+  @override
+  String get pluralName => 'Minutes';
+
+  @override
+  String get symbol => 'min';
+
+  @override
+  num get factor => 60;
+
+  @override
+  num toBase() {
+    return value * factor;
+  }
+
+  @override
+  num fromBase(num base) {
+    return base / factor;
+  }
+
+  @override
+  Unit newInstance([Object? value]) {
+    return Minute(value);
+  }
+}
