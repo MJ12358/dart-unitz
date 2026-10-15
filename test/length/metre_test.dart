@@ -1,6 +1,15 @@
 import 'package:dart_unitz/dart_unitz.dart';
 import 'package:test/test.dart';
 
+List<Unit> unitList = <Unit>[
+  Chain(1 / Chain().factor),
+  Foot(1 / Foot().factor),
+  Inch(1 / Inch().factor),
+  Yard(1 / Yard().factor),
+  Mile(1 / Mile().factor),
+  LightYear(1 / LightYear().factor),
+];
+
 void main() {
   test('constructor', () {
     final Metre metre = Metre();
@@ -26,5 +35,31 @@ void main() {
         unit,
       );
     }
+  });
+
+  test('compare', () {
+    final Metre metre = Metre(1);
+    for (final Unit unit in unitList) {
+      expect(metre.compareTo(unit), 0);
+    }
+  });
+
+  test('equality', () {
+    final Metre metre = Metre(1);
+    for (final Unit unit in unitList) {
+      expect(metre == unit, isTrue);
+    }
+  });
+
+  test('toString', () {
+    Unitz.usePrefix = true;
+    final Metre metre1 = Metre(1);
+    expect(metre1.toString(), '1 m');
+    final Metre metre2 = Metre(2);
+    expect(metre2.toString(), '2 m');
+    final Metre metre3 = Metre(3000);
+    expect(metre3.toString(), '3 km');
+    final Metre metre4 = Metre(4000000);
+    expect(metre4.toString(), '4 Mm');
   });
 }
