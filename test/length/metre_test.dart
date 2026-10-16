@@ -18,7 +18,9 @@ void main() {
     expect(metre.pluralName, 'Metres');
     expect(metre.symbol, 'm');
     expect(metre.toString(), '0 m');
-    // Alternative symbol for metre is "meter"
+  });
+
+  test('constructor (alt)', () {
     final Meter meter = Meter();
     expect(meter.value, 0);
     expect(meter.name, 'Meter');
