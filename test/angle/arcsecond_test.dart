@@ -27,6 +27,7 @@ void main() {
       );
     }
   });
+
   test('compare', () {
     final ArcSecond arcsecond = ArcSecond(1);
     for (final Unit unit in unitList) {
