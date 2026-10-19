@@ -93,7 +93,7 @@ abstract class BinaryPrefix implements UnitPrefix {
 /// {@template dart_unitz.NullPrefix}
 /// A class used to represent a null/empty prefix.
 ///
-/// Usually used when `value <= 9 && value >= 0`
+/// Usually used when `value >= 0 and < 10`
 /// {@endtemplate}
 class NullPrefix extends UnitPrefix {
   /// {@macro dart_unitz.NullPrefix}

@@ -71,12 +71,17 @@ abstract class Unit implements Comparable<Unit> {
   UnitPrefix get prefix {
     List<UnitPrefix> prefixes = <UnitPrefix>[];
 
-    if (prefixType == BinaryPrefix) {
-      prefixes = BinaryPrefix.values;
-    } else if (prefixType == DecimalPrefix) {
-      prefixes = DecimalPrefix.values;
-    } else {
-      return const NullPrefix();
+    final Type thePrefixType = Unitz.prefixType != null
+        ? Unitz.prefixType!
+        : prefixType;
+
+    switch (thePrefixType) {
+      case BinaryPrefix:
+        prefixes = BinaryPrefix.values;
+      case DecimalPrefix:
+        prefixes = DecimalPrefix.values;
+      case NullPrefix:
+        return const NullPrefix();
     }
 
     return prefixes.firstWhere(

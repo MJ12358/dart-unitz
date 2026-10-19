@@ -19,7 +19,13 @@ abstract class Unitz {
   static bool removeTrailingZeros = true;
 
   /// Uses a [UnitPrefix] when required.
-  static bool usePrefix = false;
+  static bool usePrefix = prefixType != null;
+
+  /// The type of unit prefix to use.
+  ///
+  /// Each unit category has a default unit prefix.
+  /// You can override it by setting this property.
+  static Type? prefixType;
 
   /// Convert from one unit to another.
   ///
