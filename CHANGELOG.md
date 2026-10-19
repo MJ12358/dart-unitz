@@ -1,5 +1,13 @@
 # Dart Unitz
 
+## [0.0.13]
+
+- Add Time units.
+- Add `prefixType` to configuration.
+- Fix some length conversions.
+- Update tests.
+- Update readme.
+
 ## [0.0.12]
 
 - Fix `Byte` conversion.
