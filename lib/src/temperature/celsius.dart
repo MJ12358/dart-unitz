@@ -44,3 +44,23 @@ class Celsius extends Temperature {
     return Celsius(value);
   }
 }
+
+/// {@template dart_unitz.Centigrade}
+/// An alias for [Celsius].
+/// {@endtemplate}
+class Centigrade extends Celsius {
+  /// {@macro dart_unitz.Centigrade}
+  Centigrade([super.value]);
+
+  @override
+  String get name => 'Centigrade';
+
+  @override
+  String get pluralName => name;
+
+  @override
+  Centigrade get boiling => Centigrade(100);
+
+  @override
+  Centigrade get freezing => Centigrade(0);
+}
