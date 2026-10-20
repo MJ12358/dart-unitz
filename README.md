@@ -10,10 +10,11 @@ Additionally, the library is designed to be easily expandable, meaning that deve
 
 ## WIP
 
-- ✔ Temperature
 - ✔ Angle
 - ✔ Length
+- ✔ Temperature
 - ✔ Time
+- ✔ Volume
 - [ ] Mass
 - [ ] Electric current
 - [ ] Luminous intensity
