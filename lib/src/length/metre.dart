@@ -40,7 +40,8 @@ class Metre extends Length {
 
 /// {@template dart_unitz.Meter}
 /// An alias for [Metre].
-/// For our American friends.
+///
+/// For American English, "meter" is used instead of "metre".
 /// {@endtemplate}
 class Meter extends Metre {
   /// {@macro dart_unitz.Meter}
