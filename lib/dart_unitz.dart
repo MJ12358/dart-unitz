@@ -83,5 +83,8 @@ part 'src/volume/cubic_foot.dart';
 part 'src/volume/cubic_inch.dart';
 part 'src/volume/cubic_metre.dart';
 part 'src/volume/cubic_yard.dart';
+part 'src/volume/cup.dart';
 part 'src/volume/litre.dart';
+part 'src/volume/tablespoon.dart';
+part 'src/volume/teaspoon.dart';
 part 'src/volume/volume.dart';

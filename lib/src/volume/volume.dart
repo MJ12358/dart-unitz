@@ -22,5 +22,8 @@ abstract class Volume extends Unit {
     CubicFoot(),
     CubicYard(),
     Litre(),
+    Tablespoon(),
+    Teaspoon(),
+    Cup(),
   ];
 }
