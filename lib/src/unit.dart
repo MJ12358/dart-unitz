@@ -60,7 +60,7 @@ abstract class Unit implements Comparable<Unit> {
   ///
   /// Taking into account your [Unitz] configuration.
   num get formatted {
-    final num result = _toPrecision();
+    final num result = _rounded;
     if (Unitz.removeTrailingZeros) {
       return _removeTrailingZeros(result);
     }
@@ -102,7 +102,7 @@ abstract class Unit implements Comparable<Unit> {
   @override
   String toString() {
     if (Unitz.usePrefix) {
-      return '${_truncate()} ${prefix.symbol}$symbol';
+      return '$_mantissa ${prefix.symbol}$symbol';
     }
     return '$formatted $symbol';
   }
@@ -120,12 +120,17 @@ abstract class Unit implements Comparable<Unit> {
   @override
   int get hashCode => Object.hash(value, name, symbol);
 
-  num _toPrecision() {
-    final double p = Unitz.precision.toDouble();
-    final double mod = math.pow(10, p).toDouble();
-    return (_value * mod).round().toDouble() / mod;
+  /// The value rounded to the configured precision.
+  num get _rounded {
+    final int places = Unitz.precision;
+    if (places <= 0) {
+      return _value.roundToDouble();
+    }
+    final double scale = math.pow(10, places).toDouble();
+    return (_value * scale).roundToDouble() / scale;
   }
 
+  /// Removes trailing zeros from the given value if necessary.
   num _removeTrailingZeros(num v) {
     final bool hasTrailingZero = v.truncateToDouble() == v;
     if (hasTrailingZero) {
@@ -134,17 +139,18 @@ abstract class Unit implements Comparable<Unit> {
     return v;
   }
 
-  String _truncate() {
+  /// The mantissa of the value based on the unit prefix power.
+  String get _mantissa {
     final num power = prefix.power;
-
+    // calculate the exponent
     num exp = math.log(_value) / math.log(power);
-
+    // sanitize the exponent
     if (exp.isNaN || exp.isInfinite) {
       exp = 1;
     } else {
       exp = exp.floor();
     }
-
+    // divide out the prefix and format the result
     return (_value / math.pow(power, exp)).toStringAsFixed(0);
   }
 }
