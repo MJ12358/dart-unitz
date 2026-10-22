@@ -66,3 +66,10 @@ extension UnitExtension on Unit {
     return a >= b;
   }
 }
+
+extension UnitListExtension on List<Unit> {
+  /// Returns the names of all units in the list.
+  List<String> get names {
+    return map((Unit unit) => unit.name).toList();
+  }
+}
