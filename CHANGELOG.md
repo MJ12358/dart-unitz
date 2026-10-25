@@ -1,5 +1,10 @@
 # Dart Unitz
 
+## [0.0.15]
+
+- Add more `Volume` units.
+- Modify `scalar`, `rounded` and `matissa` functions.
+
 ## [0.0.14]
 
 - Add `Volume` units.
