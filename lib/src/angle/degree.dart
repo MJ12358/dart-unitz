@@ -25,12 +25,12 @@ class Degree extends Angle {
 
   @override
   num toBase() {
-    return value * math.pi / factor;
+    return (value * math.pi) / factor;
   }
 
   @override
   num fromBase(num base) {
-    return base * factor / math.pi;
+    return (base * factor) / math.pi;
   }
 
   @override
