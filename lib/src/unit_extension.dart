@@ -40,29 +40,29 @@ extension UnitExtension on Unit {
 
   /// Less than operator for two units.
   bool operator <(Unit other) {
-    final num a = base.newInstance(toBase()).formatted;
-    final num b = other.base.newInstance(other.toBase()).formatted;
+    final num a = base.newInstance(toBase()).scalar;
+    final num b = other.base.newInstance(other.toBase()).scalar;
     return a < b;
   }
 
   /// Less than or equal to operator for two units.
   bool operator <=(Unit other) {
-    final num a = base.newInstance(toBase()).formatted;
-    final num b = other.base.newInstance(other.toBase()).formatted;
+    final num a = base.newInstance(toBase()).scalar;
+    final num b = other.base.newInstance(other.toBase()).scalar;
     return a <= b;
   }
 
   /// Greater than operator for two units.
   bool operator >(Unit other) {
-    final num a = base.newInstance(toBase()).formatted;
-    final num b = other.base.newInstance(other.toBase()).formatted;
+    final num a = base.newInstance(toBase()).scalar;
+    final num b = other.base.newInstance(other.toBase()).scalar;
     return a > b;
   }
 
   /// Greater than or equal to operator for two units.
   bool operator >=(Unit other) {
-    final num a = base.newInstance(toBase()).formatted;
-    final num b = other.base.newInstance(other.toBase()).formatted;
+    final num a = base.newInstance(toBase()).scalar;
+    final num b = other.base.newInstance(other.toBase()).scalar;
     return a >= b;
   }
 }

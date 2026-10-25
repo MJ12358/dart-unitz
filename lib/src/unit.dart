@@ -56,10 +56,8 @@ abstract class Unit implements Comparable<Unit> {
   /// The type of prefix used for this unit.
   Type get prefixType;
 
-  /// The formatted value.
-  ///
-  /// Taking into account your [Unitz] configuration.
-  num get formatted {
+  /// The scalar value based on the unit prefix and configuration.
+  num get scalar {
     final num result = _rounded;
     if (Unitz.removeTrailingZeros) {
       return _removeTrailingZeros(result);
@@ -94,8 +92,8 @@ abstract class Unit implements Comparable<Unit> {
 
   @override
   int compareTo(Unit other) {
-    final num a = base.newInstance(toBase()).formatted;
-    final num b = other.base.newInstance(other.toBase()).formatted;
+    final num a = base.newInstance(toBase()).scalar;
+    final num b = other.base.newInstance(other.toBase()).scalar;
     return a.compareTo(b);
   }
 
@@ -104,7 +102,7 @@ abstract class Unit implements Comparable<Unit> {
     if (Unitz.usePrefix) {
       return '$_mantissa ${prefix.symbol}$symbol';
     }
-    return '$formatted $symbol';
+    return '$scalar $symbol';
   }
 
   @override
@@ -112,23 +110,13 @@ abstract class Unit implements Comparable<Unit> {
     if (other is! Unit) {
       return false;
     }
-    final num a = base.newInstance(toBase()).formatted;
-    final num b = other.base.newInstance(other.toBase()).formatted;
+    final num a = base.newInstance(toBase()).scalar;
+    final num b = other.base.newInstance(other.toBase()).scalar;
     return a == b;
   }
 
   @override
   int get hashCode => Object.hash(value, name, symbol);
-
-  /// The value rounded to the configured precision.
-  num get _rounded {
-    final int places = Unitz.precision;
-    if (places <= 0) {
-      return _value.roundToDouble();
-    }
-    final double scale = math.pow(10, places).toDouble();
-    return (_value * scale).roundToDouble() / scale;
-  }
 
   /// Removes trailing zeros from the given value if necessary.
   num _removeTrailingZeros(num v) {
@@ -140,8 +128,12 @@ abstract class Unit implements Comparable<Unit> {
   }
 
   /// The mantissa of the value based on the unit prefix power.
-  String get _mantissa {
+  num get _mantissa {
     final num power = prefix.power;
+    // Nothing to do for zero or non-finite values
+    if (_value == 0 || !_value.isFinite) {
+      return _value;
+    }
     // calculate the exponent
     num exp = math.log(_value) / math.log(power);
     // sanitize the exponent
@@ -151,6 +143,37 @@ abstract class Unit implements Comparable<Unit> {
       exp = exp.floor();
     }
     // divide out the prefix and format the result
-    return (_value / math.pow(power, exp)).toStringAsFixed(0);
+    return (_value / math.pow(power, exp)).round();
+  }
+
+  /// The value rounded to the configured precision.
+  ///
+  /// For values greater than or equal to 1,
+  /// rounds to the specified number of decimal places.
+  ///
+  /// For values less than 1,
+  /// rounds to the specified number of significant figures.
+  num get _rounded {
+    final int places = Unitz.precision;
+    // Nothing to do for non-positive precision, zero, or non-finite values.
+    if (places <= 0 || _value == 0 || !_value.isFinite) {
+      return _value;
+    }
+    // For |value| >= 1, round to decimal places.
+    if (_value.abs() >= 1) {
+      final double scale = math.pow(10, places).toDouble();
+      return (_value * scale).roundToDouble() / scale;
+    }
+    // For |value| < 1, round to `places` significant figures.
+    int exp = (math.log(_value.abs()) / math.ln10).floor();
+    // Correct for floating-point drift near exact powers of ten.
+    if (_value.abs() >= math.pow(10, exp + 1)) {
+      exp += 1;
+    } else if (_value.abs() < math.pow(10, exp)) {
+      exp -= 1;
+    }
+    final int shift = places - 1 - exp; // may be positive or negative
+    final double scale = math.pow(10, shift).toDouble();
+    return (_value * scale).roundToDouble() / scale;
   }
 }
