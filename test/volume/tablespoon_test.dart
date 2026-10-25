@@ -49,6 +49,8 @@ void main() {
     expect(Tablespoon(2) == Teaspoon(6), isTrue);
     expect(Tablespoon(4) == Teaspoon(12), isTrue);
     expect(Tablespoon(16) == Cup(1), isTrue);
+    expect(Tablespoon(1.5) == Teaspoon(3), isFalse);
+    expect(Tablespoon(17) == Cup(1), isFalse);
   });
 
   test('toString', () {

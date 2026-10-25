@@ -2,16 +2,17 @@ import 'package:dart_unitz/dart_unitz.dart';
 import 'package:test/test.dart';
 
 List<Unit> unitList = <Unit>[
-  CubicInch(14.438),
-  CubicFoot(0.0083550),
+  CubicInch(14.437499999079),
+  CubicFoot(0.008355034721692),
   CubicMetre(Cup().factor),
-  CubicYard(0.00030945),
-  Litre(0.23659),
-  Tablespoon(0.062500),
-  Teaspoon(0.020833),
+  CubicYard(0.00030944573043),
+  Litre(0.23658823648491),
+  Tablespoon(15.999999998107),
+  Teaspoon(47.999999994322),
 ];
 
 void main() {
+  Unitz.precision = 6;
   test('constructor', () {
     final Cup cup = Cup();
     expect(cup.value, 0);
@@ -48,6 +49,8 @@ void main() {
   test('equality (explicit)', () {
     expect(Cup(1) == Tablespoon(16), isTrue);
     expect(Cup(1) == Teaspoon(48), isTrue);
+    expect(Cup(1) == Tablespoon(17), isFalse);
+    expect(Cup(1) == Teaspoon(49), isFalse);
   });
 
   test('toString', () {

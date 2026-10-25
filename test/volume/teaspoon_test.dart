@@ -45,10 +45,13 @@ void main() {
   });
 
   test('equality (explicit)', () {
+    Unitz.precision = 6;
     expect(Teaspoon(1) == Tablespoon(0.333333), isTrue);
     expect(Teaspoon(3) == Tablespoon(1), isTrue);
     expect(Teaspoon(6) == Tablespoon(2), isTrue);
     expect(Teaspoon(48) == Cup(1), isTrue);
+    expect(Teaspoon(1) == Tablespoon(0.333334), isFalse);
+    expect(Teaspoon(49) == Cup(1), isFalse);
   });
 
   test('toString', () {

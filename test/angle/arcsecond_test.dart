@@ -9,6 +9,7 @@ List<Unit> unitList = <Unit>[
 ];
 
 void main() {
+  Unitz.precision = 3;
   test('constructor', () {
     final ArcSecond arcsecond = ArcSecond();
     expect(arcsecond.value, 0);
