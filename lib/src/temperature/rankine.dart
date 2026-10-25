@@ -34,12 +34,12 @@ class Rankine extends Temperature {
 
   @override
   num toBase() {
-    return 5 * value / 9;
+    return (5 * value) / 9;
   }
 
   @override
   num fromBase(num base) {
-    return 9 * base / 5;
+    return (9 * base) / 5;
   }
 
   @override
