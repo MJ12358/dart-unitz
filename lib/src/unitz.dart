@@ -13,7 +13,21 @@ abstract class Unitz {
   ///
   /// This applies when retrieving the `formatted` value.
   /// But also applies to `compareTo`, `==` and other operators.
-  static int precision = 2;
+  static int get precision {
+    return _precision;
+  }
+
+  static set precision(int value) {
+    if (value < 0) {
+      throw ArgumentError('Precision must be non-negative.');
+    }
+    if (value > 308) {
+      throw ArgumentError('Precision must be less than 308.');
+    }
+    _precision = value;
+  }
+
+  static int _precision = 2;
 
   /// Used to strip trailing zeros from the `formatted` value.
   static bool removeTrailingZeros = true;
