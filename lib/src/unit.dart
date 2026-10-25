@@ -137,11 +137,7 @@ abstract class Unit implements Comparable<Unit> {
     // calculate the exponent
     num exp = math.log(_value) / math.log(power);
     // sanitize the exponent
-    if (exp.isNaN || exp.isInfinite) {
-      exp = 1;
-    } else {
-      exp = exp.floor();
-    }
+    exp = exp.isFinite ? exp.floor() : exp;
     // divide out the prefix and format the result
     return (_value / math.pow(power, exp)).round();
   }
@@ -161,19 +157,21 @@ abstract class Unit implements Comparable<Unit> {
     }
     // For |value| >= 1, round to decimal places.
     if (_value.abs() >= 1) {
-      final double scale = math.pow(10, places).toDouble();
-      return (_value * scale).roundToDouble() / scale;
+      final double placesScale = math.pow(10, places).toDouble();
+      return (_value * placesScale).roundToDouble() / placesScale;
     }
     // For |value| < 1, round to `places` significant figures.
     int exp = (math.log(_value.abs()) / math.ln10).floor();
     // Correct for floating-point drift near exact powers of ten.
-    if (_value.abs() >= math.pow(10, exp + 1)) {
+    final double expScale = math.pow(10, exp).toDouble();
+    final double mantissa = _value.abs() / expScale;
+    if (mantissa >= 10) {
       exp += 1;
-    } else if (_value.abs() < math.pow(10, exp)) {
+    } else if (mantissa < 1) {
       exp -= 1;
     }
     final int shift = places - 1 - exp; // may be positive or negative
-    final double scale = math.pow(10, shift).toDouble();
-    return (_value * scale).roundToDouble() / scale;
+    final double shiftScale = math.pow(10, shift).toDouble();
+    return (_value * shiftScale).roundToDouble() / shiftScale;
   }
 }
