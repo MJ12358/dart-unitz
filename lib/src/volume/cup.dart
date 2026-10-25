@@ -19,7 +19,7 @@ class Cup extends Volume {
   String get symbol => 'cup';
 
   @override
-  num get factor => 0.0002365882365;
+  num get factor => 0.00023658823648491;
 
   @override
   num toBase() {

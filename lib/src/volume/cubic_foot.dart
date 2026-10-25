@@ -19,7 +19,7 @@ class CubicFoot extends Volume {
   String get symbol => 'ft³';
 
   @override
-  num get factor => 0.028316846592;
+  num get factor => 0.028316846591991;
 
   @override
   num toBase() {

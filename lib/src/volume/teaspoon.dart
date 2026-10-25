@@ -19,7 +19,7 @@ class Teaspoon extends Volume {
   String get symbol => 'tsp';
 
   @override
-  num get factor => 0.00000492892;
+  num get factor => 0.000004928921594;
 
   @override
   num toBase() {

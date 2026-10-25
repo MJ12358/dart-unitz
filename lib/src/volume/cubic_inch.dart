@@ -19,7 +19,7 @@ class CubicInch extends Volume {
   String get symbol => 'in³';
 
   @override
-  num get factor => 0.000016387;
+  num get factor => 0.000016387064;
 
   @override
   num toBase() {
