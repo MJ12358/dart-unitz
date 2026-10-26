@@ -12,10 +12,10 @@ Additionally, the library is designed to be easily expandable, meaning that deve
 
 - ✔ Angle
 - ✔ Length
+- ✔ Mass
 - ✔ Temperature
 - ✔ Time
 - ✔ Volume
-- [ ] Mass
 - [ ] Electric current
 - [ ] Luminous intensity
 - [ ] Amount of substance
