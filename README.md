@@ -11,6 +11,7 @@ Additionally, the library is designed to be easily expandable, meaning that deve
 ## WIP
 
 - ✔ Angle
+- ✔ Information
 - ✔ Length
 - ✔ Mass
 - ✔ Temperature
