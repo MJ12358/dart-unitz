@@ -2,7 +2,7 @@ import 'package:dart_unitz/dart_unitz.dart';
 import 'package:test/test.dart';
 
 List<Unit> unitList = <Unit>[
-  Gram(0.002204622476038),
+  Gram(453.5924),
   Kilogram(Pound().factor),
   Ounce(15.999982030208),
   Tonne(0.0004535924),
