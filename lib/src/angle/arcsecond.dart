@@ -33,7 +33,7 @@ class ArcSecond extends Angle {
   }
 
   @override
-  Unit newInstance([Object? value]) {
+  Unit instance([Object? value]) {
     return ArcSecond(value);
   }
 }

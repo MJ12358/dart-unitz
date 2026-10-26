@@ -5,64 +5,64 @@ extension UnitExtension on Unit {
   /// Adds two units together.
   Unit operator +(Unit other) {
     final num b = fromBase(other.toBase());
-    return newInstance(value + b);
+    return instance(value + b);
   }
 
   /// Subtracts two units.
   Unit operator -(Unit other) {
     final num b = fromBase(other.toBase());
-    return newInstance(value - b);
+    return instance(value - b);
   }
 
   /// Multiplies two units together.
   Unit operator *(Unit other) {
     final num b = fromBase(other.toBase());
-    return newInstance(value * b);
+    return instance(value * b);
   }
 
   /// Divides two units.
   Unit operator /(Unit other) {
     final num b = fromBase(other.toBase());
-    return newInstance(value / b);
+    return instance(value / b);
   }
 
   /// Integer divides two units.
   Unit operator ~/(Unit other) {
     final num b = fromBase(other.toBase());
-    return newInstance(value ~/ b);
+    return instance(value ~/ b);
   }
 
   /// Modulo operator for two units.
   Unit operator %(Unit other) {
     final num b = fromBase(other.toBase());
-    return newInstance(value % b);
+    return instance(value % b);
   }
 
   /// Less than operator for two units.
   bool operator <(Unit other) {
-    final num a = base.newInstance(toBase()).scalar;
-    final num b = other.base.newInstance(other.toBase()).scalar;
+    final num a = base.instance(toBase()).scalar;
+    final num b = other.base.instance(other.toBase()).scalar;
     return a < b;
   }
 
   /// Less than or equal to operator for two units.
   bool operator <=(Unit other) {
-    final num a = base.newInstance(toBase()).scalar;
-    final num b = other.base.newInstance(other.toBase()).scalar;
+    final num a = base.instance(toBase()).scalar;
+    final num b = other.base.instance(other.toBase()).scalar;
     return a <= b;
   }
 
   /// Greater than operator for two units.
   bool operator >(Unit other) {
-    final num a = base.newInstance(toBase()).scalar;
-    final num b = other.base.newInstance(other.toBase()).scalar;
+    final num a = base.instance(toBase()).scalar;
+    final num b = other.base.instance(other.toBase()).scalar;
     return a > b;
   }
 
   /// Greater than or equal to operator for two units.
   bool operator >=(Unit other) {
-    final num a = base.newInstance(toBase()).scalar;
-    final num b = other.base.newInstance(other.toBase()).scalar;
+    final num a = base.instance(toBase()).scalar;
+    final num b = other.base.instance(other.toBase()).scalar;
     return a >= b;
   }
 }

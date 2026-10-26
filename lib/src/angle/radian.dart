@@ -33,7 +33,7 @@ class Radian extends Angle {
   }
 
   @override
-  Unit newInstance([Object? value]) {
+  Unit instance([Object? value]) {
     return Radian(value);
   }
 }

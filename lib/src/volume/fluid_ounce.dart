@@ -32,7 +32,7 @@ class FluidOunce extends Volume {
   }
 
   @override
-  Unit newInstance([Object? value]) {
+  Unit instance([Object? value]) {
     return FluidOunce(value);
   }
 }

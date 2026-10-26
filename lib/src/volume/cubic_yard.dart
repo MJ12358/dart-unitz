@@ -32,7 +32,7 @@ class CubicYard extends Volume {
   }
 
   @override
-  Unit newInstance([Object? value]) {
+  Unit instance([Object? value]) {
     return CubicYard(value);
   }
 }

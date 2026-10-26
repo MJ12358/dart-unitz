@@ -51,7 +51,7 @@ abstract class Unit implements Comparable<Unit> {
   num fromBase(num base);
 
   /// Creates a new instance of this class.
-  Unit newInstance([Object? value]);
+  Unit instance([Object? value]);
 
   /// The type of prefix used for this unit.
   Type get prefixType;
@@ -92,8 +92,8 @@ abstract class Unit implements Comparable<Unit> {
 
   @override
   int compareTo(Unit other) {
-    final num a = base.newInstance(toBase()).scalar;
-    final num b = other.base.newInstance(other.toBase()).scalar;
+    final num a = base.instance(toBase()).scalar;
+    final num b = other.base.instance(other.toBase()).scalar;
     return a.compareTo(b);
   }
 
@@ -110,8 +110,8 @@ abstract class Unit implements Comparable<Unit> {
     if (other is! Unit) {
       return false;
     }
-    final num a = base.newInstance(toBase()).scalar;
-    final num b = other.base.newInstance(other.toBase()).scalar;
+    final num a = base.instance(toBase()).scalar;
+    final num b = other.base.instance(other.toBase()).scalar;
     return a == b;
   }
 

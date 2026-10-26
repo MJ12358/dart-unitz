@@ -32,7 +32,7 @@ class Ounce extends Mass {
   }
 
   @override
-  Unit newInstance([Object? value]) {
+  Unit instance([Object? value]) {
     return Ounce(value);
   }
 }

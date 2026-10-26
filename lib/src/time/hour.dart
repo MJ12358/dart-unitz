@@ -33,7 +33,7 @@ class Hour extends Time {
   }
 
   @override
-  Unit newInstance([Object? value]) {
+  Unit instance([Object? value]) {
     return Hour(value);
   }
 }

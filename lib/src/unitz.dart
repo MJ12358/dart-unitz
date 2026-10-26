@@ -52,7 +52,7 @@ abstract class Unitz {
   }) {
     final num base = from.toBase();
     final num result = to.fromBase(base);
-    return to.newInstance(result);
+    return to.instance(result);
   }
 
   /// The list of all unit categories available in Unitz.

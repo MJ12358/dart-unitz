@@ -33,7 +33,7 @@ class Mile extends Length {
   }
 
   @override
-  Unit newInstance([Object? value]) {
+  Unit instance([Object? value]) {
     return Mile(value);
   }
 }

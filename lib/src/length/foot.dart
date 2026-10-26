@@ -34,7 +34,7 @@ class Foot extends Length {
   }
 
   @override
-  Unit newInstance([Object? value]) {
+  Unit instance([Object? value]) {
     return Foot(value);
   }
 }

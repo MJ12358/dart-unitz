@@ -34,7 +34,7 @@ class ArcMinute extends Angle {
   }
 
   @override
-  Unit newInstance([Object? value]) {
+  Unit instance([Object? value]) {
     return ArcMinute(value);
   }
 }

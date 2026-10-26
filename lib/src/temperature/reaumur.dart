@@ -40,7 +40,7 @@ class Reaumur extends Temperature {
   }
 
   @override
-  Unit newInstance([Object? value]) {
+  Unit instance([Object? value]) {
     return Reaumur(value);
   }
 }

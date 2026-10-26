@@ -32,7 +32,7 @@ class Gram extends Mass {
   }
 
   @override
-  Unit newInstance([Object? value]) {
+  Unit instance([Object? value]) {
     return Gram(value);
   }
 }
