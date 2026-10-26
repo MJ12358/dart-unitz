@@ -1,5 +1,11 @@
 # Dart Unitz
 
+## [0.0.16]
+
+- Add `Mass` units.
+- Add more `Volume` units.
+- Update tests.
+
 ## [0.0.15]
 
 - Add more `Volume` units.
