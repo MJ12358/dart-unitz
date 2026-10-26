@@ -67,6 +67,7 @@ extension UnitExtension on Unit {
   }
 }
 
+/// An extension to provide additional functionality on lists of Units.
 extension UnitListExtension on List<Unit> {
   /// Returns the names of all units in the list.
   List<String> get names {
