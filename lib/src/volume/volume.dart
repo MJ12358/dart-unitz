@@ -17,13 +17,17 @@ abstract class Volume extends Unit {
 
   /// A list of all available [Volume] units.
   static final List<Volume> values = <Volume>[
+    CubicFoot(),
     CubicInch(),
     CubicMetre(),
-    CubicFoot(),
     CubicYard(),
+    Cup(),
+    FluidOunce(),
+    Gallon(),
     Litre(),
+    Pint(),
+    Quart(),
     Tablespoon(),
     Teaspoon(),
-    Cup(),
   ];
 }

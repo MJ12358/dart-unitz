@@ -15,6 +15,7 @@ abstract class Angle extends Unit {
   @override
   Type get prefixType => NullPrefix;
 
+  /// A list of all available [Angle] units.
   static final List<Angle> values = <Angle>[
     ArcMinute(),
     ArcSecond(),

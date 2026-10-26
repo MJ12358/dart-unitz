@@ -15,6 +15,7 @@ abstract class Information extends Unit {
   @override
   Type get prefixType => BinaryPrefix;
 
+  /// A list of all available [Information] units.
   static final List<Information> values = <Information>[
     Bit(),
     Byte(),

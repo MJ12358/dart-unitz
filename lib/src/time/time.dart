@@ -15,6 +15,7 @@ abstract class Time extends Unit {
   @override
   Type get prefixType => DecimalPrefix;
 
+  /// A list of all available [Time] units.
   static final List<Time> values = <Time>[
     Second(),
     Minute(),

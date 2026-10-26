@@ -15,6 +15,7 @@ abstract class Length extends Unit {
   @override
   Type get prefixType => DecimalPrefix;
 
+  /// A list of all available [Length] units.
   static final List<Length> values = <Length>[
     AstronomicalUnit(),
     Chain(),

@@ -21,6 +21,7 @@ abstract class Temperature extends Unit {
   @override
   Type get prefixType => NullPrefix;
 
+  /// A list of all available [Temperature] units.
   static final List<Temperature> values = <Temperature>[
     Celsius(),
     Delisle(),
