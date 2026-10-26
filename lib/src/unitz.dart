@@ -11,8 +11,10 @@ abstract class Unitz {
 
   /// The number of decimal places to represent.
   ///
-  /// This applies when retrieving the `formatted` value.
-  /// But also applies to `compareTo`, `==` and other operators.
+  /// Applies when retrieving the [Unit.scalar] value.
+  ///
+  /// But also applies to [Unit.compareTo],
+  /// [Unit.==] and other operators.
   static int get precision {
     return _precision;
   }
@@ -29,13 +31,13 @@ abstract class Unitz {
 
   static int _precision = 2;
 
-  /// Used to strip trailing zeros from the `formatted` value.
+  /// Used to strip trailing zeros from the [Unit.scalar] value.
   static bool removeTrailingZeros = true;
 
   /// Uses a [UnitPrefix] when required.
   static bool usePrefix = prefixType != null;
 
-  /// The type of unit prefix to use.
+  /// The [Type] of unit prefix to use.
   ///
   /// Each unit category has a default unit prefix.
   /// You can override it by setting this property.
@@ -43,7 +45,7 @@ abstract class Unitz {
 
   /// Convert from one unit to another.
   ///
-  /// The [from] Unit should have a value.
+  /// The [from] Unit is the unit you want to convert from.
   ///
   /// The [to] Unit is the type you'd like to convert to.
   static Unit convert({
