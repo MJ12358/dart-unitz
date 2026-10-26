@@ -60,6 +60,7 @@ abstract class Unitz {
     Angle,
     Information,
     Length,
+    Mass,
     Temperature,
     Time,
     Volume,
