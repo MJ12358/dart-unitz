@@ -6,6 +6,12 @@ List<Unit> unitList = <Unit>[
   CubicFoot(27),
   CubicMetre(CubicYard().factor),
   Litre(764.555),
+  Gallon(201.974),
+  Quart(807.896),
+  Pint(1615.792),
+  Cup(3231.584),
+  Tablespoon(51697.344),
+  Teaspoon(155092.032),
 ];
 
 void main() {

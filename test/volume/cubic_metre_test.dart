@@ -6,6 +6,12 @@ List<Unit> unitList = <Unit>[
   CubicFoot(1 / CubicFoot().factor),
   CubicYard(1 / CubicYard().factor),
   Litre(1 / Litre().factor),
+  Gallon(1 / Gallon().factor),
+  Quart(1 / Quart().factor),
+  Pint(1 / Pint().factor),
+  Cup(1 / Cup().factor),
+  Tablespoon(1 / Tablespoon().factor),
+  Teaspoon(1 / Teaspoon().factor),
 ];
 
 void main() {

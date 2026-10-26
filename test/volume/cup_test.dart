@@ -7,6 +7,9 @@ List<Unit> unitList = <Unit>[
   CubicMetre(Cup().factor),
   CubicYard(0.00030944573043),
   Litre(0.23658823648491),
+  Gallon(0.062499999996002),
+  Quart(0.25),
+  Pint(0.5),
   Tablespoon(15.999999998107),
   Teaspoon(47.999999994322),
 ];
