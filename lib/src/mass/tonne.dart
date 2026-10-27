@@ -22,16 +22,6 @@ class Tonne extends Mass {
   num get scale => 1000;
 
   @override
-  num toBase() {
-    return value * scale;
-  }
-
-  @override
-  num fromBase(num base) {
-    return base / scale;
-  }
-
-  @override
   Unit instance([Object? value]) {
     return Tonne(value);
   }

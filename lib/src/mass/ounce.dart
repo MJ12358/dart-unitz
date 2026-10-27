@@ -22,16 +22,6 @@ class Ounce extends Mass {
   num get scale => 0.028349556839727;
 
   @override
-  num toBase() {
-    return value * scale;
-  }
-
-  @override
-  num fromBase(num base) {
-    return base / scale;
-  }
-
-  @override
   Unit instance([Object? value]) {
     return Ounce(value);
   }
