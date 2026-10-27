@@ -25,16 +25,6 @@ class Inch extends Length {
   num get scale => 0.0254;
 
   @override
-  num toBase() {
-    return value * scale;
-  }
-
-  @override
-  num fromBase(num base) {
-    return base / scale;
-  }
-
-  @override
   Unit instance([Object? value]) {
     return Inch(value);
   }

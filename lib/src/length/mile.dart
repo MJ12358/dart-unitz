@@ -23,16 +23,6 @@ class Mile extends Length {
   num get scale => 1609.344;
 
   @override
-  num toBase() {
-    return value * scale;
-  }
-
-  @override
-  num fromBase(num base) {
-    return base / scale;
-  }
-
-  @override
   Unit instance([Object? value]) {
     return Mile(value);
   }

@@ -23,16 +23,6 @@ class LightYear extends Length {
   num get scale => 9.4607e15;
 
   @override
-  num toBase() {
-    return value * scale;
-  }
-
-  @override
-  num fromBase(num base) {
-    return base / scale;
-  }
-
-  @override
   Unit instance([Object? value]) {
     return LightYear(value);
   }

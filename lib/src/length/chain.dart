@@ -23,16 +23,6 @@ class Chain extends Length {
   num get scale => 20.1168;
 
   @override
-  num toBase() {
-    return value * scale;
-  }
-
-  @override
-  num fromBase(num base) {
-    return base / scale;
-  }
-
-  @override
   Unit instance([Object? value]) {
     return Chain(value);
   }

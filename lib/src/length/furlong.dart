@@ -23,16 +23,6 @@ class Furlong extends Length {
   num get scale => 201.168;
 
   @override
-  num toBase() {
-    return value * scale;
-  }
-
-  @override
-  num fromBase(num base) {
-    return base / scale;
-  }
-
-  @override
   Unit instance([Object? value]) {
     return Furlong(value);
   }

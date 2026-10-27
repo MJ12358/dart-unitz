@@ -23,16 +23,6 @@ class AstronomicalUnit extends Length {
   num get scale => 1.495978707e11;
 
   @override
-  num toBase() {
-    return value * scale;
-  }
-
-  @override
-  num fromBase(num base) {
-    return base / scale;
-  }
-
-  @override
   Unit instance([Object? value]) {
     return AstronomicalUnit(value);
   }

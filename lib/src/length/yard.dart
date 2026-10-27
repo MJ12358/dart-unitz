@@ -23,16 +23,6 @@ class Yard extends Length {
   num get scale => 0.9144;
 
   @override
-  num toBase() {
-    return value * scale;
-  }
-
-  @override
-  num fromBase(num base) {
-    return base / scale;
-  }
-
-  @override
   Unit instance([Object? value]) {
     return Yard(value);
   }
