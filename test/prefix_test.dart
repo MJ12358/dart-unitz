@@ -4,6 +4,8 @@ import 'package:dart_unitz/dart_unitz.dart';
 import 'package:test/test.dart';
 
 void main() {
+  Unitz.usePrefix = true;
+
   test('decimalPrefixOrder', () {
     final List<UnitPrefix> arr = DecimalPrefix.values;
 
@@ -25,8 +27,6 @@ void main() {
   });
 
   test('decimalPrefixValue', () {
-    Unitz.usePrefix = true;
-
     final Map<Unit, String> results = <Unit, String>{
       Metre(1e-30): '1 qm',
       Meter(1e-27): '1 rm',
@@ -55,14 +55,12 @@ void main() {
       Metre(1e+30): '1 Qm',
     };
 
-    for (final Unit u in results.keys) {
-      expect(u.toString(), results[u]);
+    for (final MapEntry<Unit, String> entry in results.entries) {
+      expect(entry.key.toString(), entry.value);
     }
   });
 
   test('binaryPrefixValue', () {
-    Unitz.usePrefix = true;
-
     final Map<Unit, String> results = <Unit, String>{
       Bit(1): '1 b',
       Bit(1024): '1024 b',
@@ -76,8 +74,8 @@ void main() {
       // Bit(pow(2, 80)): '1 Yib',
     };
 
-    for (final Unit u in results.keys) {
-      expect(u.toString(), results[u]);
+    for (final MapEntry<Unit, String> entry in results.entries) {
+      expect(entry.key.toString(), entry.value);
     }
   });
 }
