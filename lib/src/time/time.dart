@@ -15,16 +15,6 @@ abstract class Time extends Unit {
   @override
   Type get prefixType => DecimalPrefix;
 
-  @override
-  num toBase() {
-    return value * scale;
-  }
-
-  @override
-  num fromBase(num base) {
-    return base / scale;
-  }
-
   /// A list of all available [Time] units.
   static final List<Time> values = <Time>[
     Second(),
