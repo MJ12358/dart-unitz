@@ -4,9 +4,9 @@ A simple and expandable unit conversion library.
 
 This package is designed to provide a straightforward and versatile solution for performing unit conversions within an application.
 
-With a focus on ease of use, the library offers a user-friendly interface that allows developers to quickly and easily convert between a wide variety of units, including length, weight, temperature, and more (work in progress).
+With a focus on ease of use, the library offers a user-friendly interface that allows developers to quickly and easily convert between a wide variety of units, including length, mass, temperature and more.
 
-Additionally, the library is designed to be easily expandable, meaning that developers can add new units or custom conversion factors as needed to meet the specific requirements of their application.
+This library is designed to be easily expandable, meaning that developers can add new units or custom conversion factors as needed to meet the specific requirements of their application.
 
 ## WIP
 
@@ -42,15 +42,15 @@ assert(conversion2 == Radian(6.28));
 assert(conversion2 == Radian(2 * pi));
 ```
 
-Addition, subtraction, multiplication and division of arbitrary units.
+Addition, subtraction, multiplication and division.
 
 ```dart
-final Celsius freezingInCelsius = Celsius(0);
-final Fahrenheit boilingInFahrenheit = Fahrenheit(212);
+  final Celsius c1 = Celsius().freezing;
+  final Celsius c2 = Celsius().boiling;
 
-final Unit result = freezingInCelsius + boilingInFahrenheit;
+  final Unit result = c1 + c2;
 
-assert(result == Celsius(100));
+  expect(result, equals(Celsius().boiling));
 ```
 
 Get a formatted string.
