@@ -31,7 +31,7 @@ class Reaumur extends Temperature {
 
   @override
   num toBase() {
-    return value * 5 / 4 + factor;
+    return (value * (5 / 4)) + factor;
   }
 
   @override
