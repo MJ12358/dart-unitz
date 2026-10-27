@@ -22,16 +22,6 @@ class CubicInch extends Volume {
   num get scale => 0.000016387064;
 
   @override
-  num toBase() {
-    return value * scale;
-  }
-
-  @override
-  num fromBase(num base) {
-    return base / scale;
-  }
-
-  @override
   Unit instance([Object? value]) {
     return CubicInch(value);
   }

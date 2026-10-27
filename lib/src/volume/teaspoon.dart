@@ -22,16 +22,6 @@ class Teaspoon extends Volume {
   num get scale => 0.000004928921594;
 
   @override
-  num toBase() {
-    return value * scale;
-  }
-
-  @override
-  num fromBase(num base) {
-    return base / scale;
-  }
-
-  @override
   Unit instance([Object? value]) {
     return Teaspoon(value);
   }
