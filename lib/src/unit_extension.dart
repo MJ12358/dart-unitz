@@ -38,6 +38,11 @@ extension UnitExtension on Unit {
     return instance(value % b);
   }
 
+  /// Negates the unit.
+  Unit operator -() {
+    return instance(-value);
+  }
+
   /// Less than operator for two units.
   bool operator <(Unit other) {
     final num a = base.instance(toBase()).scalar;
