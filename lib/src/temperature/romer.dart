@@ -28,16 +28,16 @@ class Romer extends Temperature {
   Romer get freezing => Romer(7.5);
 
   @override
-  num get factor => 273.15;
+  num get scale => 273.15;
 
   @override
   num toBase() {
-    return (value - 7.5) * (40 / 21) + factor;
+    return (value - 7.5) * (40 / 21) + scale;
   }
 
   @override
   num fromBase(num base) {
-    return (base - factor) * (21 / 40) + 7.5;
+    return (base - scale) * (21 / 40) + 7.5;
   }
 
   @override

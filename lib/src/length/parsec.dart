@@ -21,16 +21,16 @@ class Parsec extends Length {
   String get symbol => 'pc';
 
   @override
-  num get factor => 3.0856775814913673e16;
+  num get scale => 3.0856775814913673e16;
 
   @override
   num toBase() {
-    return value * factor;
+    return value * scale;
   }
 
   @override
   num fromBase(num base) {
-    return base / factor;
+    return base / scale;
   }
 
   @override

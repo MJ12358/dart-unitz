@@ -2,12 +2,12 @@ import 'package:dart_unitz/dart_unitz.dart';
 import 'package:test/test.dart';
 
 List<Unit> unitList = <Unit>[
-  Chain(1 / Chain().factor),
-  Foot(1 / Foot().factor),
-  Inch(1 / Inch().factor),
-  Yard(1 / Yard().factor),
-  Mile(1 / Mile().factor),
-  LightYear(1 / LightYear().factor),
+  Chain(1 / Chain().scale),
+  Foot(1 / Foot().scale),
+  Inch(1 / Inch().scale),
+  Yard(1 / Yard().scale),
+  Mile(1 / Mile().scale),
+  LightYear(1 / LightYear().scale),
 ];
 
 void main() {

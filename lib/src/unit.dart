@@ -38,8 +38,15 @@ abstract class Unit implements Comparable<Unit> {
   /// The symbol for this unit.
   String get symbol;
 
-  /// The common factor for this unit.
-  num get factor;
+  /// The scale for this unit.
+  num get scale;
+
+  /// The offset for this unit, if applicable.
+  num get offset => 0;
+
+  /// Indicates whether this unit
+  /// has an affine transformation (non-zero offset).
+  bool get isAffine => offset != 0;
 
   /// The base unit.
   Unit get base;

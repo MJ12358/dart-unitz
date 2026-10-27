@@ -2,16 +2,16 @@ import 'package:dart_unitz/dart_unitz.dart';
 import 'package:test/test.dart';
 
 List<Unit> unitList = <Unit>[
-  CubicInch(1 / CubicInch().factor),
-  CubicFoot(1 / CubicFoot().factor),
-  CubicYard(1 / CubicYard().factor),
-  Litre(1 / Litre().factor),
-  Gallon(1 / Gallon().factor),
-  Quart(1 / Quart().factor),
-  Pint(1 / Pint().factor),
-  Cup(1 / Cup().factor),
-  Tablespoon(1 / Tablespoon().factor),
-  Teaspoon(1 / Teaspoon().factor),
+  CubicInch(1 / CubicInch().scale),
+  CubicFoot(1 / CubicFoot().scale),
+  CubicYard(1 / CubicYard().scale),
+  Litre(1 / Litre().scale),
+  Gallon(1 / Gallon().scale),
+  Quart(1 / Quart().scale),
+  Pint(1 / Pint().scale),
+  Cup(1 / Cup().scale),
+  Tablespoon(1 / Tablespoon().scale),
+  Teaspoon(1 / Teaspoon().scale),
 ];
 
 void main() {

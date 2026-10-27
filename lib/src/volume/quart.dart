@@ -19,16 +19,16 @@ class Quart extends Volume {
   String get symbol => 'qt';
 
   @override
-  num get factor => 0.00094635294599999;
+  num get scale => 0.00094635294599999;
 
   @override
   num toBase() {
-    return value * factor;
+    return value * scale;
   }
 
   @override
   num fromBase(num base) {
-    return base / factor;
+    return base / scale;
   }
 
   @override

@@ -19,16 +19,16 @@ class Gallon extends Volume {
   String get symbol => 'gal';
 
   @override
-  num get factor => 0.0037854117840007;
+  num get scale => 0.0037854117840007;
 
   @override
   num toBase() {
-    return value * factor;
+    return value * scale;
   }
 
   @override
   num fromBase(num base) {
-    return base / factor;
+    return base / scale;
   }
 
   @override

@@ -26,7 +26,7 @@ class Kelvin extends Temperature {
   Kelvin get freezing => Kelvin(273.15);
 
   @override
-  num get factor => 1;
+  num get scale => 1;
 
   @override
   num toBase() {

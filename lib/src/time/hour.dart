@@ -20,16 +20,16 @@ class Hour extends Time {
   String get symbol => 'h';
 
   @override
-  num get factor => 3600;
+  num get scale => 3600;
 
   @override
   num toBase() {
-    return value * factor;
+    return value * scale;
   }
 
   @override
   num fromBase(num base) {
-    return base / factor;
+    return base / scale;
   }
 
   @override

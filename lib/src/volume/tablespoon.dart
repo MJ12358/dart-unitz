@@ -19,16 +19,16 @@ class Tablespoon extends Volume {
   String get symbol => 'tbsp';
 
   @override
-  num get factor => 0.000014786764782;
+  num get scale => 0.000014786764782;
 
   @override
   num toBase() {
-    return value * factor;
+    return value * scale;
   }
 
   @override
   num fromBase(num base) {
-    return base / factor;
+    return base / scale;
   }
 
   @override

@@ -28,16 +28,19 @@ class Fahrenheit extends Temperature {
   Fahrenheit get freezing => Fahrenheit(32);
 
   @override
-  num get factor => 273.15;
+  num get scale => 5 / 9;
+
+  @override
+  num get offset => 273.15 - 32 * scale;
 
   @override
   num toBase() {
-    return (value - 32) * (5 / 9) + factor;
+    return value * scale + offset;
   }
 
   @override
   num fromBase(num base) {
-    return (base - factor) * (9 / 5) + 32;
+    return (base - offset) / scale;
   }
 
   @override

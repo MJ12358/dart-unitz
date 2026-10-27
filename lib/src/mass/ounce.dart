@@ -19,16 +19,16 @@ class Ounce extends Mass {
   String get symbol => 'oz';
 
   @override
-  num get factor => 0.028349556839727;
+  num get scale => 0.028349556839727;
 
   @override
   num toBase() {
-    return value * factor;
+    return value * scale;
   }
 
   @override
   num fromBase(num base) {
-    return base / factor;
+    return base / scale;
   }
 
   @override

@@ -21,16 +21,16 @@ class Foot extends Length {
   String get symbol => 'ft';
 
   @override
-  num get factor => 0.3048;
+  num get scale => 0.3048;
 
   @override
   num toBase() {
-    return value * factor;
+    return value * scale;
   }
 
   @override
   num fromBase(num base) {
-    return base / factor;
+    return base / scale;
   }
 
   @override

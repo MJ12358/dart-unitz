@@ -2,7 +2,7 @@ import 'package:dart_unitz/dart_unitz.dart';
 import 'package:test/test.dart';
 
 List<Unit> unitList = <Unit>[
-  Metre(LightYear().factor),
+  Metre(LightYear().scale),
 ];
 
 void main() {

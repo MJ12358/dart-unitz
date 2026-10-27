@@ -20,16 +20,16 @@ class Chain extends Length {
   String get symbol => 'ch';
 
   @override
-  num get factor => 20.1168;
+  num get scale => 20.1168;
 
   @override
   num toBase() {
-    return value * factor;
+    return value * scale;
   }
 
   @override
   num fromBase(num base) {
-    return base / factor;
+    return base / scale;
   }
 
   @override

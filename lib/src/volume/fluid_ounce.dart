@@ -19,16 +19,16 @@ class FluidOunce extends Volume {
   String get symbol => 'fl oz';
 
   @override
-  num get factor => 0.000029573529564;
+  num get scale => 0.000029573529564;
 
   @override
   num toBase() {
-    return value * factor;
+    return value * scale;
   }
 
   @override
   num fromBase(num base) {
-    return base / factor;
+    return base / scale;
   }
 
   @override

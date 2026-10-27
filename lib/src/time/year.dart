@@ -20,16 +20,16 @@ class Year extends Time {
   String get symbol => 'a';
 
   @override
-  num get factor => 31556952;
+  num get scale => 31556952;
 
   @override
   num toBase() {
-    return value * factor;
+    return value * scale;
   }
 
   @override
   num fromBase(num base) {
-    return base / factor;
+    return base / scale;
   }
 
   @override

@@ -19,16 +19,16 @@ class CubicYard extends Volume {
   String get symbol => 'yd³';
 
   @override
-  num get factor => 0.76455485799241;
+  num get scale => 0.76455485799241;
 
   @override
   num toBase() {
-    return value * factor;
+    return value * scale;
   }
 
   @override
   num fromBase(num base) {
-    return base / factor;
+    return base / scale;
   }
 
   @override

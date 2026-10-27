@@ -19,16 +19,16 @@ class Pound extends Mass {
   String get symbol => 'lb';
 
   @override
-  num get factor => 0.45359237;
+  num get scale => 0.45359237;
 
   @override
   num toBase() {
-    return value * factor;
+    return value * scale;
   }
 
   @override
   num fromBase(num base) {
-    return base / factor;
+    return base / scale;
   }
 
   @override

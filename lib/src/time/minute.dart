@@ -20,16 +20,16 @@ class Minute extends Time {
   String get symbol => 'min';
 
   @override
-  num get factor => 60;
+  num get scale => 60;
 
   @override
   num toBase() {
-    return value * factor;
+    return value * scale;
   }
 
   @override
   num fromBase(num base) {
-    return base / factor;
+    return base / scale;
   }
 
   @override

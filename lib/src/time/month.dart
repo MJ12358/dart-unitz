@@ -20,16 +20,16 @@ class Month extends Time {
   String get symbol => 'mo';
 
   @override
-  num get factor => 2629746;
+  num get scale => 2629746;
 
   @override
   num toBase() {
-    return value * factor;
+    return value * scale;
   }
 
   @override
   num fromBase(num base) {
-    return base / factor;
+    return base / scale;
   }
 
   @override

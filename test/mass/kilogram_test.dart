@@ -2,10 +2,10 @@ import 'package:dart_unitz/dart_unitz.dart';
 import 'package:test/test.dart';
 
 List<Unit> unitList = <Unit>[
-  Gram(1 / Gram().factor),
-  Ounce(1 / Ounce().factor),
-  Pound(1 / Pound().factor),
-  Tonne(1 / Tonne().factor),
+  Gram(1 / Gram().scale),
+  Ounce(1 / Ounce().scale),
+  Pound(1 / Pound().scale),
+  Tonne(1 / Tonne().scale),
 ];
 
 void main() {

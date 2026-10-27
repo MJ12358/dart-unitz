@@ -21,16 +21,16 @@ class ArcMinute extends Angle {
 
   @override
   /// 60 arcminutes per degree and 180 degrees per pi radians.
-  num get factor => 60 * 180;
+  num get scale => 60 * 180;
 
   @override
   num toBase() {
-    return (value * math.pi) / factor;
+    return (value * math.pi) / scale;
   }
 
   @override
   num fromBase(num base) {
-    return (base * factor) / math.pi;
+    return (base * scale) / math.pi;
   }
 
   @override

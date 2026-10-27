@@ -19,16 +19,16 @@ class Tonne extends Mass {
   String get symbol => 't';
 
   @override
-  num get factor => 1000;
+  num get scale => 1000;
 
   @override
   num toBase() {
-    return value * factor;
+    return value * scale;
   }
 
   @override
   num fromBase(num base) {
-    return base / factor;
+    return base / scale;
   }
 
   @override

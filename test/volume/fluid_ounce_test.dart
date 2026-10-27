@@ -4,7 +4,7 @@ import 'package:test/test.dart';
 List<Unit> unitList = <Unit>[
   CubicInch(1.8046875000984),
   CubicFoot(0.001044379340335),
-  CubicMetre(FluidOunce().factor),
+  CubicMetre(FluidOunce().scale),
   CubicYard(0.000038680716308),
   Gallon(0.0078125000004244),
   Litre(0.029573529564112),

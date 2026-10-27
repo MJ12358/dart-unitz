@@ -2,7 +2,7 @@ import 'package:dart_unitz/dart_unitz.dart';
 import 'package:test/test.dart';
 
 List<Unit> unitList = <Unit>[
-  Metre(AstronomicalUnit().factor),
+  Metre(AstronomicalUnit().scale),
   // Chain(7.436465e+9),
   // Foot(4.908067e+11),
   // Inch(5.88968e+12),

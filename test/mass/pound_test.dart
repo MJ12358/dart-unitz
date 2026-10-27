@@ -3,7 +3,7 @@ import 'package:test/test.dart';
 
 List<Unit> unitList = <Unit>[
   Gram(453.5924),
-  Kilogram(Pound().factor),
+  Kilogram(Pound().scale),
   Ounce(15.999982030208),
   Tonne(0.0004535924),
 ];

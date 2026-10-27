@@ -2,11 +2,11 @@ import 'package:dart_unitz/dart_unitz.dart';
 import 'package:test/test.dart';
 
 List<Unit> unitList = <Unit>[
-  Minute(1 / Minute().factor),
-  Hour(1 / Hour().factor),
-  Day(1 / Day().factor),
-  Week(1 / Week().factor),
-  Year(1 / Year().factor),
+  Minute(1 / Minute().scale),
+  Hour(1 / Hour().scale),
+  Day(1 / Day().scale),
+  Week(1 / Week().scale),
+  Year(1 / Year().scale),
 ];
 
 void main() {

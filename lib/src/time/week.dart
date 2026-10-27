@@ -20,16 +20,16 @@ class Week extends Time {
   String get symbol => 'wk';
 
   @override
-  num get factor => 604800;
+  num get scale => 604800;
 
   @override
   num toBase() {
-    return value * factor;
+    return value * scale;
   }
 
   @override
   num fromBase(num base) {
-    return base / factor;
+    return base / scale;
   }
 
   @override

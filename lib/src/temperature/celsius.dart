@@ -27,16 +27,16 @@ class Celsius extends Temperature {
   Celsius get freezing => Celsius(0);
 
   @override
-  num get factor => 273.15;
+  num get scale => 273.15;
 
   @override
   num toBase() {
-    return value + factor;
+    return value + scale;
   }
 
   @override
   num fromBase(num base) {
-    return base - factor;
+    return base - scale;
   }
 
   @override

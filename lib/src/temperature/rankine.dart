@@ -30,7 +30,7 @@ class Rankine extends Temperature {
   Rankine get freezing => Rankine(491.67);
 
   @override
-  num get factor => 1;
+  num get scale => 1;
 
   @override
   num toBase() {

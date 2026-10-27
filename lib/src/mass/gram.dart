@@ -19,16 +19,16 @@ class Gram extends Mass {
   String get symbol => 'g';
 
   @override
-  num get factor => 0.001;
+  num get scale => 0.001;
 
   @override
   num toBase() {
-    return value * factor;
+    return value * scale;
   }
 
   @override
   num fromBase(num base) {
-    return base / factor;
+    return base / scale;
   }
 
   @override

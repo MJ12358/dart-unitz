@@ -20,16 +20,16 @@ class AstronomicalUnit extends Length {
   String get symbol => 'au';
 
   @override
-  num get factor => 1.495978707e11;
+  num get scale => 1.495978707e11;
 
   @override
   num toBase() {
-    return value * factor;
+    return value * scale;
   }
 
   @override
   num fromBase(num base) {
-    return base / factor;
+    return base / scale;
   }
 
   @override

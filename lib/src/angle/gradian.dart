@@ -21,16 +21,16 @@ class Gradian extends Angle {
   String get symbol => 'grad';
 
   @override
-  num get factor => 0.015708;
+  num get scale => 0.015708;
 
   @override
   num toBase() {
-    return value * factor;
+    return value * scale;
   }
 
   @override
   num fromBase(num base) {
-    return base / factor;
+    return base / scale;
   }
 
   @override

@@ -19,7 +19,7 @@ class Kilogram extends Mass {
   String get symbol => 'kg';
 
   @override
-  num get factor => 1;
+  num get scale => 1;
 
   @override
   num toBase() {

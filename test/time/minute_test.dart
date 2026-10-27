@@ -2,7 +2,7 @@ import 'package:dart_unitz/dart_unitz.dart';
 import 'package:test/test.dart';
 
 List<Unit> unitList = <Unit>[
-  Second(Minute().factor),
+  Second(Minute().scale),
   Minute(1),
   Hour(1 / 60),
   Day(1 / 1440),
