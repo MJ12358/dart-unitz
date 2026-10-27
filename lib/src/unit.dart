@@ -53,10 +53,22 @@ abstract class Unit implements Comparable<Unit> {
   Unit get base;
 
   /// Converts this unit to the base unit.
-  num toBase();
+  ///
+  /// The default conversion to the base unit
+  /// is a linear transformation
+  /// using [value] * [scale] + [offset].
+  num toBase() {
+    return value * scale + offset;
+  }
 
   /// Converts from the base unit to this unit.
-  num fromBase(num base);
+  ///
+  /// The default conversion from the base unit
+  /// is the inverse of the linear transformation
+  /// using [base - offset] / [scale].
+  num fromBase(num base) {
+    return (base - offset) / scale;
+  }
 
   /// Creates a new instance of this class.
   Unit instance([Object? value]);
