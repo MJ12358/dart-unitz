@@ -23,16 +23,6 @@ class Week extends Time {
   num get scale => 604800;
 
   @override
-  num toBase() {
-    return value * scale;
-  }
-
-  @override
-  num fromBase(num base) {
-    return base / scale;
-  }
-
-  @override
   Unit instance([Object? value]) {
     return Week(value);
   }

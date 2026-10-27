@@ -20,9 +20,6 @@ class Second extends Time {
   String get symbol => 's';
 
   @override
-  num get scale => 1;
-
-  @override
   num toBase() {
     return value;
   }
