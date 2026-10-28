@@ -24,16 +24,6 @@ class Degree extends Angle {
   num get scale => 180;
 
   @override
-  num toBase() {
-    return (value * math.pi) / scale;
-  }
-
-  @override
-  num fromBase(num base) {
-    return (base * scale) / math.pi;
-  }
-
-  @override
   Unit instance([Object? value]) {
     return Degree(value);
   }

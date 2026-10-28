@@ -13,6 +13,16 @@ abstract class Angle extends Unit {
   Unit get base => Radian();
 
   @override
+  num toBase() {
+    return (value * math.pi) / scale;
+  }
+
+  @override
+  num fromBase(num base) {
+    return (base * scale) / math.pi;
+  }
+
+  @override
   Type get prefixType => NullPrefix;
 
   /// A list of all available [Angle] units.
