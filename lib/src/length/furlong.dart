@@ -23,7 +23,7 @@ class Furlong extends Length {
   num get scale => 201.168;
 
   @override
-  Unit instance([Object? value]) {
+  Furlong instance([Object? value]) {
     return Furlong(value);
   }
 }

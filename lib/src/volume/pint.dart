@@ -22,7 +22,7 @@ class Pint extends Volume {
   num get scale => 0.000473176473056;
 
   @override
-  Unit instance([Object? value]) {
+  Pint instance([Object? value]) {
     return Pint(value);
   }
 }

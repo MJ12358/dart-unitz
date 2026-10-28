@@ -22,7 +22,7 @@ class FluidOunce extends Volume {
   num get scale => 0.000029573529564;
 
   @override
-  Unit instance([Object? value]) {
+  FluidOunce instance([Object? value]) {
     return FluidOunce(value);
   }
 }

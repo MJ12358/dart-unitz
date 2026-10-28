@@ -23,7 +23,7 @@ class ArcSecond extends Angle {
   num get scale => 3600 * 180;
 
   @override
-  Unit instance([Object? value]) {
+  ArcSecond instance([Object? value]) {
     return ArcSecond(value);
   }
 }

@@ -29,7 +29,7 @@ class CubicMetre extends Volume {
   }
 
   @override
-  Unit instance([Object? value]) {
+  CubicMetre instance([Object? value]) {
     return CubicMetre(value);
   }
 }
@@ -48,4 +48,9 @@ class CubicMeter extends CubicMetre {
 
   @override
   String get pluralName => 'Cubic meters';
+
+  @override
+  CubicMeter instance([Object? value]) {
+    return CubicMeter(value);
+  }
 }

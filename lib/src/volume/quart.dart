@@ -22,7 +22,7 @@ class Quart extends Volume {
   num get scale => 0.00094635294599999;
 
   @override
-  Unit instance([Object? value]) {
+  Quart instance([Object? value]) {
     return Quart(value);
   }
 }

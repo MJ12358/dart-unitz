@@ -25,7 +25,7 @@ class Inch extends Length {
   num get scale => 0.0254;
 
   @override
-  Unit instance([Object? value]) {
+  Inch instance([Object? value]) {
     return Inch(value);
   }
 }

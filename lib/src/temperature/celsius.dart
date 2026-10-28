@@ -30,7 +30,7 @@ class Celsius extends Temperature {
   num get offset => 273.15;
 
   @override
-  Unit instance([Object? value]) {
+  Celsius instance([Object? value]) {
     return Celsius(value);
   }
 }

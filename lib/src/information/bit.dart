@@ -30,7 +30,7 @@ class Bit extends Information {
   }
 
   @override
-  Unit instance([Object? value]) {
+  Bit instance([Object? value]) {
     return Bit(value);
   }
 }

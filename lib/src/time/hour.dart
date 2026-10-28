@@ -23,7 +23,7 @@ class Hour extends Time {
   num get scale => 3600;
 
   @override
-  Unit instance([Object? value]) {
+  Hour instance([Object? value]) {
     return Hour(value);
   }
 }

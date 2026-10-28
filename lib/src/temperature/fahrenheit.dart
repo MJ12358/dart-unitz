@@ -34,7 +34,7 @@ class Fahrenheit extends Temperature {
   num get offset => 273.15 - 32 * scale;
 
   @override
-  Unit instance([Object? value]) {
+  Fahrenheit instance([Object? value]) {
     return Fahrenheit(value);
   }
 }

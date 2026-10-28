@@ -33,7 +33,7 @@ class Reaumur extends Temperature {
   num get offset => 273.15;
 
   @override
-  Unit instance([Object? value]) {
+  Reaumur instance([Object? value]) {
     return Reaumur(value);
   }
 }

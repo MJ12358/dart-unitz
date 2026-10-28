@@ -23,7 +23,7 @@ class Month extends Time {
   num get scale => 2629746;
 
   @override
-  Unit instance([Object? value]) {
+  Month instance([Object? value]) {
     return Month(value);
   }
 }

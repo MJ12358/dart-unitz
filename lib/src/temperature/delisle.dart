@@ -33,7 +33,7 @@ class Delisle extends Temperature {
   num get offset => 373.15;
 
   @override
-  Unit instance([Object? value]) {
+  Delisle instance([Object? value]) {
     return Delisle(value);
   }
 }

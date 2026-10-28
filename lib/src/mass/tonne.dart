@@ -22,7 +22,7 @@ class Tonne extends Mass {
   num get scale => 1000;
 
   @override
-  Unit instance([Object? value]) {
+  Tonne instance([Object? value]) {
     return Tonne(value);
   }
 }

@@ -37,6 +37,13 @@ void main() {
     }
   });
 
+  // test('compare (explicit)', () {
+  //   final Year year = Year(1);
+  //   expect(year == Day(365), isTrue);
+  //   expect(year == Week(52), isTrue);
+  //   expect(year == Month(12), isTrue);
+  // });
+
   test('equality', () {
     final Year year = Year(1);
     for (final Unit unit in unitList) {

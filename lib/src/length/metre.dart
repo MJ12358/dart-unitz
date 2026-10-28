@@ -30,7 +30,7 @@ class Metre extends Length {
   }
 
   @override
-  Unit instance([Object? value]) {
+  Metre instance([Object? value]) {
     return Metre(value);
   }
 }
@@ -49,4 +49,9 @@ class Meter extends Metre {
 
   @override
   String get pluralName => 'Meters';
+
+  @override
+  Meter instance([Object? value]) {
+    return Meter(value);
+  }
 }

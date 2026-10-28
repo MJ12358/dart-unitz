@@ -22,7 +22,7 @@ class Cup extends Volume {
   num get scale => 0.00023658823648491;
 
   @override
-  Unit instance([Object? value]) {
+  Cup instance([Object? value]) {
     return Cup(value);
   }
 }

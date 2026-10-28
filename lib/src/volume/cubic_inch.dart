@@ -22,7 +22,7 @@ class CubicInch extends Volume {
   num get scale => 0.000016387064;
 
   @override
-  Unit instance([Object? value]) {
+  CubicInch instance([Object? value]) {
     return CubicInch(value);
   }
 }

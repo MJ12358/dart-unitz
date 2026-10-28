@@ -22,7 +22,7 @@ class Gallon extends Volume {
   num get scale => 0.0037854117840007;
 
   @override
-  Unit instance([Object? value]) {
+  Gallon instance([Object? value]) {
     return Gallon(value);
   }
 }

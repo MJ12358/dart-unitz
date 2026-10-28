@@ -34,7 +34,7 @@ class Gradian extends Angle {
   }
 
   @override
-  Unit instance([Object? value]) {
+  Gradian instance([Object? value]) {
     return Gradian(value);
   }
 }

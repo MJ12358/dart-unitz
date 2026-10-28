@@ -23,7 +23,7 @@ class Chain extends Length {
   num get scale => 20.1168;
 
   @override
-  Unit instance([Object? value]) {
+  Chain instance([Object? value]) {
     return Chain(value);
   }
 }

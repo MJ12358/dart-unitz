@@ -33,7 +33,7 @@ class Rankine extends Temperature {
   num get scale => 5 / 9;
 
   @override
-  Unit instance([Object? value]) {
+  Rankine instance([Object? value]) {
     return Rankine(value);
   }
 }

@@ -34,7 +34,7 @@ class Romer extends Temperature {
   num get offset => 273.15 - 7.5 * scale;
 
   @override
-  Unit instance([Object? value]) {
+  Romer instance([Object? value]) {
     return Romer(value);
   }
 }

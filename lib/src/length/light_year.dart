@@ -23,7 +23,7 @@ class LightYear extends Length {
   num get scale => 9.4607e15;
 
   @override
-  Unit instance([Object? value]) {
+  LightYear instance([Object? value]) {
     return LightYear(value);
   }
 }

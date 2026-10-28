@@ -24,7 +24,7 @@ class Degree extends Angle {
   num get scale => 180;
 
   @override
-  Unit instance([Object? value]) {
+  Degree instance([Object? value]) {
     return Degree(value);
   }
 }

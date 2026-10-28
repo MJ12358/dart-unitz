@@ -24,7 +24,7 @@ class Parsec extends Length {
   num get scale => 3.0856775814913673e16;
 
   @override
-  Unit instance([Object? value]) {
+  Parsec instance([Object? value]) {
     return Parsec(value);
   }
 }

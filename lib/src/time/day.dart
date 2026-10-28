@@ -23,7 +23,7 @@ class Day extends Time {
   num get scale => 86400;
 
   @override
-  Unit instance([Object? value]) {
+  Day instance([Object? value]) {
     return Day(value);
   }
 }

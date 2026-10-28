@@ -22,7 +22,7 @@ class Gram extends Mass {
   num get scale => 0.001;
 
   @override
-  Unit instance([Object? value]) {
+  Gram instance([Object? value]) {
     return Gram(value);
   }
 }

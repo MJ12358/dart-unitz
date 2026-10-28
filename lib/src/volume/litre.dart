@@ -22,7 +22,7 @@ class Litre extends Volume {
   num get scale => 0.001;
 
   @override
-  Unit instance([Object? value]) {
+  Litre instance([Object? value]) {
     return Litre(value);
   }
 }
@@ -41,4 +41,9 @@ class Liter extends Litre {
 
   @override
   String get pluralName => 'Liters';
+
+  @override
+  Liter instance([Object? value]) {
+    return Liter(value);
+  }
 }

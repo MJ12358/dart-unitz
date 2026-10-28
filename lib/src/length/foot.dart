@@ -24,7 +24,7 @@ class Foot extends Length {
   num get scale => 0.3048;
 
   @override
-  Unit instance([Object? value]) {
+  Foot instance([Object? value]) {
     return Foot(value);
   }
 }

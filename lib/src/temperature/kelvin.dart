@@ -36,7 +36,7 @@ class Kelvin extends Temperature {
   }
 
   @override
-  Unit instance([Object? value]) {
+  Kelvin instance([Object? value]) {
     return Kelvin(value);
   }
 

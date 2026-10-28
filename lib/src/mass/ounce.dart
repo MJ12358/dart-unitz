@@ -22,7 +22,7 @@ class Ounce extends Mass {
   num get scale => 0.028349556839727;
 
   @override
-  Unit instance([Object? value]) {
+  Ounce instance([Object? value]) {
     return Ounce(value);
   }
 }

@@ -30,7 +30,7 @@ class Second extends Time {
   }
 
   @override
-  Unit instance([Object? value]) {
+  Second instance([Object? value]) {
     return Second(value);
   }
 }

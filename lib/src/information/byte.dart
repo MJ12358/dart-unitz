@@ -33,7 +33,7 @@ class Byte extends Information {
   }
 
   @override
-  Unit instance([Object? value]) {
+  Byte instance([Object? value]) {
     return Byte(value);
   }
 }

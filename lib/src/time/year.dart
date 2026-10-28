@@ -23,7 +23,7 @@ class Year extends Time {
   num get scale => 31556952;
 
   @override
-  Unit instance([Object? value]) {
+  Year instance([Object? value]) {
     return Year(value);
   }
 }

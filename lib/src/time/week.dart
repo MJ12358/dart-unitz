@@ -23,7 +23,7 @@ class Week extends Time {
   num get scale => 604800;
 
   @override
-  Unit instance([Object? value]) {
+  Week instance([Object? value]) {
     return Week(value);
   }
 }

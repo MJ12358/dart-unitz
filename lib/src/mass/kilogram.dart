@@ -29,7 +29,7 @@ class Kilogram extends Mass {
   }
 
   @override
-  Unit instance([Object? value]) {
+  Kilogram instance([Object? value]) {
     return Kilogram(value);
   }
 }

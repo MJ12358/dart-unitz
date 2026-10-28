@@ -23,7 +23,7 @@ class Mile extends Length {
   num get scale => 1609.344;
 
   @override
-  Unit instance([Object? value]) {
+  Mile instance([Object? value]) {
     return Mile(value);
   }
 }
