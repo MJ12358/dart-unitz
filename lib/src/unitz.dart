@@ -35,7 +35,15 @@ abstract class Unitz {
   static bool removeTrailingZeros = true;
 
   /// Uses a [UnitPrefix] when required.
-  static bool usePrefix = prefixType != null;
+  static bool get usePrefix {
+    return _usePrefix && prefixType != null;
+  }
+
+  static set usePrefix(bool value) {
+    _usePrefix = value;
+  }
+
+  static bool _usePrefix = true;
 
   /// The [Type] of unit prefix to use.
   ///
