@@ -23,6 +23,7 @@ void main() {
     expect(cup.pluralName, 'Cups');
     expect(cup.symbol, 'cup');
     expect(cup.toString(), '0 cup');
+    expect(cup.instance(), isA<Cup>());
   });
 
   test('conversion', () {

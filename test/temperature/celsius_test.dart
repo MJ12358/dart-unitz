@@ -18,6 +18,7 @@ void main() {
     expect(c.pluralName, 'Celsius');
     expect(c.symbol, '°C');
     expect(c.toString(), '0 °C');
+    expect(c.instance(), isA<Celsius>());
   });
 
   test('constructor (alt)', () {
@@ -27,6 +28,7 @@ void main() {
     expect(c.pluralName, 'Centigrade');
     expect(c.symbol, '°C');
     expect(c.toString(), '0 °C');
+    expect(c.instance(), isA<Centigrade>());
   });
 
   // Expected: Delisle:<0 °D>

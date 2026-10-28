@@ -18,6 +18,7 @@ void main() {
     expect(tablespoon.pluralName, 'Tablespoons');
     expect(tablespoon.symbol, 'tbsp');
     expect(tablespoon.toString(), '0 tbsp');
+    expect(tablespoon.instance(), isA<Tablespoon>());
   });
 
   test('conversion', () {

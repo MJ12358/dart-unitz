@@ -13,6 +13,7 @@ void main() {
     expect(pc.pluralName, 'Parsecs');
     expect(pc.symbol, 'pc');
     expect(pc.toString(), '0 pc');
+    expect(pc.instance(), isA<Parsec>());
   });
 
   test('conversion', () {

@@ -16,6 +16,7 @@ void main() {
     expect(gradian.pluralName, 'Gradians');
     expect(gradian.symbol, 'grad');
     expect(gradian.toString(), '0 grad');
+    expect(gradian.instance(), isA<Gradian>());
   });
 
   test('conversion', () {

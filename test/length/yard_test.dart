@@ -13,6 +13,7 @@ void main() {
     expect(yard.pluralName, 'Yards');
     expect(yard.symbol, 'yd');
     expect(yard.toString(), '0 yd');
+    expect(yard.instance(), isA<Yard>());
   });
 
   test('conversion', () {

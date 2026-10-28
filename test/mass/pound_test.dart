@@ -16,6 +16,7 @@ void main() {
     expect(pound.pluralName, 'Pounds');
     expect(pound.symbol, 'lb');
     expect(pound.toString(), '0 lb');
+    expect(pound.instance(), isA<Pound>());
   });
 
   test('conversion', () {

@@ -18,6 +18,7 @@ void main() {
     expect(r.pluralName, 'Rømer');
     expect(r.symbol, '°Rø');
     expect(r.toString(), '0 °Rø');
+    expect(r.instance(), isA<Romer>());
   });
 
   test('conversion (boiling)', () {

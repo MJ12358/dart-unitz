@@ -16,6 +16,7 @@ void main() {
     expect(arcminute.pluralName, 'Arc Minutes');
     expect(arcminute.symbol, "'");
     expect(arcminute.toString(), "0 '");
+    expect(arcminute.instance(), isA<ArcMinute>());
   });
 
   test('conversion', () {

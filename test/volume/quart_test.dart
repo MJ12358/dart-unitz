@@ -21,6 +21,7 @@ void main() {
     expect(quart.pluralName, 'Quarts');
     expect(quart.symbol, 'qt');
     expect(quart.toString(), '0 qt');
+    expect(quart.instance(), isA<Quart>());
   });
 
   test('conversion', () {

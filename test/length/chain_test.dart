@@ -17,6 +17,7 @@ void main() {
     expect(chain.pluralName, 'Chains');
     expect(chain.symbol, 'ch');
     expect(chain.toString(), '0 ch');
+    expect(chain.instance(), isA<Chain>());
   });
 
   test('conversion', () {

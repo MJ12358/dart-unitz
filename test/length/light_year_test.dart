@@ -13,6 +13,7 @@ void main() {
     expect(ly.pluralName, 'Light Years');
     expect(ly.symbol, 'ly');
     expect(ly.toString(), '0 ly');
+    expect(ly.instance(), isA<LightYear>());
   });
 
   test('conversion', () {

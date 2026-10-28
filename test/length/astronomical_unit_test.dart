@@ -19,6 +19,7 @@ void main() {
     expect(au.pluralName, 'Astronomical Units');
     expect(au.symbol, 'au');
     expect(au.toString(), '0 au');
+    expect(au.instance(), isA<AstronomicalUnit>());
   });
 
   test('conversion', () {

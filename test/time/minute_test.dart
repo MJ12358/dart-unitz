@@ -18,6 +18,7 @@ void main() {
     expect(minute.pluralName, 'Minutes');
     expect(minute.symbol, 'min');
     expect(minute.toString(), '0 min');
+    expect(minute.instance(), isA<Minute>());
   });
 
   test('conversion', () {

@@ -18,6 +18,7 @@ void main() {
     expect(metre.pluralName, 'Metres');
     expect(metre.symbol, 'm');
     expect(metre.toString(), '0 m');
+    expect(metre.instance(), isA<Metre>());
   });
 
   test('constructor (alt)', () {
@@ -27,6 +28,7 @@ void main() {
     expect(meter.pluralName, 'Meters');
     expect(meter.symbol, 'm');
     expect(meter.toString(), '0 m');
+    expect(meter.instance(), isA<Meter>());
   });
 
   test('conversion', () {

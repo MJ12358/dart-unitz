@@ -22,6 +22,7 @@ void main() {
     expect(cubicInch.pluralName, 'Cubic inches');
     expect(cubicInch.symbol, 'in³');
     expect(cubicInch.toString(), '0 in³');
+    expect(cubicInch.instance(), isA<CubicInch>());
   });
 
   test('conversion', () {

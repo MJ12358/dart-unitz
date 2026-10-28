@@ -18,6 +18,7 @@ void main() {
     expect(hour.pluralName, 'Hours');
     expect(hour.symbol, 'h');
     expect(hour.toString(), '0 h');
+    expect(hour.instance(), isA<Hour>());
   });
 
   test('conversion', () {

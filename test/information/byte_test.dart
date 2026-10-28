@@ -13,6 +13,7 @@ void main() {
     expect(byte.pluralName, 'Bytes');
     expect(byte.symbol, 'B');
     expect(byte.toString(), '0 B');
+    expect(byte.instance(), isA<Byte>());
   });
 
   test('conversion', () {

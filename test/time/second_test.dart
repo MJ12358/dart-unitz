@@ -17,6 +17,7 @@ void main() {
     expect(second.pluralName, 'Seconds');
     expect(second.symbol, 's');
     expect(second.toString(), '0 s');
+    expect(second.instance(), isA<Second>());
   });
 
   test('conversion', () {

@@ -18,6 +18,7 @@ void main() {
     expect(f.pluralName, 'Fahrenheit');
     expect(f.symbol, '°F');
     expect(f.toString(), '0 °F');
+    expect(f.instance(), isA<Fahrenheit>());
   });
 
   // Expected: Celsius:<0 °C>

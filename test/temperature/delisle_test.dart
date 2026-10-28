@@ -18,6 +18,7 @@ void main() {
     expect(d.pluralName, 'Delisle');
     expect(d.symbol, '°D');
     expect(d.toString(), '0 °D');
+    expect(d.instance(), isA<Delisle>());
   });
 
   // Expected: Celsius:<0 °C>

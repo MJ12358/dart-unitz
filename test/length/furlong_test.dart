@@ -14,6 +14,7 @@ void main() {
     expect(furlong.pluralName, 'Furlongs');
     expect(furlong.symbol, 'fur');
     expect(furlong.toString(), '0 fur');
+    expect(furlong.instance(), isA<Furlong>());
   });
 
   test('conversion', () {

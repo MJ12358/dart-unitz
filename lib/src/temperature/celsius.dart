@@ -53,4 +53,9 @@ class Centigrade extends Celsius {
 
   @override
   Centigrade get freezing => Centigrade(0);
+
+  @override
+  Centigrade instance([Object? value]) {
+    return Centigrade(value);
+  }
 }

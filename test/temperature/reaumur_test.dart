@@ -18,6 +18,7 @@ void main() {
     expect(r.pluralName, 'Réaumur');
     expect(r.symbol, '°Ré');
     expect(r.toString(), '0 °Ré');
+    expect(r.instance(), isA<Reaumur>());
   });
 
   // Expected: Delisle:<0 °D>

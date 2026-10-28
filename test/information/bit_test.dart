@@ -13,6 +13,7 @@ void main() {
     expect(bit.pluralName, 'Bits');
     expect(bit.symbol, 'b');
     expect(bit.toString(), '0 b');
+    expect(bit.instance(), isA<Bit>());
   });
 
   test('conversion', () {

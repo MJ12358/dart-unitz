@@ -18,6 +18,7 @@ void main() {
     expect(k.pluralName, 'Kelvin');
     expect(k.symbol, 'K');
     expect(k.toString(), '0 K');
+    expect(k.instance(), isA<Kelvin>());
   });
 
   // Expected: Celsius:<0 °C>

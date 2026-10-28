@@ -22,6 +22,7 @@ void main() {
     expect(cubicYard.pluralName, 'Cubic yards');
     expect(cubicYard.symbol, 'yd³');
     expect(cubicYard.toString(), '0 yd³');
+    expect(cubicYard.instance(), isA<CubicYard>());
   });
 
   test('conversion', () {

@@ -16,6 +16,7 @@ void main() {
     expect(kilogram.pluralName, 'Kilograms');
     expect(kilogram.symbol, 'kg');
     expect(kilogram.toString(), '0 kg');
+    expect(kilogram.instance(), isA<Kilogram>());
   });
 
   test('conversion', () {

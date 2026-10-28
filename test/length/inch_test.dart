@@ -14,6 +14,7 @@ void main() {
     expect(inch.pluralName, 'Inches');
     expect(inch.symbol, 'in');
     expect(inch.toString(), '0 in');
+    expect(inch.instance(), isA<Inch>());
   });
 
   test('conversion', () {

@@ -16,6 +16,7 @@ void main() {
     expect(gram.pluralName, 'Grams');
     expect(gram.symbol, 'g');
     expect(gram.toString(), '0 g');
+    expect(gram.instance(), isA<Gram>());
   });
 
   test('conversion', () {

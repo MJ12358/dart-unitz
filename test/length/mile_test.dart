@@ -13,6 +13,7 @@ void main() {
     expect(mile.pluralName, 'Miles');
     expect(mile.symbol, 'mi');
     expect(mile.toString(), '0 mi');
+    expect(mile.instance(), isA<Mile>());
   });
 
   test('conversion', () {

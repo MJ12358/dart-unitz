@@ -17,6 +17,7 @@ void main() {
     expect(arcsecond.pluralName, 'Arc Seconds');
     expect(arcsecond.symbol, '"');
     expect(arcsecond.toString(), '0 "');
+    expect(arcsecond.instance(), isA<ArcSecond>());
   });
 
   test('conversion', () {

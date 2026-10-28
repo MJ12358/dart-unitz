@@ -22,6 +22,7 @@ void main() {
     expect(cubicMetre.pluralName, 'Cubic metres');
     expect(cubicMetre.symbol, 'm³');
     expect(cubicMetre.toString(), '0 m³');
+    expect(cubicMetre.instance(), isA<CubicMetre>());
   });
 
   test('constructor (alt)', () {

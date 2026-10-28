@@ -16,6 +16,7 @@ void main() {
     expect(tonne.pluralName, 'Tonnes');
     expect(tonne.symbol, 't');
     expect(tonne.toString(), '0 t');
+    expect(tonne.instance(), isA<Tonne>());
   });
 
   test('conversion', () {

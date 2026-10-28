@@ -16,6 +16,7 @@ void main() {
     expect(radian.pluralName, 'Radians');
     expect(radian.symbol, 'rad');
     expect(radian.toString(), '0 rad');
+    expect(radian.instance(), isA<Radian>());
   });
 
   test('conversion', () {

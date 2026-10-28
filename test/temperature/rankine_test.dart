@@ -18,6 +18,7 @@ void main() {
     expect(r.pluralName, 'Rankine');
     expect(r.symbol, '°Ra');
     expect(r.toString(), '0 °Ra');
+    expect(r.instance(), isA<Rankine>());
   });
 
   // Expected: Celsius:<0 °C>

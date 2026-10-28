@@ -22,6 +22,7 @@ void main() {
     expect(cubicFoot.pluralName, 'Cubic feet');
     expect(cubicFoot.symbol, 'ft³');
     expect(cubicFoot.toString(), '0 ft³');
+    expect(cubicFoot.instance(), isA<CubicFoot>());
   });
 
   test('conversion', () {

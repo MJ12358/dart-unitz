@@ -18,6 +18,7 @@ void main() {
     expect(year.pluralName, 'Years');
     expect(year.symbol, 'a');
     expect(year.toString(), '0 a');
+    expect(year.instance(), isA<Year>());
   });
 
   test('conversion', () {

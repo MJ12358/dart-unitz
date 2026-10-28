@@ -22,6 +22,7 @@ void main() {
     expect(litre.pluralName, 'Litres');
     expect(litre.symbol, 'L');
     expect(litre.toString(), '0 L');
+    expect(litre.instance(), isA<Litre>());
   });
 
   test('constructor (alt)', () {
@@ -30,6 +31,7 @@ void main() {
     expect(liter.name, 'Liter');
     expect(liter.pluralName, 'Liters');
     expect(liter.symbol, 'L');
+    expect(liter.instance(), isA<Liter>());
     expect(liter.toString(), '0 L');
   });
 

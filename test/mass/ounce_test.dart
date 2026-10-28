@@ -16,6 +16,7 @@ void main() {
     expect(ounce.pluralName, 'Ounces');
     expect(ounce.symbol, 'oz');
     expect(ounce.toString(), '0 oz');
+    expect(ounce.instance(), isA<Ounce>());
   });
 
   test('conversion', () {

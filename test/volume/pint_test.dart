@@ -21,6 +21,7 @@ void main() {
     expect(pint.pluralName, 'Pints');
     expect(pint.symbol, 'pt');
     expect(pint.toString(), '0 pt');
+    expect(pint.instance(), isA<Pint>());
   });
 
   test('conversion', () {

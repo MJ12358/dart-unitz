@@ -20,6 +20,7 @@ void main() {
     expect(gallon.pluralName, 'Gallons');
     expect(gallon.symbol, 'gal');
     expect(gallon.toString(), '0 gal');
+    expect(gallon.instance(), isA<Gallon>());
   });
 
   test('conversion', () {

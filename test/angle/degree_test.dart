@@ -16,6 +16,7 @@ void main() {
     expect(degree.pluralName, 'Degrees');
     expect(degree.symbol, '°');
     expect(degree.toString(), '0 °');
+    expect(degree.instance(), isA<Degree>());
   });
 
   test('conversion', () {

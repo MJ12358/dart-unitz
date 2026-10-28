@@ -18,6 +18,7 @@ void main() {
     expect(day.pluralName, 'Days');
     expect(day.symbol, 'd');
     expect(day.toString(), '0 d');
+    expect(day.instance(), isA<Day>());
   });
 
   test('conversion', () {

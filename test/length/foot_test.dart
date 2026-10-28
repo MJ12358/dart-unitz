@@ -15,6 +15,7 @@ void main() {
     expect(foot.pluralName, 'Feet');
     expect(foot.symbol, 'ft');
     expect(foot.toString(), '0 ft');
+    expect(foot.instance(), isA<Foot>());
   });
 
   test('conversion', () {

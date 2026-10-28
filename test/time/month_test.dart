@@ -18,6 +18,7 @@ void main() {
     expect(month.pluralName, 'Months');
     expect(month.symbol, 'mo');
     expect(month.toString(), '0 mo');
+    expect(month.instance(), isA<Month>());
   });
 
   test('conversion', () {

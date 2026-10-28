@@ -21,6 +21,7 @@ void main() {
     expect(fluidOunce.pluralName, 'Fluid Ounces');
     expect(fluidOunce.symbol, 'fl oz');
     expect(fluidOunce.toString(), '0 fl oz');
+    expect(fluidOunce.instance(), isA<FluidOunce>());
   });
 
   test('conversion', () {

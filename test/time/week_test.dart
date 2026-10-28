@@ -18,6 +18,7 @@ void main() {
     expect(week.pluralName, 'Weeks');
     expect(week.symbol, 'wk');
     expect(week.toString(), '0 wk');
+    expect(week.instance(), isA<Week>());
   });
 
   test('conversion', () {
