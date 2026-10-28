@@ -19,9 +19,6 @@ class CubicMetre extends Volume {
   String get symbol => 'm³';
 
   @override
-  num get scale => 1;
-
-  @override
   num toBase() {
     return value;
   }
