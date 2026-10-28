@@ -27,17 +27,10 @@ class Reaumur extends Temperature {
   Reaumur get freezing => Reaumur(0);
 
   @override
-  num get scale => 273.15;
+  num get scale => 5 / 4;
 
   @override
-  num toBase() {
-    return (value * (5 / 4)) + scale;
-  }
-
-  @override
-  num fromBase(num base) {
-    return (base - scale) * (4 / 5);
-  }
+  num get offset => 273.15;
 
   @override
   Unit instance([Object? value]) {

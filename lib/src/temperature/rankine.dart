@@ -30,17 +30,7 @@ class Rankine extends Temperature {
   Rankine get freezing => Rankine(491.67);
 
   @override
-  num get scale => 1;
-
-  @override
-  num toBase() {
-    return (5 * value) / 9;
-  }
-
-  @override
-  num fromBase(num base) {
-    return (9 * base) / 5;
-  }
+  num get scale => 5 / 9;
 
   @override
   Unit instance([Object? value]) {

@@ -27,17 +27,7 @@ class Celsius extends Temperature {
   Celsius get freezing => Celsius(0);
 
   @override
-  num get scale => 273.15;
-
-  @override
-  num toBase() {
-    return value + scale;
-  }
-
-  @override
-  num fromBase(num base) {
-    return base - scale;
-  }
+  num get offset => 273.15;
 
   @override
   Unit instance([Object? value]) {

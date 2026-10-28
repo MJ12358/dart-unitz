@@ -27,17 +27,10 @@ class Delisle extends Temperature {
   Delisle get freezing => Delisle(150);
 
   @override
-  num get scale => 373.15;
+  num get scale => -2 / 3;
 
   @override
-  num toBase() {
-    return scale - value * (2 / 3);
-  }
-
-  @override
-  num fromBase(num base) {
-    return (scale - base) * (3 / 2);
-  }
+  num get offset => 373.15;
 
   @override
   Unit instance([Object? value]) {

@@ -28,17 +28,10 @@ class Romer extends Temperature {
   Romer get freezing => Romer(7.5);
 
   @override
-  num get scale => 273.15;
+  num get scale => 40 / 21;
 
   @override
-  num toBase() {
-    return (value - 7.5) * (40 / 21) + scale;
-  }
-
-  @override
-  num fromBase(num base) {
-    return (base - scale) * (21 / 40) + 7.5;
-  }
+  num get offset => 273.15 - 7.5 * scale;
 
   @override
   Unit instance([Object? value]) {
