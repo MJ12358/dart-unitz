@@ -36,14 +36,14 @@ abstract class Unitz {
 
   /// Uses a [UnitPrefix] when required.
   static bool get usePrefix {
-    return _usePrefix && prefixType != null;
+    return _usePrefix || prefixType != null;
   }
 
   static set usePrefix(bool value) {
     _usePrefix = value;
   }
 
-  static bool _usePrefix = true;
+  static bool _usePrefix = false;
 
   /// The [Type] of unit prefix to use.
   ///
