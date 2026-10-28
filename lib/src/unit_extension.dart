@@ -1,6 +1,6 @@
 part of '../dart_unitz.dart';
 
-/// An extension to provide operators on Units.
+/// An extension to provide operators on [Unit]s.
 extension UnitExtension on Unit {
   /// Adds two units together.
   Unit operator +(Unit other) {
@@ -72,10 +72,18 @@ extension UnitExtension on Unit {
   }
 }
 
-/// An extension to provide additional functionality on lists of Units.
+/// An extension to provide additional functionality on [List<Unit>].
 extension UnitListExtension on List<Unit> {
   /// Returns the names of all units in the list.
   List<String> get names {
     return map((Unit unit) => unit.name).toList();
+  }
+}
+
+/// An extension to provide additional functionality on [List<UnitPrefix>].
+extension UnitPrefixListExtension on List<UnitPrefix> {
+  /// Returns the names of all unit prefixes in the list.
+  List<String> get names {
+    return map((UnitPrefix prefix) => prefix.name).toList();
   }
 }
