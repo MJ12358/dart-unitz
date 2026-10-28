@@ -10,7 +10,7 @@ abstract class Mass extends Unit {
   Mass([super.value]);
 
   @override
-  Unit get base => Kilogram();
+  Mass get base => Kilogram();
 
   @override
   Type get prefixType => DecimalPrefix;

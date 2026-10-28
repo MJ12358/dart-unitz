@@ -10,7 +10,7 @@ abstract class Information extends Unit {
   Information([super.value]);
 
   @override
-  Unit get base => Bit();
+  Information get base => Bit();
 
   @override
   Type get prefixType => BinaryPrefix;

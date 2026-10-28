@@ -16,7 +16,7 @@ abstract class Temperature extends Unit {
   Temperature get freezing;
 
   @override
-  Unit get base => Kelvin();
+  Temperature get base => Kelvin();
 
   @override
   Type get prefixType => NullPrefix;

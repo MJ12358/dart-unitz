@@ -10,7 +10,7 @@ abstract class Angle extends Unit {
   Angle([super.value]);
 
   @override
-  Unit get base => Radian();
+  Angle get base => Radian();
 
   @override
   num toBase() {
