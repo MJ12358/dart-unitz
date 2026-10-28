@@ -31,8 +31,8 @@ class Kelvin extends Temperature {
   }
 
   @override
-  num fromBase(num base) {
-    return base;
+  num fromBase(num baseValue) {
+    return baseValue;
   }
 
   @override

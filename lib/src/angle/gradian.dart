@@ -29,8 +29,8 @@ class Gradian extends Angle {
   }
 
   @override
-  num fromBase(num base) {
-    return base / scale;
+  num fromBase(num baseValue) {
+    return baseValue / scale;
   }
 
   @override

@@ -18,8 +18,8 @@ abstract class Angle extends Unit {
   }
 
   @override
-  num fromBase(num base) {
-    return (base * scale) / math.pi;
+  num fromBase(num baseValue) {
+    return (baseValue * scale) / math.pi;
   }
 
   @override

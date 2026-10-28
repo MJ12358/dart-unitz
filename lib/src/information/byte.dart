@@ -28,8 +28,8 @@ class Byte extends Information {
   }
 
   @override
-  num fromBase(num base) {
-    return base / scale;
+  num fromBase(num baseValue) {
+    return baseValue / scale;
   }
 
   @override

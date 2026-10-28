@@ -66,8 +66,8 @@ abstract class Unit implements Comparable<Unit> {
   /// The default conversion from the base unit
   /// is the inverse of the linear transformation
   /// using [base - offset] / [scale].
-  num fromBase(num base) {
-    return (base - offset) / scale;
+  num fromBase(num baseValue) {
+    return (baseValue - offset) / scale;
   }
 
   /// Creates a new instance of this class.

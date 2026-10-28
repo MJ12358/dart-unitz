@@ -25,8 +25,8 @@ class Second extends Time {
   }
 
   @override
-  num fromBase(num base) {
-    return base;
+  num fromBase(num baseValue) {
+    return baseValue;
   }
 
   @override

@@ -24,8 +24,8 @@ class Kilogram extends Mass {
   }
 
   @override
-  num fromBase(num base) {
-    return base;
+  num fromBase(num baseValue) {
+    return baseValue;
   }
 
   @override
