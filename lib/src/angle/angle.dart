@@ -5,22 +5,12 @@ part of '../../dart_unitz.dart';
 ///
 /// https://en.wikipedia.org/wiki/Angle
 /// {@endtemplate}
-abstract class Angle extends Unit {
+abstract class Angle extends LinearUnit {
   /// {@macro dart_unitz.Angle}
   Angle([super.value]);
 
   @override
-  Angle get base => Radian();
-
-  @override
-  num toBase() {
-    return (value * math.pi) / scale;
-  }
-
-  @override
-  num fromBase(num baseValue) {
-    return (baseValue * scale) / math.pi;
-  }
+  Radian get base => Radian();
 
   @override
   Type get prefixType => NullPrefix;

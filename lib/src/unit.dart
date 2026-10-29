@@ -40,35 +40,24 @@ abstract class Unit implements Comparable<Unit> {
 
   /// The multiplicative scale applied to [value]
   /// when converting to the base unit.
-  num get scale => 1;
+  num get scale;
 
   /// The additive offset applied when converting to the base unit.
-  num get offset => 0;
+  num get offset;
 
   /// Whether converting this unit to the base unit is an affine
   /// transformation or a purely linear one.
+  @nonVirtual
   bool get isAffine => offset != 0;
 
   /// The base unit.
   Unit get base;
 
   /// Converts this unit to the base unit.
-  ///
-  /// The default conversion to the base unit
-  /// is a linear transformation
-  /// using [value] * [scale] + [offset].
-  num toBase() {
-    return value * scale + offset;
-  }
+  num toBase();
 
   /// Converts from the base unit to this unit.
-  ///
-  /// The default conversion from the base unit
-  /// is the inverse of the linear transformation
-  /// using [base - offset] / [scale].
-  num fromBase(num baseValue) {
-    return (baseValue - offset) / scale;
-  }
+  num fromBase(num baseValue);
 
   /// Creates a new instance of this class.
   Unit instance([Object? value]);
@@ -193,5 +182,47 @@ abstract class Unit implements Comparable<Unit> {
     final int shift = places - 1 - exp; // may be positive or negative
     final double shiftScale = math.pow(10, shift).toDouble();
     return (_value * shiftScale).roundToDouble() / shiftScale;
+  }
+}
+
+/// {@template dart_unitz.LinearUnit}
+/// An abstract class to provide a template for linear units.
+/// {@endtemplate}
+abstract class LinearUnit extends Unit {
+  /// {@macro dart_unitz.LinearUnit}
+  LinearUnit([super.value]);
+
+  @override
+  num get offset => 0;
+
+  @override
+  num toBase() {
+    return value * scale;
+  }
+
+  @override
+  num fromBase(num baseValue) {
+    return baseValue / scale;
+  }
+}
+
+/// {@template dart_unitz.AffineUnit}
+/// An abstract class to provide a template for affine units.
+/// {@endtemplate}
+abstract class AffineUnit extends Unit {
+  /// {@macro dart_unitz.AffineUnit}
+  AffineUnit([super.value]);
+
+  @override
+  num get offset;
+
+  @override
+  num toBase() {
+    return value * scale + offset;
+  }
+
+  @override
+  num fromBase(num baseValue) {
+    return (baseValue - offset) / scale;
   }
 }

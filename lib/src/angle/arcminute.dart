@@ -21,7 +21,7 @@ class ArcMinute extends Angle {
 
   @override
   /// 60 arcminutes per degree and 180 degrees per pi radians.
-  num get scale => 60 * 180;
+  num get scale => math.pi / (180 * 60);
 
   @override
   ArcMinute instance([Object? value]) {

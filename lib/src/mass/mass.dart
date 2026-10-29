@@ -5,12 +5,12 @@ part of '../../dart_unitz.dart';
 ///
 /// https://en.wikipedia.org/wiki/Mass
 /// {@endtemplate}
-abstract class Mass extends Unit {
+abstract class Mass extends LinearUnit {
   /// {@macro dart_unitz.Mass}
   Mass([super.value]);
 
   @override
-  Mass get base => Kilogram();
+  Kilogram get base => Kilogram();
 
   @override
   Type get prefixType => DecimalPrefix;

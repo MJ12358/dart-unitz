@@ -20,7 +20,7 @@ class ArcSecond extends Angle {
   String get symbol => '"';
 
   @override
-  num get scale => 3600 * 180;
+  num get scale => math.pi / (180 * 3600);
 
   @override
   ArcSecond instance([Object? value]) {

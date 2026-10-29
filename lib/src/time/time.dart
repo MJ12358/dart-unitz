@@ -5,12 +5,12 @@ part of '../../dart_unitz.dart';
 ///
 /// https://en.wikipedia.org/wiki/Time
 /// {@endtemplate}
-abstract class Time extends Unit {
+abstract class Time extends LinearUnit {
   /// {@macro dart_unitz.Time}
   Time([super.value]);
 
   @override
-  Unit get base => Second();
+  Second get base => Second();
 
   @override
   Type get prefixType => DecimalPrefix;

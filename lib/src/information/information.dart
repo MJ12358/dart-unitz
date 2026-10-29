@@ -5,12 +5,12 @@ part of '../../dart_unitz.dart';
 ///
 /// https://en.wikipedia.org/wiki/Units_of_information
 /// {@endtemplate}
-abstract class Information extends Unit {
+abstract class Information extends LinearUnit {
   /// {@macro dart_unitz.Information}
   Information([super.value]);
 
   @override
-  Information get base => Bit();
+  Bit get base => Bit();
 
   @override
   Type get prefixType => BinaryPrefix;

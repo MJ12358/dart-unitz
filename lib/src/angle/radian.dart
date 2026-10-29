@@ -20,14 +20,7 @@ class Radian extends Angle {
   String get symbol => 'rad';
 
   @override
-  num toBase() {
-    return value;
-  }
-
-  @override
-  num fromBase(num baseValue) {
-    return baseValue;
-  }
+  num get scale => 1;
 
   @override
   Radian instance([Object? value]) {

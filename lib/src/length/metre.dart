@@ -20,6 +20,9 @@ class Metre extends Length {
   String get symbol => 'm';
 
   @override
+  num get scale => 1;
+
+  @override
   num toBase() {
     return value;
   }

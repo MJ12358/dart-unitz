@@ -21,17 +21,7 @@ class Gradian extends Angle {
   String get symbol => 'grad';
 
   @override
-  num get scale => 0.015708;
-
-  @override
-  num toBase() {
-    return value * scale;
-  }
-
-  @override
-  num fromBase(num baseValue) {
-    return baseValue / scale;
-  }
+  num get scale => math.pi / 200;
 
   @override
   Gradian instance([Object? value]) {

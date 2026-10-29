@@ -33,6 +33,9 @@ class Rankine extends Temperature {
   num get scale => 5 / 9;
 
   @override
+  num get offset => 0;
+
+  @override
   Rankine instance([Object? value]) {
     return Rankine(value);
   }

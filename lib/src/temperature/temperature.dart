@@ -5,7 +5,7 @@ part of '../../dart_unitz.dart';
 ///
 /// https://en.wikipedia.org/wiki/Temperature
 /// {@endtemplate}
-abstract class Temperature extends Unit {
+abstract class Temperature extends AffineUnit {
   /// {@macro dart_unitz.Temperature}
   Temperature([super.value]);
 
@@ -16,7 +16,7 @@ abstract class Temperature extends Unit {
   Temperature get freezing;
 
   @override
-  Temperature get base => Kelvin();
+  Kelvin get base => Kelvin();
 
   @override
   Type get prefixType => NullPrefix;

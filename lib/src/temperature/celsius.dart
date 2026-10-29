@@ -27,6 +27,9 @@ class Celsius extends Temperature {
   Celsius get freezing => Celsius(0);
 
   @override
+  num get scale => 1;
+
+  @override
   num get offset => 273.15;
 
   @override

@@ -5,12 +5,12 @@ part of '../../dart_unitz.dart';
 ///
 /// https://en.wikipedia.org/wiki/Volume
 /// {@endtemplate}
-abstract class Volume extends Unit {
+abstract class Volume extends LinearUnit {
   /// {@macro dart_unitz.Volume}
   Volume([super.value]);
 
   @override
-  Unit get base => CubicMetre();
+  CubicMetre get base => CubicMetre();
 
   @override
   Type get prefixType => DecimalPrefix;

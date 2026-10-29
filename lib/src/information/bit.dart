@@ -20,6 +20,9 @@ class Bit extends Information {
   String get symbol => 'b';
 
   @override
+  num get scale => 1;
+
+  @override
   num toBase() {
     return value;
   }

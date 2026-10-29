@@ -21,7 +21,7 @@ class Degree extends Angle {
   String get symbol => '°';
 
   @override
-  num get scale => 180;
+  num get scale => math.pi / 180;
 
   @override
   Degree instance([Object? value]) {

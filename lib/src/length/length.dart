@@ -5,12 +5,12 @@ part of '../../dart_unitz.dart';
 ///
 /// https://en.wikipedia.org/wiki/Length
 /// {@endtemplate}
-abstract class Length extends Unit {
+abstract class Length extends LinearUnit {
   /// {@macro dart_unitz.Length}
   Length([super.value]);
 
   @override
-  Length get base => Metre();
+  Metre get base => Metre();
 
   @override
   Type get prefixType => DecimalPrefix;
