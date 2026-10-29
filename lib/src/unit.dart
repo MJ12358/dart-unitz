@@ -67,9 +67,9 @@ abstract class Unit implements Comparable<Unit> {
 
   /// The scalar value based on the unit prefix and configuration.
   num get scalar {
-    final num result = _rounded;
+    final num result = rounded;
     if (Unitz.removeTrailingZeros) {
-      return _removeTrailingZeros(result);
+      return removeTrailingZeros(result);
     }
     return result;
   }
@@ -109,7 +109,7 @@ abstract class Unit implements Comparable<Unit> {
   @override
   String toString() {
     if (Unitz.usePrefix) {
-      return '$_mantissa ${prefix.symbol}$symbol';
+      return '$mantissa ${prefix.symbol}$symbol';
     }
     return '$scalar $symbol';
   }
@@ -126,63 +126,6 @@ abstract class Unit implements Comparable<Unit> {
 
   @override
   int get hashCode => Object.hash(value, name, symbol);
-
-  /// Removes trailing zeros from the given value if necessary.
-  num _removeTrailingZeros(num v) {
-    final bool hasTrailingZero = v.truncateToDouble() == v;
-    if (hasTrailingZero) {
-      return num.parse(v.toStringAsFixed(0));
-    }
-    return v;
-  }
-
-  /// The mantissa of the value based on the unit prefix power.
-  num get _mantissa {
-    final num power = prefix.power;
-    // Nothing to do for zero or non-finite values
-    if (_value == 0 || !_value.isFinite) {
-      return _value;
-    }
-    // calculate the exponent
-    num exp = math.log(_value) / math.log(power);
-    // sanitize the exponent
-    exp = exp.isFinite ? exp.floor() : exp;
-    // divide out the prefix and format the result
-    return (_value / math.pow(power, exp)).round();
-  }
-
-  /// The value rounded to the configured precision.
-  ///
-  /// For values greater than or equal to 1,
-  /// rounds to the specified number of decimal places.
-  ///
-  /// For values less than 1,
-  /// rounds to the specified number of significant figures.
-  num get _rounded {
-    final int places = Unitz.precision;
-    // Nothing to do for non-positive precision, zero, or non-finite values.
-    if (places <= 0 || _value == 0 || !_value.isFinite) {
-      return _value;
-    }
-    // For |value| >= 1, round to decimal places.
-    if (_value.abs() >= 1) {
-      final double placesScale = math.pow(10, places).toDouble();
-      return (_value * placesScale).roundToDouble() / placesScale;
-    }
-    // For |value| < 1, round to `places` significant figures.
-    int exp = (math.log(_value.abs()) / math.ln10).floor();
-    // Correct for floating-point drift near exact powers of ten.
-    final double expScale = math.pow(10, exp).toDouble();
-    final double mantissa = _value.abs() / expScale;
-    if (mantissa >= 10) {
-      exp += 1;
-    } else if (mantissa < 1) {
-      exp -= 1;
-    }
-    final int shift = places - 1 - exp; // may be positive or negative
-    final double shiftScale = math.pow(10, shift).toDouble();
-    return (_value * shiftScale).roundToDouble() / shiftScale;
-  }
 }
 
 /// {@template dart_unitz.LinearUnit}
