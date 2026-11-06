@@ -1,5 +1,15 @@
 # Dart Unitz
 
+## [0.0.18]
+
+- Add negation operator.
+- Add extension for `UnitPrefix`.
+- Make `usePrefix` a getter/setter.
+- Refactor units into `Linear` or `Affine`.
+- Return own type from `instance` method.
+- Tighten category base return type.
+- Update tests.
+
 ## [0.0.17]
 
 - Add `Mass` units.
