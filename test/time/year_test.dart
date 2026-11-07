@@ -38,12 +38,23 @@ void main() {
     }
   });
 
-  // test('compare (explicit)', () {
-  //   final Year year = Year(1);
-  //   expect(year == Day(365), isTrue);
-  //   expect(year == Week(52), isTrue);
-  //   expect(year == Month(12), isTrue);
-  // });
+  test('compare (explicit)', () {
+    final Year year = Year(1);
+    // Year is the Gregorian average, not 365 days or 52 weeks.
+    expect(year == Day(365), isFalse);
+    expect(year == Week(52), isFalse);
+    // 12 average months is exactly one average year (integers, no float).
+    expect(year == Month(12), isTrue);
+    // The exact equivalents, with tolerance for float:
+    expect(year.toBase(), closeTo(Day(365.2425).toBase(), 1e-3));
+    expect(year.toBase(), closeTo(Week(52.1775).toBase(), 1e-3));
+    // Common year and leap year comparisons
+    final CommonYear commonYear = CommonYear(1);
+    final LeapYear leapYear = LeapYear(1);
+    // TODO: Use the correct equality comparison for Unit objects.
+    expect(commonYear, Day(365));
+    expect(leapYear, Day(366));
+  });
 
   test('equality', () {
     final Year year = Year(1);
