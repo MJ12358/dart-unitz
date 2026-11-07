@@ -27,3 +27,37 @@ class Year extends Time {
     return Year(value);
   }
 }
+
+/// {@template dart_unitz.CommonYear}
+/// The common year, standard symbol: a,
+/// is a unit of time equal to 365 days.
+/// {@endtemplate}
+class CommonYear extends Year {
+  /// {@macro dart_unitz.CommonYear}
+  CommonYear([super.value]);
+
+  @override
+  num get scale => Day().scale * 365;
+
+  @override
+  CommonYear instance([Object? value]) {
+    return CommonYear(value);
+  }
+}
+
+/// {@template dart_unitz.LeapYear}
+/// The leap year, standard symbol: a,
+/// is a unit of time equal to 366 days.
+/// {@endtemplate}
+class LeapYear extends Year {
+  /// {@macro dart_unitz.LeapYear}
+  LeapYear([super.value]);
+
+  @override
+  num get scale => Day().scale * 366;
+
+  @override
+  LeapYear instance([Object? value]) {
+    return LeapYear(value);
+  }
+}
