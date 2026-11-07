@@ -20,7 +20,7 @@ class Week extends Time {
   String get symbol => 'wk';
 
   @override
-  num get scale => 604800;
+  num get scale => Day().scale * 7;
 
   @override
   Week instance([Object? value]) {

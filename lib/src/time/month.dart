@@ -20,7 +20,7 @@ class Month extends Time {
   String get symbol => 'mo';
 
   @override
-  num get scale => 2629746;
+  num get scale => Year().scale / 12;
 
   @override
   Month instance([Object? value]) {
