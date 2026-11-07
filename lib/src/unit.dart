@@ -130,6 +130,9 @@ abstract class Unit implements Comparable<Unit> {
 
 /// {@template dart_unitz.LinearUnit}
 /// An abstract class to provide a template for linear units.
+///
+/// Linear units have a zero offset and their conversion to the base unit
+/// is purely multiplicative.
 /// {@endtemplate}
 abstract class LinearUnit extends Unit {
   /// {@macro dart_unitz.LinearUnit}
@@ -151,6 +154,9 @@ abstract class LinearUnit extends Unit {
 
 /// {@template dart_unitz.AffineUnit}
 /// An abstract class to provide a template for affine units.
+///
+/// Affine units have a non-zero offset and their conversion to the base unit
+/// involves both a multiplicative scale and an additive offset.
 /// {@endtemplate}
 abstract class AffineUnit extends Unit {
   /// {@macro dart_unitz.AffineUnit}
