@@ -32,9 +32,18 @@ class Year extends Time {
 /// The common year, standard symbol: a,
 /// is a unit of time equal to 365 days.
 /// {@endtemplate}
-class CommonYear extends Year {
+class CommonYear extends Time {
   /// {@macro dart_unitz.CommonYear}
   CommonYear([super.value]);
+
+  @override
+  String get name => Year().name;
+
+  @override
+  String get pluralName => Year().pluralName;
+
+  @override
+  String get symbol => Year().symbol;
 
   @override
   num get scale => Day().scale * 365;
@@ -49,9 +58,18 @@ class CommonYear extends Year {
 /// The leap year, standard symbol: a,
 /// is a unit of time equal to 366 days.
 /// {@endtemplate}
-class LeapYear extends Year {
+class LeapYear extends Time {
   /// {@macro dart_unitz.LeapYear}
   LeapYear([super.value]);
+
+  @override
+  String get name => Year().name;
+
+  @override
+  String get pluralName => Year().pluralName;
+
+  @override
+  String get symbol => Year().symbol;
 
   @override
   num get scale => Day().scale * 366;

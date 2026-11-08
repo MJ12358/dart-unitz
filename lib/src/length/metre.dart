@@ -43,7 +43,7 @@ class Metre extends Length {
 ///
 /// For American English, "meter" is used instead of "metre".
 /// {@endtemplate}
-class Meter extends Metre {
+class Meter extends Length {
   /// {@macro dart_unitz.Meter}
   Meter([super.value]);
 
@@ -52,6 +52,22 @@ class Meter extends Metre {
 
   @override
   String get pluralName => 'Meters';
+
+  @override
+  String get symbol => 'm';
+
+  @override
+  num get scale => 1;
+
+  @override
+  num toBase() {
+    return value;
+  }
+
+  @override
+  num fromBase(num baseValue) {
+    return baseValue;
+  }
 
   @override
   Meter instance([Object? value]) {

@@ -51,9 +51,8 @@ void main() {
     // Common year and leap year comparisons
     final CommonYear commonYear = CommonYear(1);
     final LeapYear leapYear = LeapYear(1);
-    // TODO: Use the correct equality comparison for Unit objects.
-    expect(commonYear, Day(365));
-    expect(leapYear, Day(366));
+    expect(commonYear == Day(365), isTrue);
+    expect(leapYear == Day(366), isTrue);
   });
 
   test('equality', () {
