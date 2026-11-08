@@ -8,23 +8,41 @@ part of '../dart_unitz.dart';
 @immutable
 abstract class Unit implements Comparable<Unit> {
   /// {@macro dart_unitz.Unit}
-  Unit(Object? value) {
+  Unit(Object? value) : _value = _parse(value);
+
+  /// Parses the input [value] into a numeric representation.
+  static num _parse(Object? value) {
+    // Null check.
     if (value == null) {
-      _value = 0;
-    } else if (value is num) {
-      _value = value;
-    } else if (value is String) {
-      _value = num.parse(value);
-    } else if (value is BigInt) {
-      _value = value.toInt();
-    } else {
-      throw UnsupportedError(
-        '${value.runtimeType} is not a supported input.',
-      );
+      return 0;
     }
+    // Num check.
+    if (value is num) {
+      if (value.isNaN || value.isInfinite) {
+        throw ArgumentError('Invalid numeric value, $value', 'value');
+      }
+      return value;
+    }
+    // String check.
+    if (value is String) {
+      try {
+        return num.parse(value);
+      } on FormatException {
+        throw ArgumentError('Cannot parse "$value" as a number.', 'value');
+      }
+    }
+    // BigInt check.
+    if (value is BigInt) {
+      return value.toInt();
+    }
+    // Unsupported type.
+    throw UnsupportedError(
+      '${value.runtimeType} is not a supported input.',
+    );
   }
 
-  late final num _value;
+  /// The internal numeric representation of this unit's value.
+  final num _value;
 
   /// The precise value.
   num get value => _value;
@@ -100,18 +118,18 @@ abstract class Unit implements Comparable<Unit> {
   }
 
   @override
-  int compareTo(Unit other) {
-    final num a = base.instance(toBase()).scalar;
-    final num b = other.base.instance(other.toBase()).scalar;
-    return a.compareTo(b);
-  }
-
-  @override
   String toString() {
     if (Unitz.usePrefix) {
       return '$mantissa ${prefix.symbol}$symbol';
     }
     return '$scalar $symbol';
+  }
+
+  @override
+  int compareTo(Unit other) {
+    final num a = base.instance(toBase()).scalar;
+    final num b = other.base.instance(other.toBase()).scalar;
+    return a.compareTo(b);
   }
 
   @override
