@@ -1,5 +1,8 @@
 part of '../dart_unitz.dart';
 
+/// 308 is the approximate max decimal exponent for IEEE-754 doubles.
+const num _maxDecimal = 308;
+
 /// {@template dart_unitz.Unitz}
 /// The entry point for [Unitz].
 ///
@@ -21,10 +24,12 @@ abstract class Unitz {
 
   static set precision(int value) {
     if (value < 0) {
-      throw ArgumentError('Precision must be non-negative.');
+      throw ArgumentError('Precision must be non-negative, got $value.');
     }
-    if (value > 308) {
-      throw ArgumentError('Precision must be less than 308.');
+    if (value > _maxDecimal) {
+      throw ArgumentError(
+        'Precision must be less than $_maxDecimal, got $value.',
+      );
     }
     _precision = value;
   }
@@ -41,6 +46,10 @@ abstract class Unitz {
 
   static set usePrefix(bool value) {
     _usePrefix = value;
+    // If usePrefix is turned off, clear the prefixType.
+    if (!value) {
+      prefixType = null;
+    }
   }
 
   static bool _usePrefix = false;
@@ -66,7 +75,7 @@ abstract class Unitz {
   }
 
   /// The list of all unit categories available in Unitz.
-  static final List<Type> categories = <Type>[
+  static final List<Type> categories = List<Type>.unmodifiableOf(<Type>[
     Angle,
     Information,
     Length,
@@ -74,5 +83,5 @@ abstract class Unitz {
     Temperature,
     Time,
     Volume,
-  ];
+  ]);
 }
