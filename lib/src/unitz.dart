@@ -3,6 +3,9 @@ part of '../dart_unitz.dart';
 /// 308 is the approximate max decimal exponent for IEEE-754 doubles.
 const num _maxDecimal = 308;
 
+/// 53 is the approximate max binary exponent for IEEE-754 doubles.
+const num _maxExponent = 53;
+
 /// {@template dart_unitz.Unitz}
 /// The entry point for [Unitz].
 ///

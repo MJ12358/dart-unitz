@@ -82,17 +82,15 @@ extension UnitExtension on Unit {
 
   /// The mantissa of the value based on the unit prefix power.
   num get mantissa {
-    final num power = prefix.power;
     // Nothing to do for zero or non-finite values
     if (value == 0 || !value.isFinite) {
       return value;
     }
-    // calculate the exponent
-    num exp = math.log(value) / math.log(power);
-    // sanitize the exponent
-    exp = exp.isFinite ? exp.floor() : exp;
-    // divide out the prefix and format the result
-    return (value / math.pow(power, exp)).round();
+    final num power = prefix.power;
+    if (power == 1) {
+      return value;
+    }
+    return (value / power).round();
   }
 
   /// The value rounded to the configured precision.
@@ -110,6 +108,11 @@ extension UnitExtension on Unit {
     }
     // For |value| >= 1, round to decimal places.
     if (value.abs() >= 1) {
+      // If value * 10^places would exceed 2^53, rounding is a no-op
+      // (the double has no fractional bits to round at that magnitude).
+      if (value.abs() >= math.pow(2, _maxExponent) / math.pow(10, places)) {
+        return value;
+      }
       final double placesScale = math.pow(10, places).toDouble();
       return (value * placesScale).roundToDouble() / placesScale;
     }
