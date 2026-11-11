@@ -1,10 +1,10 @@
 part of '../dart_unitz.dart';
 
 /// 308 is the approximate max decimal exponent for IEEE-754 doubles.
-const num _maxDecimal = 308;
+const int _maxDecimal = 308;
 
 /// 53 is the approximate max binary exponent for IEEE-754 doubles.
-const num _maxExponent = 53;
+const int _maxExponent = 53;
 
 /// {@template dart_unitz.Unitz}
 /// The entry point for [Unitz].
@@ -29,7 +29,7 @@ abstract class Unitz {
     if (value < 0) {
       throw ArgumentError('Precision must be non-negative, got $value.');
     }
-    if (value > _maxDecimal) {
+    if (value >= _maxDecimal) {
       throw ArgumentError(
         'Precision must be less than $_maxDecimal, got $value.',
       );

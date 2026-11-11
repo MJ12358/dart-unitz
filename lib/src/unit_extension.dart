@@ -106,20 +106,28 @@ extension UnitExtension on Unit {
     if (places <= 0 || value == 0 || !value.isFinite) {
       return value;
     }
-    // For |value| >= 1, round to decimal places.
     if (value.abs() >= 1) {
-      // If value * 10^places would exceed 2^53, rounding is a no-op
-      // (the double has no fractional bits to round at that magnitude).
-      if (value.abs() >= math.pow(2, _maxExponent) / math.pow(10, places)) {
-        return value;
-      }
-      final double placesScale = math.pow(10, places).toDouble();
-      return (value * placesScale).roundToDouble() / placesScale;
+      return _roundToDecimalPlaces(places);
+    } else {
+      return _roundToSignificantFigures(places);
     }
-    // For |value| < 1, round to `places` significant figures.
+  }
+
+  /// Rounds the value to the specified number of decimal places.
+  num _roundToDecimalPlaces(int places) {
+    // Beyond 2^53 doubles have no fractional bits
+    if (value.abs() >= math.pow(2.0, _maxExponent) / math.pow(10.0, places)) {
+      return value;
+    }
+    final double placesScale = math.pow(10.0, places).toDouble();
+    return (value * placesScale).roundToDouble() / placesScale;
+  }
+
+  /// Rounds the value to the specified number of significant figures.
+  num _roundToSignificantFigures(int places) {
     int exp = (math.log(value.abs()) / math.ln10).floor();
     // Correct for floating-point drift near exact powers of ten.
-    final double expScale = math.pow(10, exp).toDouble();
+    final double expScale = math.pow(10.0, exp).toDouble();
     final double mantissa = value.abs() / expScale;
     if (mantissa >= 10) {
       exp += 1;
@@ -127,7 +135,10 @@ extension UnitExtension on Unit {
       exp -= 1;
     }
     final int shift = places - 1 - exp; // may be positive or negative
-    final double shiftScale = math.pow(10, shift).toDouble();
+    if (shift > _maxDecimal || shift < -_maxDecimal) {
+      return value;
+    }
+    final double shiftScale = math.pow(10.0, shift).toDouble();
     return (value * shiftScale).roundToDouble() / shiftScale;
   }
 }
