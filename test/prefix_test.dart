@@ -4,7 +4,13 @@ import 'package:dart_unitz/dart_unitz.dart';
 import 'package:test/test.dart';
 
 void main() {
-  Unitz.usePrefix = true;
+  setUp(() {
+    Unitz.usePrefix = true;
+  });
+
+  tearDown(() {
+    Unitz.usePrefix = false;
+  });
 
   test('decimalPrefixOrder', () {
     final List<UnitPrefix> arr = DecimalPrefix.values;
@@ -55,8 +61,22 @@ void main() {
       Metre(1e+30): '1 Qm',
     };
 
+    print('precision=${Unitz.precision}');
+    print('map size=${results.length}');
+    // expect(results.length == 25, isTrue);
     for (final MapEntry<Unit, String> entry in results.entries) {
-      expect(entry.key.toString(), entry.value);
+      final Unit u = entry.key;
+      expect(
+        u.toString(),
+        entry.value,
+        reason:
+            'key=${u.runtimeType}, '
+            'value=${u.value}, '
+            'scalar=${u.scalar}, '
+            'prefix=${u.prefix.symbol}, '
+            'mantissa=${u.mantissa}, '
+            'toString=$u',
+      );
     }
   });
 
@@ -75,7 +95,18 @@ void main() {
     };
 
     for (final MapEntry<Unit, String> entry in results.entries) {
-      expect(entry.key.toString(), entry.value);
+      final Unit u = entry.key;
+      expect(
+        u.toString(),
+        entry.value,
+        reason:
+            'key=${u.runtimeType}, '
+            'value=${u.value}, '
+            'scalar=${u.scalar}, '
+            'prefix=${u.prefix.symbol}, '
+            'mantissa=${u.mantissa}, '
+            'toString=$u',
+      );
     }
   });
 }
