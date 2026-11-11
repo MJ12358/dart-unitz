@@ -110,9 +110,7 @@ abstract class Unit implements Comparable<Unit> {
     }
 
     return prefixes.firstWhere(
-      (UnitPrefix e) {
-        return e.power <= _value;
-      },
+      (UnitPrefix e) => e.power <= _value.abs(),
       orElse: NullPrefix.new,
     );
   }
@@ -133,8 +131,14 @@ abstract class Unit implements Comparable<Unit> {
   }
 
   @override
+  /// Equality is *approximate*: it compares base-unit values rounded to
+  /// [Unitz.precision]. Equality is symmetric and reflexive,
+  /// but **not transitive** at rounding boundaries.
   bool operator ==(Object other) {
     if (other is! Unit) {
+      return false;
+    }
+    if (base.runtimeType != other.base.runtimeType) {
       return false;
     }
     final num a = base.instance(toBase()).scalar;
@@ -143,7 +147,8 @@ abstract class Unit implements Comparable<Unit> {
   }
 
   @override
-  int get hashCode => Object.hash(value, name, symbol);
+  int get hashCode =>
+      Object.hash(base.runtimeType, base.instance(toBase()).scalar);
 }
 
 /// {@template dart_unitz.LinearUnit}
