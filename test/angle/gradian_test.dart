@@ -44,7 +44,6 @@ void main() {
   });
 
   test('toString', () {
-    Unitz.usePrefix = true; // Angle uses a NullPrefix
     final Gradian gradian1 = Gradian(1);
     expect(gradian1.toString(), '1 grad');
     final Gradian gradian2 = Gradian(2);

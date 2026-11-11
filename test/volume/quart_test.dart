@@ -13,7 +13,16 @@ List<Unit> unitList = <Unit>[
 ];
 
 void main() {
-  Unitz.precision = 6;
+  setUp(() {
+    Unitz.precision = 6;
+    Unitz.usePrefix = true;
+  });
+
+  tearDown(() {
+    Unitz.precision = 2;
+    Unitz.usePrefix = false;
+  });
+
   test('constructor', () {
     final Quart quart = Quart();
     expect(quart.value, 0);
@@ -49,7 +58,6 @@ void main() {
   });
 
   test('toString', () {
-    Unitz.usePrefix = true;
     final Quart quart1 = Quart(1);
     expect(quart1.toString(), '1 qt');
     final Quart quart2 = Quart(2);

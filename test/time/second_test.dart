@@ -10,6 +10,14 @@ List<Unit> unitList = <Unit>[
 ];
 
 void main() {
+  setUp(() {
+    Unitz.usePrefix = true;
+  });
+
+  tearDown(() {
+    Unitz.usePrefix = false;
+  });
+
   test('constructor', () {
     final Second second = Second();
     expect(second.value, 0);
@@ -45,7 +53,6 @@ void main() {
   });
 
   test('toString', () {
-    Unitz.usePrefix = true;
     final Second s1 = Second(1);
     expect(s1.toString(), '1 s');
     final Second s2 = Second(2);

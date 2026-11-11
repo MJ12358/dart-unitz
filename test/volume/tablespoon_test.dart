@@ -11,6 +11,14 @@ List<Unit> unitList = <Unit>[
 ];
 
 void main() {
+  setUp(() {
+    Unitz.usePrefix = true;
+  });
+
+  tearDown(() {
+    Unitz.usePrefix = false;
+  });
+
   test('constructor', () {
     final Tablespoon tablespoon = Tablespoon();
     expect(tablespoon.value, 0);
@@ -55,7 +63,6 @@ void main() {
   });
 
   test('toString', () {
-    Unitz.usePrefix = true;
     final Tablespoon tablespoon1 = Tablespoon(1);
     expect(tablespoon1.toString(), '1 tbsp');
     final Tablespoon tablespoon2 = Tablespoon(2);

@@ -13,7 +13,16 @@ List<Unit> unitList = <Unit>[
 ];
 
 void main() {
-  Unitz.precision = 6;
+  setUp(() {
+    Unitz.precision = 6;
+    Unitz.usePrefix = true;
+  });
+
+  tearDown(() {
+    Unitz.precision = 2;
+    Unitz.usePrefix = false;
+  });
+
   test('constructor', () {
     final Pint pint = Pint();
     expect(pint.value, 0);
@@ -49,7 +58,6 @@ void main() {
   });
 
   test('toString', () {
-    Unitz.usePrefix = true;
     final Pint pint1 = Pint(1);
     expect(pint1.toString(), '1 pt');
     final Pint pint2 = Pint(2);

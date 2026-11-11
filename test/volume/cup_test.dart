@@ -15,7 +15,16 @@ List<Unit> unitList = <Unit>[
 ];
 
 void main() {
-  Unitz.precision = 6;
+  setUp(() {
+    Unitz.precision = 6;
+    Unitz.usePrefix = true;
+  });
+
+  tearDown(() {
+    Unitz.precision = 2;
+    Unitz.usePrefix = false;
+  });
+
   test('constructor', () {
     final Cup cup = Cup();
     expect(cup.value, 0);
@@ -58,7 +67,6 @@ void main() {
   });
 
   test('toString', () {
-    Unitz.usePrefix = true;
     final Cup cup1 = Cup(1);
     expect(cup1.toString(), '1 cup');
     final Cup cup2 = Cup(2);

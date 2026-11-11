@@ -66,7 +66,6 @@ void main() {
   });
 
   test('toString', () {
-    // Unitz.prefixType = DecimalPrefix;
     final Kelvin k1 = Kelvin(1);
     expect(k1.toString(), '1 K');
     final Kelvin k2 = Kelvin(2);

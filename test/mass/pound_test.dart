@@ -9,6 +9,14 @@ List<Unit> unitList = <Unit>[
 ];
 
 void main() {
+  setUp(() {
+    Unitz.usePrefix = true;
+  });
+
+  tearDown(() {
+    Unitz.usePrefix = false;
+  });
+
   test('constructor', () {
     final Pound pound = Pound();
     expect(pound.value, 0);
@@ -44,7 +52,6 @@ void main() {
   });
 
   test('toString', () {
-    Unitz.usePrefix = true;
     final Pound pound1 = Pound(1);
     expect(pound1.toString(), '1 lb');
     final Pound pound2 = Pound(2);

@@ -6,6 +6,14 @@ List<Unit> unitList = <Unit>[
 ];
 
 void main() {
+  setUp(() {
+    Unitz.usePrefix = true;
+  });
+
+  tearDown(() {
+    Unitz.usePrefix = false;
+  });
+
   test('constructor', () {
     final Parsec pc = Parsec();
     expect(pc.value, 0);
@@ -41,7 +49,6 @@ void main() {
   });
 
   test('toString', () {
-    Unitz.usePrefix = true;
     final Parsec pc1 = Parsec(1);
     expect(pc1.toString(), '1 pc');
     final Parsec pc2 = Parsec(2);

@@ -9,6 +9,14 @@ List<Unit> unitList = <Unit>[
 ];
 
 void main() {
+  setUp(() {
+    Unitz.usePrefix = true;
+  });
+
+  tearDown(() {
+    Unitz.usePrefix = false;
+  });
+
   test('constructor', () {
     final Gram gram = Gram();
     expect(gram.value, 0);
@@ -44,7 +52,6 @@ void main() {
   });
 
   test('toString', () {
-    Unitz.usePrefix = true;
     final Gram gram1 = Gram(1);
     expect(gram1.toString(), '1 g');
     final Gram gram2 = Gram(2);

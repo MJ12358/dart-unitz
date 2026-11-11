@@ -15,6 +15,14 @@ List<Unit> unitList = <Unit>[
 ];
 
 void main() {
+  setUp(() {
+    Unitz.usePrefix = true;
+  });
+
+  tearDown(() {
+    Unitz.usePrefix = false;
+  });
+
   test('constructor', () {
     final CubicMetre cubicMetre = CubicMetre();
     expect(cubicMetre.value, 0);
@@ -59,7 +67,6 @@ void main() {
   });
 
   test('toString', () {
-    Unitz.usePrefix = true;
     final CubicMetre cubicMetre1 = CubicMetre(1);
     expect(cubicMetre1.toString(), '1 m³');
     final CubicMetre cubicMetre2 = CubicMetre(2);

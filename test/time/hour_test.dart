@@ -11,6 +11,14 @@ List<Unit> unitList = <Unit>[
 ];
 
 void main() {
+  setUp(() {
+    Unitz.usePrefix = true;
+  });
+
+  tearDown(() {
+    Unitz.usePrefix = false;
+  });
+
   test('constructor', () {
     final Hour hour = Hour();
     expect(hour.value, 0);
@@ -46,7 +54,6 @@ void main() {
   });
 
   test('toString', () {
-    Unitz.usePrefix = true;
     final Hour h1 = Hour(1);
     expect(h1.toString(), '1 h');
     final Hour h2 = Hour(2);

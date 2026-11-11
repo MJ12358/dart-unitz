@@ -15,6 +15,14 @@ List<Unit> unitList = <Unit>[
 ];
 
 void main() {
+  setUp(() {
+    Unitz.usePrefix = true;
+  });
+
+  tearDown(() {
+    Unitz.usePrefix = false;
+  });
+
   test('constructor', () {
     final CubicYard cubicYard = CubicYard();
     expect(cubicYard.value, 0);
@@ -50,7 +58,6 @@ void main() {
   });
 
   test('toString', () {
-    Unitz.usePrefix = true;
     final CubicYard cubicYard1 = CubicYard(1);
     expect(cubicYard1.toString(), '1 yd³');
     final CubicYard cubicYard2 = CubicYard(2);

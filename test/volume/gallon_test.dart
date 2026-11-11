@@ -12,7 +12,16 @@ List<Unit> unitList = <Unit>[
 ];
 
 void main() {
-  Unitz.precision = 6;
+  setUp(() {
+    Unitz.precision = 6;
+    Unitz.usePrefix = true;
+  });
+
+  tearDown(() {
+    Unitz.precision = 2;
+    Unitz.usePrefix = false;
+  });
+
   test('constructor', () {
     final Gallon gallon = Gallon();
     expect(gallon.value, 0);
@@ -55,7 +64,6 @@ void main() {
   });
 
   test('toString', () {
-    Unitz.usePrefix = true;
     final Gallon gallon1 = Gallon(1);
     expect(gallon1.toString(), '1 gal');
     final Gallon gallon2 = Gallon(2);

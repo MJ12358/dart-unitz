@@ -15,6 +15,14 @@ List<Unit> unitList = <Unit>[
 ];
 
 void main() {
+  setUp(() {
+    Unitz.usePrefix = true;
+  });
+
+  tearDown(() {
+    Unitz.usePrefix = false;
+  });
+
   test('constructor', () {
     final CubicFoot cubicFoot = CubicFoot();
     expect(cubicFoot.value, 0);
@@ -50,7 +58,6 @@ void main() {
   });
 
   test('toString', () {
-    Unitz.usePrefix = true;
     final CubicFoot cubicFoot1 = CubicFoot(1);
     expect(cubicFoot1.toString(), '1 ft³');
     final CubicFoot cubicFoot2 = CubicFoot(2);

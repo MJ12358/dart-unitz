@@ -76,7 +76,6 @@ void main() {
   });
 
   test('toString', () {
-    Unitz.usePrefix = true; // Temperature uses a NullPrefix
     final Celsius c1 = Celsius(1);
     expect(c1.toString(), '1 °C');
     final Celsius c2 = Celsius(2);

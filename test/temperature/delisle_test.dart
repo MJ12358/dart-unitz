@@ -66,7 +66,6 @@ void main() {
   });
 
   test('toString', () {
-    Unitz.usePrefix = true; // Temperature uses a NullPrefix
     final Delisle d1 = Delisle(1);
     expect(d1.toString(), '1 °D');
     final Delisle d2 = Delisle(2);

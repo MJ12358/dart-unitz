@@ -6,6 +6,14 @@ List<Unit> unitList = <Unit>[
 ];
 
 void main() {
+  setUp(() {
+    Unitz.usePrefix = true;
+  });
+
+  tearDown(() {
+    Unitz.usePrefix = false;
+  });
+
   test('constructor', () {
     final Mile mile = Mile();
     expect(mile.value, 0);
@@ -41,7 +49,6 @@ void main() {
   });
 
   test('toString', () {
-    Unitz.usePrefix = true;
     final Mile mile1 = Mile(1);
     expect(mile1.toString(), '1 mi');
     final Mile mile2 = Mile(2);

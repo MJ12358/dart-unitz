@@ -8,6 +8,14 @@ List<Unit> unitList = <Unit>[
 ];
 
 void main() {
+  setUp(() {
+    Unitz.usePrefix = true;
+  });
+
+  tearDown(() {
+    Unitz.usePrefix = false;
+  });
+
   test('constructor', () {
     final Foot foot = Foot();
     expect(foot.value, 0);
@@ -43,7 +51,6 @@ void main() {
   });
 
   test('toString', () {
-    Unitz.usePrefix = true;
     final Foot foot1 = Foot(1);
     expect(foot1.toString(), '1 ft');
     final Foot foot2 = Foot(2);

@@ -15,6 +15,14 @@ List<Unit> unitList = <Unit>[
 ];
 
 void main() {
+  setUp(() {
+    Unitz.usePrefix = true;
+  });
+
+  tearDown(() {
+    Unitz.usePrefix = false;
+  });
+
   test('constructor', () {
     final Litre litre = Litre();
     expect(litre.value, 0);
@@ -60,7 +68,6 @@ void main() {
   });
 
   test('toString', () {
-    Unitz.usePrefix = true;
     final Litre litre1 = Litre(1);
     expect(litre1.toString(), '1 L');
     final Litre litre2 = Litre(2);

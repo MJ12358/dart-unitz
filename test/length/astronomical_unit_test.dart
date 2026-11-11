@@ -12,6 +12,14 @@ List<Unit> unitList = <Unit>[
 ];
 
 void main() {
+  setUp(() {
+    Unitz.usePrefix = true;
+  });
+
+  tearDown(() {
+    Unitz.usePrefix = false;
+  });
+
   test('constructor', () {
     final AstronomicalUnit au = AstronomicalUnit();
     expect(au.value, 0);
@@ -47,7 +55,6 @@ void main() {
   });
 
   test('toString', () {
-    Unitz.usePrefix = true;
     final AstronomicalUnit au1 = AstronomicalUnit(1);
     expect(au1.toString(), '1 au');
     final AstronomicalUnit au2 = AstronomicalUnit(2);

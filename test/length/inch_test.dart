@@ -7,6 +7,14 @@ List<Unit> unitList = <Unit>[
 ];
 
 void main() {
+  setUp(() {
+    Unitz.usePrefix = true;
+  });
+
+  tearDown(() {
+    Unitz.usePrefix = false;
+  });
+
   test('constructor', () {
     final Inch inch = Inch();
     expect(inch.value, 0);
@@ -42,7 +50,6 @@ void main() {
   });
 
   test('toString', () {
-    Unitz.usePrefix = true;
     final Inch inch1 = Inch(1);
     expect(inch1.toString(), '1 in');
     final Inch inch2 = Inch(2);

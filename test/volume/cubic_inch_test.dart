@@ -15,6 +15,14 @@ List<Unit> unitList = <Unit>[
 ];
 
 void main() {
+  setUp(() {
+    Unitz.usePrefix = true;
+  });
+
+  tearDown(() {
+    Unitz.usePrefix = false;
+  });
+
   test('constructor', () {
     final CubicInch cubicInch = CubicInch();
     expect(cubicInch.value, 0);
@@ -50,7 +58,6 @@ void main() {
   });
 
   test('toString', () {
-    Unitz.usePrefix = true;
     final CubicInch cubicInch1 = CubicInch(1);
     expect(cubicInch1.toString(), '1 in³');
     final CubicInch cubicInch2 = CubicInch(2);

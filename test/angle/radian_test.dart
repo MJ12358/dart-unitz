@@ -44,7 +44,6 @@ void main() {
   });
 
   test('toString', () {
-    Unitz.usePrefix = true; // Angle uses a NullPrefix
     final Radian radian1 = Radian(1);
     expect(radian1.toString(), '1 rad');
     final Radian radian2 = Radian(2);

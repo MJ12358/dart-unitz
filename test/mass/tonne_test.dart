@@ -9,6 +9,14 @@ List<Unit> unitList = <Unit>[
 ];
 
 void main() {
+  setUp(() {
+    Unitz.usePrefix = true;
+  });
+
+  tearDown(() {
+    Unitz.usePrefix = false;
+  });
+
   test('constructor', () {
     final Tonne tonne = Tonne();
     expect(tonne.value, 0);
@@ -44,7 +52,6 @@ void main() {
   });
 
   test('toString', () {
-    Unitz.usePrefix = true;
     final Tonne tonne1 = Tonne(1);
     expect(tonne1.toString(), '1 t');
     final Tonne tonne2 = Tonne(2);

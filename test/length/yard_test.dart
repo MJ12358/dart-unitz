@@ -6,6 +6,14 @@ List<Unit> unitList = <Unit>[
 ];
 
 void main() {
+  setUp(() {
+    Unitz.usePrefix = true;
+  });
+
+  tearDown(() {
+    Unitz.usePrefix = false;
+  });
+
   test('constructor', () {
     final Yard yard = Yard();
     expect(yard.value, 0);
@@ -41,7 +49,6 @@ void main() {
   });
 
   test('toString', () {
-    Unitz.usePrefix = true;
     final Yard yard1 = Yard(1);
     expect(yard1.toString(), '1 yd');
     final Yard yard2 = Yard(2);

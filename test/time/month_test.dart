@@ -11,6 +11,14 @@ List<Unit> unitList = <Unit>[
 ];
 
 void main() {
+  setUp(() {
+    Unitz.usePrefix = true;
+  });
+
+  tearDown(() {
+    Unitz.usePrefix = false;
+  });
+
   test('constructor', () {
     final Month month = Month();
     expect(month.value, 0);
@@ -46,7 +54,6 @@ void main() {
   });
 
   test('toString', () {
-    Unitz.usePrefix = true;
     final Month m1 = Month(1);
     expect(m1.toString(), '1 mo');
     final Month m2 = Month(2);

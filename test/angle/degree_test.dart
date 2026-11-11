@@ -44,7 +44,6 @@ void main() {
   });
 
   test('toString', () {
-    Unitz.usePrefix = true; // Angle uses a NullPrefix
     final Degree degree1 = Degree(1);
     expect(degree1.toString(), '1 °');
     final Degree degree2 = Degree(2);

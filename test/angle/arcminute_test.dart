@@ -44,7 +44,6 @@ void main() {
   });
 
   test('toString', () {
-    Unitz.usePrefix = true; // Angle uses a NullPrefix
     final ArcMinute arcminute1 = ArcMinute(1);
     expect(arcminute1.toString(), "1 '");
     final ArcMinute arcminute2 = ArcMinute(2);

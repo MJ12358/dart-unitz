@@ -13,7 +13,16 @@ List<Unit> unitList = <Unit>[
 ];
 
 void main() {
-  Unitz.precision = 6;
+  setUp(() {
+    Unitz.precision = 6;
+    Unitz.usePrefix = true;
+  });
+
+  tearDown(() {
+    Unitz.precision = 2;
+    Unitz.usePrefix = false;
+  });
+
   test('constructor', () {
     final FluidOunce fluidOunce = FluidOunce();
     expect(fluidOunce.value, 0);
@@ -49,7 +58,6 @@ void main() {
   });
 
   test('toString', () {
-    Unitz.usePrefix = true;
     final FluidOunce fluidOunce1 = FluidOunce(1);
     expect(fluidOunce1.toString(), '1 fl oz');
     final FluidOunce fluidOunce2 = FluidOunce(2);

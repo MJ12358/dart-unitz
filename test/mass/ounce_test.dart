@@ -9,6 +9,14 @@ List<Unit> unitList = <Unit>[
 ];
 
 void main() {
+  setUp(() {
+    Unitz.usePrefix = true;
+  });
+
+  tearDown(() {
+    Unitz.usePrefix = false;
+  });
+
   test('constructor', () {
     final Ounce ounce = Ounce();
     expect(ounce.value, 0);
@@ -44,7 +52,6 @@ void main() {
   });
 
   test('toString', () {
-    Unitz.usePrefix = true;
     final Ounce ounce1 = Ounce(1);
     expect(ounce1.toString(), '1 oz');
     final Ounce ounce2 = Ounce(2);

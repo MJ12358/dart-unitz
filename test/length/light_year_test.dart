@@ -6,6 +6,14 @@ List<Unit> unitList = <Unit>[
 ];
 
 void main() {
+  setUp(() {
+    Unitz.usePrefix = true;
+  });
+
+  tearDown(() {
+    Unitz.usePrefix = false;
+  });
+
   test('constructor', () {
     final LightYear ly = LightYear();
     expect(ly.value, 0);
@@ -41,7 +49,6 @@ void main() {
   });
 
   test('toString', () {
-    Unitz.usePrefix = true;
     final LightYear ly1 = LightYear(1);
     expect(ly1.toString(), '1 ly');
     final LightYear ly2 = LightYear(2);

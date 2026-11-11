@@ -11,6 +11,14 @@ List<Unit> unitList = <Unit>[
 ];
 
 void main() {
+  setUp(() {
+    Unitz.usePrefix = true;
+  });
+
+  tearDown(() {
+    Unitz.usePrefix = false;
+  });
+
   test('constructor', () {
     final Week week = Week();
     expect(week.value, 0);
@@ -46,7 +54,6 @@ void main() {
   });
 
   test('toString', () {
-    Unitz.usePrefix = true;
     final Week w1 = Week(1);
     expect(w1.toString(), '1 wk');
     final Week w2 = Week(2);

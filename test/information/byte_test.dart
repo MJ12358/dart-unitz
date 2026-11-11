@@ -6,6 +6,14 @@ List<Unit> unitList = <Unit>[
 ];
 
 void main() {
+  setUp(() {
+    Unitz.usePrefix = true;
+  });
+
+  tearDown(() {
+    Unitz.usePrefix = false;
+  });
+
   test('constructor', () {
     final Byte byte = Byte();
     expect(byte.value, 0);
@@ -40,7 +48,6 @@ void main() {
   });
 
   test('toString', () {
-    Unitz.usePrefix = true;
     final Byte byte1 = Byte(1);
     expect(byte1.toString(), '1 B');
     final Byte byte2 = Byte(2);

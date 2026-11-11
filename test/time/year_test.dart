@@ -11,6 +11,14 @@ List<Unit> unitList = <Unit>[
 ];
 
 void main() {
+  setUp(() {
+    Unitz.usePrefix = true;
+  });
+
+  tearDown(() {
+    Unitz.usePrefix = false;
+  });
+
   test('constructor', () {
     final Year year = Year();
     expect(year.value, 0);
@@ -63,7 +71,6 @@ void main() {
   });
 
   test('toString', () {
-    Unitz.usePrefix = true;
     final Year y1 = Year(1);
     expect(y1.toString(), '1 a');
     final Year y2 = Year(2);

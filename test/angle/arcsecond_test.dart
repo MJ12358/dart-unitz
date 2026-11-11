@@ -9,7 +9,14 @@ List<Unit> unitList = <Unit>[
 ];
 
 void main() {
-  Unitz.precision = 3;
+  setUp(() {
+    Unitz.precision = 3;
+  });
+
+  tearDown(() {
+    Unitz.precision = 2;
+  });
+
   test('constructor', () {
     final ArcSecond arcsecond = ArcSecond();
     expect(arcsecond.value, 0);
@@ -45,7 +52,6 @@ void main() {
   });
 
   test('toString', () {
-    Unitz.usePrefix = true; // Angle uses a NullPrefix
     final ArcSecond arcsecond1 = ArcSecond(1);
     expect(arcsecond1.toString(), '1 "');
     final ArcSecond arcsecond2 = ArcSecond(2);

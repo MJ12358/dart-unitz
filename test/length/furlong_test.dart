@@ -7,6 +7,14 @@ List<Unit> unitList = <Unit>[
 ];
 
 void main() {
+  setUp(() {
+    Unitz.usePrefix = true;
+  });
+
+  tearDown(() {
+    Unitz.usePrefix = false;
+  });
+
   test('constructor', () {
     final Furlong furlong = Furlong();
     expect(furlong.value, 0);
@@ -34,8 +42,14 @@ void main() {
     }
   });
 
+  test('equality', () {
+    final Furlong furlong = Furlong(1);
+    for (final Unit unit in unitList) {
+      expect(furlong == unit, isTrue);
+    }
+  });
+
   test('toString', () {
-    Unitz.usePrefix = true;
     final Furlong furlong1 = Furlong(1);
     expect(furlong1.toString(), '1 fur');
     final Furlong furlong2 = Furlong(2);

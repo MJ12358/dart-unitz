@@ -10,6 +10,14 @@ List<Unit> unitList = <Unit>[
 ];
 
 void main() {
+  setUp(() {
+    Unitz.usePrefix = true;
+  });
+
+  tearDown(() {
+    Unitz.usePrefix = false;
+  });
+
   test('constructor', () {
     final Chain chain = Chain();
     expect(chain.value, 0);
@@ -45,7 +53,6 @@ void main() {
   });
 
   test('toString', () {
-    Unitz.usePrefix = true;
     final Chain chain1 = Chain(1);
     expect(chain1.toString(), '1 ch');
     final Chain chain2 = Chain(2);

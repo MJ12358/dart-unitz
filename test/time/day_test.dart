@@ -11,6 +11,14 @@ List<Unit> unitList = <Unit>[
 ];
 
 void main() {
+  setUp(() {
+    Unitz.usePrefix = true;
+  });
+
+  tearDown(() {
+    Unitz.usePrefix = false;
+  });
+
   test('constructor', () {
     final Day day = Day();
     expect(day.value, 0);
@@ -46,7 +54,6 @@ void main() {
   });
 
   test('toString', () {
-    Unitz.usePrefix = true;
     final Day d1 = Day(1);
     expect(d1.toString(), '1 d');
     final Day d2 = Day(2);

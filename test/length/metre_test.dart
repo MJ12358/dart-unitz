@@ -11,6 +11,14 @@ List<Unit> unitList = <Unit>[
 ];
 
 void main() {
+  setUp(() {
+    Unitz.usePrefix = true;
+  });
+
+  tearDown(() {
+    Unitz.usePrefix = false;
+  });
+
   test('constructor', () {
     final Metre metre = Metre();
     expect(metre.value, 0);
@@ -56,7 +64,6 @@ void main() {
   });
 
   test('toString', () {
-    Unitz.usePrefix = true;
     final Metre metre1 = Metre(1);
     expect(metre1.toString(), '1 m');
     final Metre metre2 = Metre(2);
