@@ -1,4 +1,4 @@
-import 'dart:math';
+import 'dart:math' as math;
 
 import 'package:dart_unitz/dart_unitz.dart';
 import 'package:test/test.dart';
@@ -81,15 +81,15 @@ void main() {
   test('binaryPrefixValue', () {
     final Map<Unit, String> results = <Unit, String>{
       Bit(1): '1 b',
-      Bit(1024): '1024 b',
-      Bit(pow(2, 10)): '1 Kib',
-      Bit(pow(2, 20)): '1 Mib',
-      Bit(pow(2, 30)): '1 Gib',
-      Bit(pow(2, 40)): '1 Tib',
-      Bit(pow(2, 50)): '1 Pib',
-      Bit(pow(2, 60)): '1 Eib',
-      // Bit(pow(2, 70)): '1 Zib', //TODO: num too large
-      // Bit(pow(2, 80)): '1 Yib',
+      Bit(1023): '1023 b',
+      Bit(1024): '1 Kib', // same as math.pow(2.0, 10)
+      Bit(math.pow(2.0, 20)): '1 Mib',
+      Bit(math.pow(2.0, 30)): '1 Gib',
+      Bit(math.pow(2.0, 40)): '1 Tib',
+      Bit(math.pow(2.0, 50)): '1 Pib',
+      Bit(math.pow(2.0, 60)): '1 Eib',
+      Bit(math.pow(2.0, 70)): '1 Zib',
+      Bit(math.pow(2.0, 80)): '1 Yib',
     };
 
     for (final MapEntry<Unit, String> entry in results.entries) {
