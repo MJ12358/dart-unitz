@@ -70,7 +70,7 @@ void main() {
   test('relational operators agree with ==', () {
     final List<Unit> units = <Unit>[
       Metre(1),
-      Metre(2),
+      Meter(2),
       Kilogram(1),
       Second(1),
     ];
