@@ -45,30 +45,22 @@ extension UnitExtension on Unit {
 
   /// Less than operator for two units.
   bool operator <(Unit other) {
-    final num a = base.instance(toBase()).scalar;
-    final num b = other.base.instance(other.toBase()).scalar;
-    return a < b;
+    return compareTo(other) < 0;
   }
 
   /// Less than or equal to operator for two units.
   bool operator <=(Unit other) {
-    final num a = base.instance(toBase()).scalar;
-    final num b = other.base.instance(other.toBase()).scalar;
-    return a <= b;
+    return compareTo(other) <= 0;
   }
 
   /// Greater than operator for two units.
   bool operator >(Unit other) {
-    final num a = base.instance(toBase()).scalar;
-    final num b = other.base.instance(other.toBase()).scalar;
-    return a > b;
+    return compareTo(other) > 0;
   }
 
   /// Greater than or equal to operator for two units.
   bool operator >=(Unit other) {
-    final num a = base.instance(toBase()).scalar;
-    final num b = other.base.instance(other.toBase()).scalar;
-    return a >= b;
+    return compareTo(other) >= 0;
   }
 
   /// Removes trailing zeros from the given value if necessary.
@@ -141,6 +133,12 @@ extension UnitExtension on Unit {
     final double shiftScale = math.pow(10.0, shift).toDouble();
     return (value * shiftScale).roundToDouble() / shiftScale;
   }
+
+  /// The scalar value of this unit expressed in its base unit.
+  ///
+  /// Used as the comparison key by [compareTo], [==], and the relational
+  /// operators, so all of them agree on equality.
+  num get _baseScalar => base.instance(toBase()).scalar;
 }
 
 /// An extension to provide additional functionality on [List<Unit>].
