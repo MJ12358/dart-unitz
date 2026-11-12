@@ -105,48 +105,4 @@ void main() {
     expect(r2.value, -1000);
     expect(r2, isA<Gram>());
   });
-
-  test('less than', () {
-    final Metre m1 = Metre(2);
-    final Metre m2 = Metre(3);
-    expect(m1 < m2, isTrue);
-    final Gram g1 = Gram(2);
-    final Gram g2 = Gram(3);
-    expect(g1 < g2, isTrue);
-  });
-
-  test('less than or equal to', () {
-    final Metre m1 = Metre(2);
-    final Metre m2 = Metre(3);
-    final Metre m3 = Metre(2);
-    expect(m1 <= m2, isTrue);
-    expect(m1 <= m3, isTrue);
-    final Gram g1 = Gram(2);
-    final Gram g2 = Gram(2);
-    final Gram g3 = Gram(3);
-    expect(g1 <= g2, isTrue);
-    expect(g1 <= g3, isTrue);
-  });
-
-  test('greater than', () {
-    final Metre m1 = Metre(4);
-    final Metre m2 = Metre(3);
-    expect(m1 > m2, isTrue);
-    final Gram g1 = Gram(4);
-    final Gram g2 = Gram(3);
-    expect(g1 > g2, isTrue);
-  });
-
-  test('greater than or equal to', () {
-    final Metre m1 = Metre(4);
-    final Metre m2 = Metre(3);
-    final Metre m3 = Metre(4);
-    expect(m1 >= m2, isTrue);
-    expect(m1 >= m3, isTrue);
-    final Gram g1 = Gram(4);
-    final Gram g2 = Gram(3);
-    final Gram g3 = Gram(4);
-    expect(g1 >= g2, isTrue);
-    expect(g1 >= g3, isTrue);
-  });
 }

@@ -61,9 +61,7 @@ void main() {
       Metre(1e+30): '1 Qm',
     };
 
-    print('precision=${Unitz.precision}');
-    print('map size=${results.length}');
-    // expect(results.length == 25, isTrue);
+    expect(results.length == 25, isTrue);
     for (final MapEntry<Unit, String> entry in results.entries) {
       final Unit u = entry.key;
       expect(
