@@ -123,32 +123,49 @@ abstract class Unit implements Comparable<Unit> {
     return '$scalar $symbol';
   }
 
+  /// Compares this unit to [other].
+  ///
+  /// Within the same unit family (same [base] runtime type), the comparison
+  /// is by base-unit scalar value, rounded to [Unitz.precision] — consistent
+  /// with [==].
+  ///
+  /// Across families, the order is **unspecified** (it is deterministic within
+  /// a single program run but not semantically meaningful). This ensures
+  /// `compareTo == 0` iff `==`, per the [Comparable] contract, without throwing
+  /// on mixed-family comparisons.
   @override
   int compareTo(Unit other) {
-    final num a = base.instance(toBase()).scalar;
-    final num b = other.base.instance(other.toBase()).scalar;
-    return a.compareTo(b);
+    final Type aType = base.runtimeType;
+    final Type bType = other.base.runtimeType;
+    if (aType != bType) {
+      // Cross-family: order by a stable family key, then by identity
+      // to break any hashCode ties deterministically.
+      final int byHash = aType.hashCode.compareTo(bType.hashCode);
+      if (byHash != 0) {
+        return byHash;
+      }
+      // hashCode collision between distinct types:
+      // fall back to identityHashCode,
+      // which is unique per object within a process.
+      return identityHashCode(aType).compareTo(identityHashCode(bType));
+    }
+    // Same family: compare base scalars, consistent with ==.
+    return _baseScalar.compareTo(other._baseScalar);
   }
 
-  @override
   /// Equality is *approximate*: it compares base-unit values rounded to
   /// [Unitz.precision]. Equality is symmetric and reflexive,
   /// but **not transitive** at rounding boundaries.
+  @override
   bool operator ==(Object other) {
-    if (other is! Unit) {
-      return false;
-    }
-    if (base.runtimeType != other.base.runtimeType) {
-      return false;
-    }
-    final num a = base.instance(toBase()).scalar;
-    final num b = other.base.instance(other.toBase()).scalar;
-    return a == b;
+    return other is Unit &&
+        base.runtimeType == other.base.runtimeType &&
+        _baseScalar == other._baseScalar;
   }
 
+  /// Returns a hash code based on the base unit type and its scalar value.
   @override
-  int get hashCode =>
-      Object.hash(base.runtimeType, base.instance(toBase()).scalar);
+  int get hashCode => Object.hash(base.runtimeType, _baseScalar);
 }
 
 /// {@template dart_unitz.LinearUnit}
