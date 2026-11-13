@@ -1,5 +1,12 @@
 # Dart Unitz
 
+## [0.0.19]
+
+- Fix compareTo, equals and hashCode functions.
+- Update mantissa and rounded functions.
+- Utilize base scales to derive scale in some units.
+- Update tests.
+
 ## [0.0.18]
 
 - Add negation operator.
