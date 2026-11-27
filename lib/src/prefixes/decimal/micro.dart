@@ -8,7 +8,7 @@ part of '../../../dart_unitz.dart';
 /// {@endtemplate}
 class Micro extends DecimalPrefix {
   /// {@macro dart_unitz.Micro}
-  Micro();
+  const Micro();
 
   @override
   String get name => 'micro';

@@ -7,7 +7,7 @@ part of '../../../dart_unitz.dart';
 /// {@endtemplate}
 class Kibi extends BinaryPrefix {
   /// {@macro dart_unitz.Kibi}
-  Kibi();
+  const Kibi();
 
   @override
   String get name => 'kibi';

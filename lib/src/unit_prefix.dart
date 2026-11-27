@@ -37,7 +37,7 @@ abstract class DecimalPrefix implements UnitPrefix {
   const DecimalPrefix();
 
   /// A list of all decimal prefixes, ordered from largest to smallest.
-  static final List<UnitPrefix> values = <UnitPrefix>[
+  static const List<UnitPrefix> values = <UnitPrefix>[
     Quetta(),
     Ronna(),
     Yotta(),
@@ -50,7 +50,7 @@ abstract class DecimalPrefix implements UnitPrefix {
     Kilo(),
     Hecto(),
     Deca(),
-    const NullPrefix(),
+    NullPrefix(),
     Deci(),
     Centi(),
     Milli(),
@@ -77,7 +77,7 @@ abstract class BinaryPrefix implements UnitPrefix {
   const BinaryPrefix();
 
   /// A list of all binary prefixes, ordered from largest to smallest.
-  static final List<UnitPrefix> values = <UnitPrefix>[
+  static const List<UnitPrefix> values = <UnitPrefix>[
     Yobi(),
     Zebi(),
     Exbi(),
@@ -86,7 +86,7 @@ abstract class BinaryPrefix implements UnitPrefix {
     Gibi(),
     Mebi(),
     Kibi(),
-    const NullPrefix(),
+    NullPrefix(),
   ];
 }
 

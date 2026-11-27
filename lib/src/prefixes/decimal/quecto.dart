@@ -8,7 +8,7 @@ part of '../../../dart_unitz.dart';
 /// {@endtemplate}
 class Quecto extends DecimalPrefix {
   /// {@macro dart_unitz.Quecto}
-  Quecto();
+  const Quecto();
 
   @override
   String get name => 'quecto';

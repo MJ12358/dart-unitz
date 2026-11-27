@@ -13,7 +13,7 @@ void main() {
   });
 
   test('decimalPrefixOrder', () {
-    final List<UnitPrefix> arr = DecimalPrefix.values;
+    const List<UnitPrefix> arr = DecimalPrefix.values;
 
     for (int i = 1; i < arr.length; i++) {
       final UnitPrefix p1 = arr[i];
@@ -23,7 +23,7 @@ void main() {
   });
 
   test('binaryPrefixOrder', () {
-    final List<UnitPrefix> arr = BinaryPrefix.values;
+    const List<UnitPrefix> arr = BinaryPrefix.values;
 
     for (int i = 1; i < arr.length; i++) {
       final UnitPrefix p1 = arr[i];

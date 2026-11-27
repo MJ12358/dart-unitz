@@ -8,7 +8,7 @@ part of '../../../dart_unitz.dart';
 /// {@endtemplate}
 class Mega extends DecimalPrefix {
   /// {@macro dart_unitz.Mega}
-  Mega();
+  const Mega();
 
   @override
   String get name => 'mega';

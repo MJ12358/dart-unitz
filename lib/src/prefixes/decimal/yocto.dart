@@ -8,7 +8,7 @@ part of '../../../dart_unitz.dart';
 /// {@endtemplate}
 class Yocto extends DecimalPrefix {
   /// {@macro dart_unitz.Yocto}
-  Yocto();
+  const Yocto();
 
   @override
   String get name => 'yocto';
@@ -20,7 +20,7 @@ class Yocto extends DecimalPrefix {
   String get symbol => 'y';
 
   @override
-  String get word => 'septillionthth';
+  String get word => 'septillionth';
 
   @override
   String get pluralWord => 'septillionths';
