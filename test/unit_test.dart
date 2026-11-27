@@ -32,6 +32,34 @@ void main() {
     Unitz.precision = 2;
   });
 
+  test('constructor parses input value properly', () {
+    const Object i1 = 1;
+    const int i2 = 2;
+    const double i3 = 3.0;
+    const num i4 = 4;
+    const String i5 = '5';
+    const String i6 = '6.0';
+    final BigInt i7 = BigInt.from(7);
+    expect(Metre(i1).value, equals(1));
+    expect(Metre(i2).value, equals(2));
+    expect(Metre(i3).value, equals(3.0));
+    expect(Metre(i4).value, equals(4));
+    expect(Metre(i5).value, equals(5.0));
+    expect(Metre(i6).value, equals(6.0));
+    expect(Metre(i7).value, equals(7));
+  });
+
+  test('constructor throws for unsupported types', () {
+    const num i1 = double.nan;
+    const num i2 = double.infinity;
+    const String i3 = 'test';
+    const bool i4 = true;
+    expect(() => Metre(i1), throwsA(isA<ArgumentError>()));
+    expect(() => Metre(i2), throwsA(isA<ArgumentError>()));
+    expect(() => Metre(i3), throwsA(isA<ArgumentError>()));
+    expect(() => Metre(i4), throwsA(isA<UnsupportedError>()));
+  });
+
   test('categories have registered values list', () {
     for (final Type c in Unitz.categories) {
       expect(instancesOf(c), isNotEmpty, reason: 'No values for $c');
