@@ -39,6 +39,10 @@ void main() {
     expect(meter.instance(), isA<Meter>());
   });
 
+  test('alternate constructor equality', () {
+    expect(Metre(1) == Meter(1), isTrue);
+  });
+
   test('conversion', () {
     final Metre metre = Metre();
     for (final Unit unit in Length.values) {

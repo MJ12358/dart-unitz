@@ -43,6 +43,10 @@ void main() {
     expect(liter.toString(), '0 L');
   });
 
+  test('alternate constructor equality', () {
+    expect(Litre(1) == Liter(1), isTrue);
+  });
+
   test('conversion', () {
     final Litre litre = Litre();
     for (final Volume unit in Volume.values) {
