@@ -54,10 +54,10 @@ void main() {
     const num i2 = double.infinity;
     const String i3 = 'test';
     const bool i4 = true;
-    expect(() => Metre(i1), throwsA(isA<ArgumentError>()));
-    expect(() => Metre(i2), throwsA(isA<ArgumentError>()));
-    expect(() => Metre(i3), throwsA(isA<ArgumentError>()));
-    expect(() => Metre(i4), throwsA(isA<UnsupportedError>()));
+    expect(() => Metre(i1), throwsA(isA<UnitException>()));
+    expect(() => Metre(i2), throwsA(isA<UnitException>()));
+    expect(() => Metre(i3), throwsA(isA<UnitException>()));
+    expect(() => Metre(i4), throwsA(isA<UnitException>()));
   });
 
   test('categories have registered values list', () {

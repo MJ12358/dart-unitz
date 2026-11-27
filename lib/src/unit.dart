@@ -19,7 +19,7 @@ abstract class Unit implements Comparable<Unit> {
     // Num check.
     if (value is num) {
       if (value.isNaN || value.isInfinite) {
-        throw ArgumentError('Invalid numeric value, $value', 'value');
+        throw UnitException.invalidNumeric(value);
       }
       return value;
     }
@@ -28,11 +28,11 @@ abstract class Unit implements Comparable<Unit> {
       try {
         final num result = num.parse(value);
         if (result.isNaN || result.isInfinite) {
-          throw ArgumentError('Invalid numeric value, $value', 'value');
+          throw UnitException.invalidString(value);
         }
         return result;
       } on FormatException {
-        throw ArgumentError('Cannot parse "$value" as a number.', 'value');
+        throw UnitException.cannotParse(value);
       }
     }
     // BigInt check.
@@ -40,9 +40,7 @@ abstract class Unit implements Comparable<Unit> {
       return value.toInt();
     }
     // Unsupported type.
-    throw UnsupportedError(
-      '${value.runtimeType} is not a supported input.',
-    );
+    throw UnitException.unsupportedType(value);
   }
 
   /// The internal numeric representation of this unit's value.

@@ -82,6 +82,7 @@ part 'src/time/second.dart';
 part 'src/time/week.dart';
 part 'src/time/year.dart';
 part 'src/unit.dart';
+part 'src/unit_exception.dart';
 part 'src/unit_extension.dart';
 part 'src/unit_prefix.dart';
 part 'src/unitz.dart';
