@@ -167,6 +167,83 @@ abstract class Unit implements Comparable<Unit> {
   /// Returns a hash code based on the base unit type and its scalar value.
   @override
   int get hashCode => Object.hash(base.runtimeType, _baseScalar);
+
+  /// Removes trailing zeros from the given value if necessary.
+  num removeTrailingZeros(num v) {
+    final bool hasTrailingZero = v.truncateToDouble() == v;
+    if (hasTrailingZero) {
+      return num.parse(v.toStringAsFixed(0));
+    }
+    return v;
+  }
+
+  /// The mantissa of the value based on the unit prefix power.
+  num get mantissa {
+    // Nothing to do for zero or non-finite values
+    if (value == 0 || !value.isFinite) {
+      return value;
+    }
+    final num power = prefix.power;
+    if (power == 1) {
+      return value;
+    }
+    return (value / power).round();
+  }
+
+  /// The value rounded to the configured precision.
+  ///
+  /// For values greater than or equal to 1,
+  /// rounds to the specified number of decimal places.
+  ///
+  /// For values less than 1,
+  /// rounds to the specified number of significant figures.
+  num get _rounded {
+    final int places = Unitz.precision;
+    // Nothing to do for non-positive precision, zero, or non-finite values.
+    if (places <= 0 || value == 0 || !value.isFinite) {
+      return value;
+    }
+    if (value.abs() >= 1) {
+      return _roundToDecimalPlaces(places);
+    } else {
+      return _roundToSignificantFigures(places);
+    }
+  }
+
+  /// Rounds the value to the specified number of decimal places.
+  num _roundToDecimalPlaces(int places) {
+    // Beyond 2^53 doubles have no fractional bits
+    if (value.abs() >= math.pow(2.0, _maxExponent) / math.pow(10.0, places)) {
+      return value;
+    }
+    final double placesScale = math.pow(10.0, places).toDouble();
+    return (value * placesScale).roundToDouble() / placesScale;
+  }
+
+  /// Rounds the value to the specified number of significant figures.
+  num _roundToSignificantFigures(int places) {
+    int exp = (math.log(value.abs()) / math.ln10).floor();
+    // Correct for floating-point drift near exact powers of ten.
+    final double expScale = math.pow(10.0, exp).toDouble();
+    final double mantissa = value.abs() / expScale;
+    if (mantissa >= 10) {
+      exp += 1;
+    } else if (mantissa < 1) {
+      exp -= 1;
+    }
+    final int shift = places - 1 - exp; // may be positive or negative
+    if (shift > _maxDecimal || shift < -_maxDecimal) {
+      return value;
+    }
+    final double shiftScale = math.pow(10.0, shift).toDouble();
+    return (value * shiftScale).roundToDouble() / shiftScale;
+  }
+
+  /// The scalar value of this unit expressed in its base unit.
+  ///
+  /// Used as the comparison key by [compareTo], [==], and the relational
+  /// operators, so all of them agree on equality.
+  num get _baseScalar => base.instance(toBase()).scalar;
 }
 
 /// {@template dart_unitz.LinearUnit}
