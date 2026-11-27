@@ -92,7 +92,7 @@ extension UnitExtension on Unit {
   ///
   /// For values less than 1,
   /// rounds to the specified number of significant figures.
-  num get rounded {
+  num get _rounded {
     final int places = Unitz.precision;
     // Nothing to do for non-positive precision, zero, or non-finite values.
     if (places <= 0 || value == 0 || !value.isFinite) {

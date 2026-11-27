@@ -87,11 +87,10 @@ abstract class Unit implements Comparable<Unit> {
 
   /// The scalar value based on the unit prefix and configuration.
   num get scalar {
-    final num result = rounded;
     if (Unitz.removeTrailingZeros) {
-      return removeTrailingZeros(result);
+      return removeTrailingZeros(_rounded);
     }
-    return result;
+    return _rounded;
   }
 
   /// The unit prefix for this [value].
