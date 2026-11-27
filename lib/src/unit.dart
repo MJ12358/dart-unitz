@@ -26,7 +26,11 @@ abstract class Unit implements Comparable<Unit> {
     // String check.
     if (value is String) {
       try {
-        return num.parse(value);
+        final num result = num.parse(value);
+        if (result.isNaN || result.isInfinite) {
+          throw ArgumentError('Invalid numeric value, $value', 'value');
+        }
+        return result;
       } on FormatException {
         throw ArgumentError('Cannot parse "$value" as a number.', 'value');
       }
